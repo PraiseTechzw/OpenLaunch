@@ -10,14 +10,19 @@
     "ai"
   ],
   "scripts": {
-    "dev": "npm run dev",
-    "build": "npm run build",
-    "start": "npm run start",
-    "lint": "npm run lint",
-    "type-check": "npm run type-check",
+    "dev": "npm run dev --workspace=website",
+    "build": "npm run build --workspace=website",
+    "start": "npm run start --workspace=website",
+    "lint": "npm run lint --workspace=website",
+    "type-check": "npm run type-check --workspace=website",
     "test": "echo \"Running tests for all workspaces...\" && npm run test --workspaces --if-present",
-    "install-all": "npm install && npm install",
-    "clean": "rm -rf node_modules && rm -rf */node_modules && rm -rf */.next && rm -rf */dist"
+    "install-all": "npm install --workspaces",
+    "clean": "rm -rf node_modules && rm -rf */node_modules && rm -rf */.next && rm -rf */dist",
+    "release": "npm run release:patch",
+    "release:patch": "npm version patch && git push && git push --tags",
+    "release:minor": "npm version minor && git push && git push --tags",
+    "release:major": "npm version major && git push && git push --tags",
+    "release:manual": "node scripts/release.js"
   },
   "keywords": [
     "open-source",
