@@ -1,0 +1,48 @@
+{
+  "name": "openlaunch",
+  "version": "1.0.0",
+  "description": "OpenLaunch - Collaborative Software Development Platform",
+  "private": true,
+  "workspaces": [
+    "website",
+    "frontend",
+    "backend",
+    "ai"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=website",
+    "build": "npm run build --workspace=website",
+    "start": "npm run start --workspace=website",
+    "lint": "npm run lint --workspace=website",
+    "type-check": "npm run type-check --workspace=website",
+    "test": "echo \"Running tests for all workspaces...\" && npm run test --workspaces --if-present",
+    "install-all": "npm install && npm install --workspaces",
+    "clean": "rm -rf node_modules && rm -rf */node_modules && rm -rf */.next && rm -rf */dist"
+  },
+  "keywords": [
+    "open-source",
+    "collaboration",
+    "software-development",
+    "community",
+    "nextjs",
+    "react",
+    "typescript"
+  ],
+  "author": "OpenLaunch Community",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PraiseTechzw/OpenLaunch.git"
+  },
+  "bugs": {
+    "url": "https://github.com/PraiseTechzw/OpenLaunch/issues"
+  },
+  "homepage": "https://github.com/PraiseTechzw/OpenLaunch#readme",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.5"
+  }
+}
