@@ -10,13 +10,13 @@
     "ai"
   ],
   "scripts": {
-    "dev": "cd website && npm run dev",
-    "build": "cd website && npm run build",
-    "start": "cd website && npm run start",
-    "lint": "cd website && npm run lint",
-    "type-check": "cd website && npm run type-check",
+    "dev": "npm run dev",
+    "build": "npm run build",
+    "start": "npm run start",
+    "lint": "npm run lint",
+    "type-check": "npm run type-check",
     "test": "echo \"Running tests for all workspaces...\" && npm run test --workspaces --if-present",
-    "install-all": "npm install && cd website && npm install",
+    "install-all": "npm install && npm install",
     "clean": "rm -rf node_modules && rm -rf */node_modules && rm -rf */.next && rm -rf */dist"
   },
   "keywords": [
