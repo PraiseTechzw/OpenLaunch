@@ -12,20 +12,8 @@ if (!fs.existsSync('website') || !fs.existsSync('package.json')) {
   process.exit(1);
 }
 
-// Option 1: Update vercel.json with correct configuration
+// Option 1: Standard Vercel v2 configuration for monorepos
 const vercelConfig = {
-  "buildCommand": "cd website && npm run build",
-  "outputDirectory": "website/.next",
-  "installCommand": "npm install && cd website && npm install",
-  "framework": "nextjs",
-  "rootDirectory": "website"
-};
-
-fs.writeFileSync('vercel.json', JSON.stringify(vercelConfig, null, 2));
-console.log('✅ Updated vercel.json with correct configuration');
-
-// Option 2: Create alternative vercel.json for advanced setup
-const advancedVercelConfig = {
   "version": 2,
   "builds": [
     {
@@ -47,8 +35,23 @@ const advancedVercelConfig = {
   ]
 };
 
-fs.writeFileSync('vercel-advanced.json', JSON.stringify(advancedVercelConfig, null, 2));
-console.log('✅ Created vercel-advanced.json as alternative configuration');
+fs.writeFileSync('vercel.json', JSON.stringify(vercelConfig, null, 2));
+console.log('✅ Updated vercel.json with correct v2 configuration');
+
+// Option 2: Alternative configuration using project settings (for dashboard)
+const dashboardConfig = {
+  "note": "Configure these settings in Vercel Dashboard:",
+  "settings": {
+    "rootDirectory": "website",
+    "buildCommand": "npm run build",
+    "outputDirectory": ".next",
+    "installCommand": "npm install",
+    "framework": "nextjs"
+  }
+};
+
+fs.writeFileSync('vercel-dashboard-config.json', JSON.stringify(dashboardConfig, null, 2));
+console.log('✅ Created vercel-dashboard-config.json with dashboard settings');
 
 // Create .vercelignore file
 const vercelIgnore = `# Dependencies
@@ -115,12 +118,12 @@ console.log('\n📋 Next Steps:');
 console.log('1. Commit the updated vercel.json file');
 console.log('2. Push to your repository');
 console.log('3. Redeploy on Vercel');
-console.log('\nIf the standard configuration doesn\'t work:');
-console.log('1. Rename vercel-advanced.json to vercel.json');
-console.log('2. Or configure manually in Vercel dashboard:');
-console.log('   - Root Directory: website');
-console.log('   - Build Command: npm run build');
-console.log('   - Output Directory: .next');
-console.log('   - Install Command: npm install');
+console.log('\nAlternative: Configure via Vercel Dashboard:');
+console.log('1. Go to your project settings on Vercel');
+console.log('2. Set Root Directory: website');
+console.log('3. Set Build Command: npm run build');
+console.log('4. Set Output Directory: .next');
+console.log('5. Set Install Command: npm install');
+console.log('6. Remove or rename vercel.json to use dashboard settings');
 
 console.log('\n🚀 Deployment should now work correctly!');

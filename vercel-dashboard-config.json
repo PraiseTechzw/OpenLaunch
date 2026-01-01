@@ -1,0 +1,10 @@
+{
+  "note": "Configure these settings in Vercel Dashboard:",
+  "settings": {
+    "rootDirectory": "website",
+    "buildCommand": "npm run build",
+    "outputDirectory": ".next",
+    "installCommand": "npm install",
+    "framework": "nextjs"
+  }
+}

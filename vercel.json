@@ -1,7 +1,21 @@
 {
-  "buildCommand": "cd website && npm run build",
-  "outputDirectory": "website/.next",
-  "installCommand": "npm install && cd website && npm install",
-  "framework": "nextjs",
-  "rootDirectory": "website"
+  "version": 2,
+  "builds": [
+    {
+      "src": "website/package.json",
+      "use": "@vercel/next",
+      "config": {
+        "distDir": ".next"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/website/$1"
+    }
+  ]
 }

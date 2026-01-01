@@ -21,21 +21,35 @@ OpenLaunch/
 
 **Option 1: Using vercel.json (Current Configuration)**
 
-The repository includes a `vercel.json` configuration file:
+The repository includes a `vercel.json` configuration file using Vercel v2 API:
 
 ```json
 {
-  "buildCommand": "cd website && npm run build",
-  "outputDirectory": "website/.next",
-  "installCommand": "npm install && cd website && npm install",
-  "framework": "nextjs",
-  "rootDirectory": "website"
+  "version": 2,
+  "builds": [
+    {
+      "src": "website/package.json",
+      "use": "@vercel/next",
+      "config": {
+        "distDir": ".next"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/website/$1"
+    }
+  ]
 }
 ```
 
-**Option 2: Vercel Dashboard Configuration**
+**Option 2: Vercel Dashboard Configuration (Recommended for simplicity)**
 
-If you prefer to configure via the Vercel dashboard:
+Configure via the Vercel dashboard (remove or rename vercel.json first):
 
 1. **Root Directory**: `website`
 2. **Build Command**: `npm run build`
@@ -43,20 +57,20 @@ If you prefer to configure via the Vercel dashboard:
 4. **Install Command**: `npm install`
 5. **Framework Preset**: Next.js
 
-**Option 3: Move Next.js to Root (Alternative)**
+**Option 3: Simple vercel.json**
 
-If you continue having issues, you can move the Next.js app to the root:
+Use the minimal configuration in `vercel-simple.json`:
 
-```bash
-# Backup current structure
-cp -r website website-backup
-
-# Move Next.js files to root
-mv website/* .
-mv website/.* . 2>/dev/null || true
-
-# Update package.json scripts
-# Remove the "cd website &&" parts from scripts
+```json
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "website/next.config.js",
+      "use": "@vercel/next"
+    }
+  ]
+}
 ```
 
 ### Netlify
