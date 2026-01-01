@@ -1,6 +1,6 @@
-# Onboarding Guide: Welcome to Coding Party 2026! 🎉
+# Onboarding Guide: Welcome to OpenLaunch! 🎉
 
-Welcome to Coding Party 2026! We're thrilled you're here and excited to help you become part of our collaborative innovation community. This guide will walk you through everything you need to know to get started.
+Welcome to OpenLaunch! We're thrilled you're here and excited to help you become part of our collaborative innovation community through our annual Coding Party initiatives. This guide will walk you through everything you need to know to get started.
 
 ## Table of Contents
 
@@ -14,9 +14,9 @@ Welcome to Coding Party 2026! We're thrilled you're here and excited to help you
 
 ---
 
-## What is Coding Party 2026?
+## What is OpenLaunch?
 
-Coding Party 2026 is a collaborative innovation lab where developers, designers, and creators build real-world software in public. We're not just another open source project—we're a community-driven platform that:
+OpenLaunch is a collaborative innovation lab where developers, designers, and creators build real-world software in public through our annual Coding Party initiatives. We're not just another open source project—we're a community-driven platform that:
 
 - **Builds Multiple Products**: We develop various applications and tools simultaneously
 - **Welcomes All Skill Levels**: From beginners to experts, everyone has a place here

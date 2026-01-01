@@ -1,8 +1,8 @@
-# UI System: Coding Party 2026
+# UI System: OpenLaunch
 
 ## Overview
 
-The Coding Party 2026 UI System is a comprehensive design system that ensures consistency, accessibility, and efficiency across all our applications. It provides reusable components, design tokens, and guidelines that enable our community to build cohesive user experiences.
+The OpenLaunch UI System is a comprehensive design system that ensures consistency, accessibility, and efficiency across all our applications and annual Coding Party initiatives. It provides reusable components, design tokens, and guidelines that enable our community to build cohesive user experiences.
 
 ## Design Tokens
 
@@ -1052,4 +1052,4 @@ Use mobile-first approach with min-width media queries.
 
 ---
 
-*This UI System documentation is continuously updated as our design system evolves. For the latest components and guidelines, check our [Storybook](https://storybook.coding-party-2026.org) or contribute to our [design system discussions](https://github.com/coding-party-2026/coding-party-2026/discussions/categories/design-system).*
+*This UI System documentation is continuously updated as our design system evolves. For the latest components and guidelines, check our [Storybook](https://storybook.openlaunch.org) or contribute to our [design system discussions](https://github.com/PraiseTechzw/OpenLaunch/discussions/categories/design-system).*

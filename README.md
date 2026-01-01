@@ -81,7 +81,7 @@ OpenLaunch/
 
 ### Contribution Process
 
-1. **Discuss**: Share your idea in [Issues](https://github.com/coding-party-2026/coding-party-2026/issues) or [Discussions](https://github.com/coding-party-2026/coding-party-2026/discussions)
+1. **Discuss**: Share your idea in [Issues](https://github.com/PraiseTechzw/OpenLaunch/issues) or [Discussions](https://github.com/PraiseTechzw/OpenLaunch/discussions)
 2. **Plan**: Work with maintainers to refine the approach
 3. **Build**: Create your contribution following our guidelines
 4. **Review**: Collaborate on code review and refinement
@@ -96,8 +96,8 @@ OpenLaunch/
 
 ## Community
 
-- **Discussions**: [GitHub Discussions](https://github.com/coding-party-2026/coding-party-2026/discussions)
-- **Issues**: [Bug reports and feature requests](https://github.com/coding-party-2026/coding-party-2026/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/PraiseTechzw/OpenLaunch/discussions)
+- **Issues**: [Bug reports and feature requests](https://github.com/PraiseTechzw/OpenLaunch/issues)
 - **Contributors**: See our amazing [contributors](community/contributors.md)
 - **Events**: Check out upcoming [community events](community/events.md)
 
@@ -124,4 +124,4 @@ Built with ❤️ by the global developer community. Special thanks to all our [
 
 ---
 
-**Ready to join the party?** Start by reading our [onboarding guide](docs/onboarding.md) and jump into the [discussions](https://github.com/coding-party-2026/coding-party-2026/discussions)!
+**Ready to join the party?** Start by reading our [onboarding guide](docs/onboarding.md) and jump into the [discussions](https://github.com/PraiseTechzw/OpenLaunch/discussions)!

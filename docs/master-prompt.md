@@ -1,14 +1,14 @@
-# Master Prompt: The Coding Party 2026 Mindset
+# Master Prompt: The OpenLaunch Mindset
 
 ## Introduction
 
-This document serves as the philosophical and practical guide for all contributors to Coding Party 2026. It's our "master prompt"—the shared mindset that shapes how we think, build, and collaborate. Whether you're writing code, designing interfaces, creating documentation, or building community, these principles should guide your approach.
+This document serves as the philosophical and practical guide for all contributors to OpenLaunch. It's our "master prompt"—the shared mindset that shapes how we think, build, and collaborate through our annual Coding Party initiatives. Whether you're writing code, designing interfaces, creating documentation, or building community, these principles should guide your approach.
 
-## The Coding Party Philosophy
+## The OpenLaunch Philosophy
 
 ### We Are Builders, Not Just Coders
 
-At Coding Party 2026, we don't just write code—we build solutions that matter. Every line of code, every design decision, every documentation update should contribute to something meaningful and lasting.
+At OpenLaunch, we don't just write code—we build solutions that matter through our collaborative Coding Party initiatives. Every line of code, every design decision, every documentation update should contribute to something meaningful and lasting.
 
 **Think like a builder:**
 - Start with the problem, not the technology
@@ -384,4 +384,4 @@ The future of collaborative software development is being written right here, ri
 
 ---
 
-*This master prompt is a living document that evolves with our community's understanding and experience. Have insights to share or improvements to suggest? Join our [philosophy discussions](https://github.com/coding-party-2026/coding-party-2026/discussions/categories/philosophy) or submit a pull request with your ideas.*
+*This master prompt is a living document that evolves with our community's understanding and experience. Have insights to share or improvements to suggest? Join our [philosophy discussions](https://github.com/PraiseTechzw/OpenLaunch/discussions/categories/philosophy) or submit a pull request with your ideas.*

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Coding Party 2026 Setup Script
+# OpenLaunch Setup Script
 # This script sets up the development environment for contributors
 
 set -e  # Exit on any error
@@ -280,17 +280,17 @@ show_next_steps() {
     echo ""
     echo "Need help? Check out:"
     echo "  - Documentation: docs/"
-    echo "  - Community discussions: https://github.com/coding-party-2026/coding-party-2026/discussions"
-    echo "  - Issues: https://github.com/coding-party-2026/coding-party-2026/issues"
+    echo "  - Community discussions: https://github.com/PraiseTechzw/OpenLaunch/discussions"
+    echo "  - Issues: https://github.com/PraiseTechzw/OpenLaunch/issues"
     echo ""
-    log_success "Welcome to Coding Party 2026! 🚀"
+    log_success "Welcome to OpenLaunch! 🚀"
 }
 
 # Main setup function
 main() {
     echo ""
     echo "╔══════════════════════════════════════════════════════════════╗"
-    echo "║                    Coding Party 2026                         ║"
+    echo "║                      OpenLaunch                              ║"
     echo "║                   Development Setup                          ║"
     echo "╚══════════════════════════════════════════════════════════════╝"
     echo ""

@@ -1,5 +1,5 @@
 name: 💡 Idea Proposal
-description: Propose a new project, application, or major initiative for Coding Party 2026
+description: Propose a new project, application, or major initiative for OpenLaunch
 title: "[Idea]: "
 labels: ["idea", "needs-discussion", "community-input"]
 assignees: []
@@ -8,7 +8,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Have a big idea for Coding Party 2026? 💡
+        Have a big idea for OpenLaunch? 💡
         
         This template is for proposing new applications, major features, or community initiatives that could become part of our collaborative innovation lab.
 
@@ -322,4 +322,4 @@ body:
         - Consider creating a proof-of-concept or mockup
         - Join our community events to present your idea
         
-        Remember: The best ideas in Coding Party 2026 are those that bring the community together and create real value for users! 🚀
+        Remember: The best ideas in OpenLaunch are those that bring the community together and create real value for users! 🚀

@@ -1,8 +1,8 @@
-# Vision: Coding Party 2026
+# Vision: OpenLaunch
 
 ## Our North Star
 
-Coding Party 2026 exists to democratize software innovation by creating the world's most inclusive, transparent, and impactful collaborative development platform. We believe that the future of software is built not by isolated teams, but by diverse communities working together in the open.
+OpenLaunch exists to democratize software innovation by creating the world's most inclusive, transparent, and impactful collaborative development platform. Through our annual Coding Party initiatives, we believe that the future of software is built not by isolated teams, but by diverse communities working together in the open.
 
 ## The Problem We're Solving
 
@@ -178,7 +178,7 @@ This vision is not just a dream—it's a blueprint for action. Every line of cod
 
 **For the Industry**: We're not just another open source project; we're pioneering a new model for how great software gets built.
 
-Join us in making this vision a reality. The future of software development is collaborative, inclusive, and open—and it starts with Coding Party 2026.
+Join us in making this vision a reality. The future of software development is collaborative, inclusive, and open—and it starts with OpenLaunch.
 
 ---
 

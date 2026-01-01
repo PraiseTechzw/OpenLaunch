@@ -1,8 +1,8 @@
-# Governance: Coding Party 2026
+# Governance: OpenLaunch
 
 ## Overview
 
-Coding Party 2026 operates as a community-driven, transparent, and inclusive organization. Our governance model is designed to ensure that all voices are heard while maintaining the ability to make decisions efficiently and move projects forward effectively.
+OpenLaunch operates as a community-driven, transparent, and inclusive organization through our annual Coding Party initiatives. Our governance model is designed to ensure that all voices are heard while maintaining the ability to make decisions efficiently and move projects forward effectively.
 
 ## Governance Principles
 
@@ -35,7 +35,7 @@ Coding Party 2026 operates as a community-driven, transparent, and inclusive org
 ## Organizational Structure
 
 ### Community Members
-All individuals who participate in Coding Party 2026 in any capacity.
+All individuals who participate in OpenLaunch in any capacity.
 
 **Rights:**
 - Participate in public discussions
@@ -97,7 +97,7 @@ Contributors who take ongoing responsibility for specific projects or areas.
 - Handle conflicts and disputes in their areas
 
 ### Core Team
-Long-term maintainers who help guide the overall direction of Coding Party 2026.
+Long-term maintainers who help guide the overall direction of OpenLaunch.
 
 **Qualification Criteria:**
 - Active maintainer for at least 1 year

@@ -1,8 +1,8 @@
-# Roadmap: Coding Party 2026
+# Roadmap: OpenLaunch
 
 ## Overview
 
-This roadmap outlines our journey from initial community building to becoming a thriving collaborative innovation lab. Our approach is iterative and community-driven, with regular checkpoints for feedback and course correction.
+This roadmap outlines our journey from initial community building to becoming a thriving collaborative innovation lab through our annual Coding Party initiatives. Our approach is iterative and community-driven, with regular checkpoints for feedback and course correction.
 
 ## Roadmap Principles
 

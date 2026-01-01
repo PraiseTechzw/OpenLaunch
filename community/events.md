@@ -1,8 +1,8 @@
-# Events: Coding Party 2026
+# Events: OpenLaunch
 
 ## Overview
 
-Events are the heartbeat of our community. They bring us together to learn, collaborate, celebrate achievements, and build lasting relationships. From regular virtual meetups to annual conferences, our events are designed to be inclusive, educational, and fun.
+Events are the heartbeat of our community through our annual Coding Party initiatives. They bring us together to learn, collaborate, celebrate achievements, and build lasting relationships. From regular virtual meetups to annual conferences, our events are designed to be inclusive, educational, and fun.
 
 ## Upcoming Events
 
@@ -131,7 +131,7 @@ Events are the heartbeat of our community. They bring us together to learn, coll
 
 ### Annual Events
 
-#### Coding Party Conference
+#### OpenLaunch Conference
 **When**: Summer (dates TBD)  
 **Duration**: 2-3 days  
 **Format**: Hybrid (Virtual + In-Person)  
@@ -444,10 +444,10 @@ Most events are recorded and made available:
 ## Contact and Support
 
 ### Event Team
-- **General Events**: events@coding-party-2026.org
-- **Speaker Inquiries**: speakers@coding-party-2026.org
-- **Sponsorship**: sponsors@coding-party-2026.org
-- **Local Meetups**: meetups@coding-party-2026.org
+- **General Events**: events@openlaunch.org
+- **Speaker Inquiries**: speakers@openlaunch.org
+- **Sponsorship**: sponsors@openlaunch.org
+- **Local Meetups**: meetups@openlaunch.org
 
 ### Event Organizers
 *Event organizer contacts will be listed here as they are appointed*
@@ -484,4 +484,4 @@ We continuously improve our events based on community feedback:
 
 ---
 
-*This events page is updated regularly with new events and information. For the latest updates, check our [community calendar] or join our [community discussions]. Want to organize an event? Contact our event team at events@coding-party-2026.org.*
+*This events page is updated regularly with new events and information. For the latest updates, check our [community calendar] or join our [community discussions]. Want to organize an event? Contact our event team at events@openlaunch.org.*

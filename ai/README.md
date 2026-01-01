@@ -1,8 +1,8 @@
-# AI/ML: Coding Party 2026
+# AI/ML: OpenLaunch
 
 ## Overview
 
-The AI/ML ecosystem of Coding Party 2026 leverages artificial intelligence and machine learning to enhance collaboration, improve developer productivity, and create intelligent features that help our community build better software together.
+The AI/ML ecosystem of OpenLaunch leverages artificial intelligence and machine learning to enhance collaboration, improve developer productivity, and create intelligent features that help our community build better software together through our annual Coding Party initiatives.
 
 ## Vision
 
@@ -825,8 +825,8 @@ for strategy in fusion_strategies:
 
 ```bash
 # Clone the repository
-git clone https://github.com/coding-party-2026/coding-party-2026.git
-cd coding-party-2026/ai
+git clone https://github.com/PraiseTechzw/OpenLaunch.git
+cd OpenLaunch/ai
 
 # Create virtual environment
 python -m venv venv
@@ -967,10 +967,10 @@ We welcome collaboration with:
 - [Collaborative Filtering for Developer Matching](./papers/developer-matching.md)
 
 ### Community
-- [AI/ML Discussions](https://github.com/coding-party-2026/coding-party-2026/discussions/categories/ai-ml)
-- [Research Proposals](https://github.com/coding-party-2026/coding-party-2026/discussions/categories/research)
-- [Model Performance Reports](https://github.com/coding-party-2026/coding-party-2026/issues?q=label%3Aai-performance)
+- [AI/ML Discussions](https://github.com/PraiseTechzw/OpenLaunch/discussions/categories/ai-ml)
+- [Research Proposals](https://github.com/PraiseTechzw/OpenLaunch/discussions/categories/research)
+- [Model Performance Reports](https://github.com/PraiseTechzw/OpenLaunch/issues?q=label%3Aai-performance)
 
 ---
 
-*This AI/ML documentation is continuously updated as our models and capabilities evolve. For the latest research and to contribute to AI development, visit our [AI/ML discussions](https://github.com/coding-party-2026/coding-party-2026/discussions/categories/ai-ml) or check out our [research notebooks](./notebooks/).*
+*This AI/ML documentation is continuously updated as our models and capabilities evolve. For the latest research and to contribute to AI development, visit our [AI/ML discussions](https://github.com/PraiseTechzw/OpenLaunch/discussions/categories/ai-ml) or check out our [research notebooks](./notebooks/).*

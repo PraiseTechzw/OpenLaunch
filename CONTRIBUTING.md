@@ -1,6 +1,6 @@
-# Contributing to Coding Party 2026
+# Contributing to OpenLaunch
 
-Thank you for your interest in contributing to Coding Party 2026! This guide will help you get started and ensure your contributions align with our community standards.
+Thank you for your interest in contributing to OpenLaunch! This guide will help you get started and ensure your contributions align with our community standards.
 
 ## Table of Contents
 
@@ -30,13 +30,13 @@ This project adheres to our [Code of Conduct](CODE_OF_CONDUCT.md). By participat
 1. **Fork the Repository**
    ```bash
    # Click the "Fork" button on GitHub, then clone your fork
-   git clone https://github.com/YOUR_USERNAME/coding-party-2026.git
-   cd coding-party-2026
+   git clone https://github.com/YOUR_USERNAME/OpenLaunch.git
+   cd OpenLaunch
    ```
 
 2. **Add Upstream Remote**
    ```bash
-   git remote add upstream https://github.com/coding-party-2026/coding-party-2026.git
+   git remote add upstream https://github.com/PraiseTechzw/OpenLaunch.git
    ```
 
 3. **Run Setup Script**
@@ -67,10 +67,10 @@ We welcome various types of contributions:
 
 ### Finding Work
 
-1. **Browse Issues**: Check our [issue tracker](https://github.com/coding-party-2026/coding-party-2026/issues)
+1. **Browse Issues**: Check our [issue tracker](https://github.com/PraiseTechzw/OpenLaunch/issues)
 2. **Good First Issues**: Look for issues labeled `good first issue`
 3. **Help Wanted**: Check issues labeled `help wanted`
-4. **Discussions**: Join conversations in [GitHub Discussions](https://github.com/coding-party-2026/coding-party-2026/discussions)
+4. **Discussions**: Join conversations in [GitHub Discussions](https://github.com/PraiseTechzw/OpenLaunch/discussions)
 
 ### Before You Start
 
@@ -265,4 +265,4 @@ Don't hesitate to ask questions! We're here to help:
 - **Technical Questions?** Start a [discussion](https://github.com/coding-party-2026/coding-party-2026/discussions)
 - **Found a Bug?** Create an [issue](https://github.com/coding-party-2026/coding-party-2026/issues)
 
-Thank you for contributing to Coding Party 2026! 🎉
+Thank you for contributing to OpenLaunch! 🎉

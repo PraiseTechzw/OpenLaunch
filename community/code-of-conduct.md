@@ -1,8 +1,8 @@
-# Code of Conduct: Coding Party 2026
+# Code of Conduct: OpenLaunch
 
 ## Our Pledge
 
-We as members, contributors, and leaders of Coding Party 2026 pledge to make participation in our community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, caste, color, religion, or sexual identity and orientation.
+We as members, contributors, and leaders of OpenLaunch pledge to make participation in our community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, caste, color, religion, or sexual identity and orientation.
 
 We pledge to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, and healthy community that embodies our values of collaborative innovation, learning, and mutual respect.
 
@@ -163,13 +163,13 @@ This Code of Conduct also applies when an individual is officially representing 
 
 If you experience or witness unacceptable behavior, or have any other concerns, please report it by contacting the community team at:
 
-**Primary Contact**: conduct@coding-party-2026.org
+**Primary Contact**: conduct@openlaunch.org
 
 **Alternative Contacts**:
-- For issues involving core team members: governance@coding-party-2026.org
-- For urgent safety concerns: emergency@coding-party-2026.org
+- For issues involving core team members: governance@openlaunch.org
+- For urgent safety concerns: emergency@openlaunch.org
 
-**Anonymous Reporting**: You can also submit anonymous reports through our [anonymous reporting form](https://forms.coding-party-2026.org/conduct-report).
+**Anonymous Reporting**: You can also submit anonymous reports through our [anonymous reporting form](https://forms.openlaunch.org/conduct-report).
 
 ### What to Include in Reports
 
@@ -351,10 +351,10 @@ Additional inspiration and guidance came from:
 
 ## Contact Information
 
-**General Conduct Questions**: conduct@coding-party-2026.org
-**Governance Issues**: governance@coding-party-2026.org
-**Emergency Situations**: emergency@coding-party-2026.org
-**Anonymous Reports**: [Anonymous Reporting Form](https://forms.coding-party-2026.org/conduct-report)
+**General Conduct Questions**: conduct@openlaunch.org
+**Governance Issues**: governance@openlaunch.org
+**Emergency Situations**: emergency@openlaunch.org
+**Anonymous Reports**: [Anonymous Reporting Form](https://forms.openlaunch.org/conduct-report)
 
 **Community Leaders**:
 - *Community leaders will be listed here as they are appointed*
@@ -392,4 +392,4 @@ You have the right to appeal any decision through our appeals process. Appeals a
 
 ---
 
-*This Code of Conduct is effective as of January 1, 2026, and will be reviewed annually. For questions about this Code of Conduct, please contact conduct@coding-party-2026.org.*
+*This Code of Conduct is effective as of January 1, 2026, and will be reviewed annually. For questions about this Code of Conduct, please contact conduct@openlaunch.org.*

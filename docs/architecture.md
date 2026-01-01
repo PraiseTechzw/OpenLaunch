@@ -1,8 +1,8 @@
-# Architecture: Coding Party 2026
+# Architecture: OpenLaunch
 
 ## Overview
 
-Coding Party 2026 is designed as a modular, scalable platform that supports multiple concurrent projects while maintaining consistency, quality, and community collaboration. Our architecture emphasizes flexibility, maintainability, and contributor accessibility.
+OpenLaunch is designed as a modular, scalable platform that supports multiple concurrent projects while maintaining consistency, quality, and community collaboration through our annual Coding Party initiatives. Our architecture emphasizes flexibility, maintainability, and contributor accessibility.
 
 ## Design Principles
 

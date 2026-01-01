@@ -1,8 +1,8 @@
-# Backend: Coding Party 2026
+# Backend: OpenLaunch
 
 ## Overview
 
-The backend infrastructure of Coding Party 2026 provides robust, scalable, and secure APIs and services that power our collaborative development platform. Built with modern technologies and best practices, our backend supports real-time collaboration, user management, project coordination, and AI-powered features.
+The backend infrastructure of OpenLaunch provides robust, scalable, and secure APIs and services that power our collaborative development platform and annual Coding Party initiatives. Built with modern technologies and best practices, our backend supports real-time collaboration, user management, project coordination, and AI-powered features.
 
 ## Architecture
 
@@ -1462,8 +1462,8 @@ ENABLE_AI_FEATURES=true
 
 ```bash
 # Clone the repository
-git clone https://github.com/coding-party-2026/coding-party-2026.git
-cd coding-party-2026/backend
+git clone https://github.com/PraiseTechzw/OpenLaunch.git
+cd OpenLaunch/backend
 
 # Install dependencies
 pnpm install
@@ -1557,10 +1557,10 @@ pnpm test:coverage
 - [Redis Documentation](https://redis.io/documentation)
 
 ### Community
-- [Backend Discussions](https://github.com/coding-party-2026/coding-party-2026/discussions/categories/backend)
-- [API Feedback](https://github.com/coding-party-2026/coding-party-2026/discussions/categories/api)
-- [Bug Reports](https://github.com/coding-party-2026/coding-party-2026/issues)
+- [Backend Discussions](https://github.com/PraiseTechzw/OpenLaunch/discussions/categories/backend)
+- [API Feedback](https://github.com/PraiseTechzw/OpenLaunch/discussions/categories/api)
+- [Bug Reports](https://github.com/PraiseTechzw/OpenLaunch/issues)
 
 ---
 
-*This backend documentation is continuously updated as our services evolve. For the latest API documentation and to contribute to backend development, visit our [API docs](https://api.coding-party-2026.org/docs) or join our [backend discussions](https://github.com/coding-party-2026/coding-party-2026/discussions/categories/backend).*
+*This backend documentation is continuously updated as our services evolve. For the latest API documentation and to contribute to backend development, visit our [API docs](https://api.openlaunch.org/docs) or join our [backend discussions](https://github.com/PraiseTechzw/OpenLaunch/discussions/categories/backend).*

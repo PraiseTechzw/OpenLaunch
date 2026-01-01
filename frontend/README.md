@@ -1,8 +1,8 @@
-# Frontend: Coding Party 2026
+# Frontend: OpenLaunch
 
 ## Overview
 
-The frontend ecosystem of Coding Party 2026 encompasses all user-facing applications and interfaces. We build modern, accessible, and performant web applications that serve our diverse community of developers, designers, and creators.
+The frontend ecosystem of OpenLaunch encompasses all user-facing applications and interfaces for our annual Coding Party initiatives. We build modern, accessible, and performant web applications that serve our diverse community of developers, designers, and creators.
 
 ## Architecture
 
@@ -168,8 +168,8 @@ Shared configuration files and constants.
 #### Setup
 ```bash
 # Clone the repository
-git clone https://github.com/coding-party-2026/coding-party-2026.git
-cd coding-party-2026/frontend
+git clone https://github.com/PraiseTechzw/OpenLaunch.git
+cd OpenLaunch/frontend
 
 # Install dependencies
 pnpm install
@@ -544,10 +544,10 @@ export const config = {
 - [Cypress](https://cypress.io)
 
 ### Community
-- [Frontend Discussions](https://github.com/coding-party-2026/coding-party-2026/discussions/categories/frontend)
-- [Design System Discussions](https://github.com/coding-party-2026/coding-party-2026/discussions/categories/design-system)
-- [Bug Reports](https://github.com/coding-party-2026/coding-party-2026/issues)
+- [Frontend Discussions](https://github.com/PraiseTechzw/OpenLaunch/discussions/categories/frontend)
+- [Design System Discussions](https://github.com/PraiseTechzw/OpenLaunch/discussions/categories/design-system)
+- [Bug Reports](https://github.com/PraiseTechzw/OpenLaunch/issues)
 
 ---
 
-*This frontend documentation is continuously updated as our applications evolve. For the latest information and to contribute to frontend development, visit our [frontend discussions](https://github.com/coding-party-2026/coding-party-2026/discussions/categories/frontend) or check out our [component library](https://storybook.coding-party-2026.org).*
+*This frontend documentation is continuously updated as our applications evolve. For the latest information and to contribute to frontend development, visit our [frontend discussions](https://github.com/PraiseTechzw/OpenLaunch/discussions/categories/frontend) or check out our [component library](https://storybook.openlaunch.org).*

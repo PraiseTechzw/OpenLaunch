@@ -1,14 +1,14 @@
-# Contributors: Coding Party 2026
+# Contributors: OpenLaunch
 
 ## Our Amazing Community
 
-Coding Party 2026 is built by an incredible community of developers, designers, writers, and creators from around the world. Every contribution, no matter how small, helps make our collaborative innovation lab a reality.
+OpenLaunch is built by an incredible community of developers, designers, writers, and creators from around the world through our annual Coding Party initiatives. Every contribution, no matter how small, helps make our collaborative innovation lab a reality.
 
 ## Hall of Fame
 
 ### Founding Contributors
 
-These are the visionaries who helped establish Coding Party 2026 and laid the foundation for our community:
+These are the visionaries who helped establish OpenLaunch and laid the foundation for our community:
 
 *This section will be populated as our community grows and we recognize our founding members.*
 
@@ -212,8 +212,8 @@ Want to see your name on this page? Here's how to get started:
 
 ### 1. Make Your First Contribution
 - Check out our [Contributing Guide](../CONTRIBUTING.md)
-- Look for [good first issues](https://github.com/coding-party-2026/coding-party-2026/labels/good%20first%20issue)
-- Join our [community discussions](https://github.com/coding-party-2026/coding-party-2026/discussions)
+- Look for [good first issues](https://github.com/PraiseTechzw/OpenLaunch/labels/good%20first%20issue)
+- Join our [community discussions](https://github.com/PraiseTechzw/OpenLaunch/discussions)
 
 ### 2. Follow Our Guidelines
 - Read and follow our [Code of Conduct](../CODE_OF_CONDUCT.md)
@@ -245,7 +245,7 @@ Want to see your name on this page? Here's how to get started:
 - [Project Governance](../docs/governance.md)
 
 ### Recognition and Rewards
-- [Contribution Tracking](https://github.com/coding-party-2026/coding-party-2026/graphs/contributors)
+- [Contribution Tracking](https://github.com/PraiseTechzw/OpenLaunch/graphs/contributors)
 - [Badge System](../docs/badges.md)
 - [Awards and Recognition](../docs/awards.md)
 - [Contributor Benefits](../docs/contributor-benefits.md)
@@ -302,7 +302,7 @@ Contributors who have moved on to other projects remain part of our extended fam
 
 ## Thank You
 
-To every person who has contributed to Coding Party 2026, whether through code, design, documentation, community building, or simply being part of our discussions - **thank you**. You are the reason this project exists and thrives.
+To every person who has contributed to OpenLaunch, whether through code, design, documentation, community building, or simply being part of our discussions - **thank you**. You are the reason this project exists and thrives.
 
 Your contributions, no matter how small they might seem, make a real difference. Every bug fix makes the platform more reliable. Every documentation improvement helps someone learn. Every kind word in a discussion makes someone feel welcome. Every design enhancement makes the experience better for everyone.
 

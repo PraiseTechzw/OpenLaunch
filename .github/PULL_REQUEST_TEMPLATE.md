@@ -214,4 +214,4 @@
 - Acknowledge good work and improvements
 - Focus on the code, not the person
 
-Thank you for contributing to Coding Party 2026! 🎉
+Thank you for contributing to OpenLaunch! 🎉

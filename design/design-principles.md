@@ -1,8 +1,8 @@
-# Design Principles: Coding Party 2026
+# Design Principles: OpenLaunch
 
 ## Overview
 
-Our design principles guide every visual and interaction decision across all Coding Party 2026 projects. These principles ensure consistency, accessibility, and user-centered design while supporting our mission of collaborative innovation.
+Our design principles guide every visual and interaction decision across all OpenLaunch projects and our annual Coding Party initiatives. These principles ensure consistency, accessibility, and user-centered design while supporting our mission of collaborative innovation.
 
 ## Core Design Philosophy
 
@@ -446,4 +446,4 @@ Our designs support collaboration and scale gracefully as our community and proj
 
 ---
 
-*These design principles are living guidelines that evolve with our community and projects. Have suggestions for improvements or additions? Join our [design discussions](https://github.com/coding-party-2026/coding-party-2026/discussions/categories/design) or submit a pull request with your ideas.*
+*These design principles are living guidelines that evolve with our community and projects. Have suggestions for improvements or additions? Join our [design discussions](https://github.com/PraiseTechzw/OpenLaunch/discussions/categories/design) or submit a pull request with your ideas.*
