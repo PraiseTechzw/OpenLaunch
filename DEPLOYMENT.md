@@ -17,22 +17,71 @@ OpenLaunch/
 
 ## Deployment Platforms
 
-### Vercel
+### Vercel (Recommended)
 
-The repository includes a `vercel.json` configuration file for Vercel deployment:
+**Option 1: Using vercel.json (Current Configuration)**
 
-1. **Automatic Detection**: Vercel should automatically detect the Next.js app
-2. **Build Command**: `cd website && npm run build`
-3. **Output Directory**: `website/.next`
-4. **Install Command**: `npm install && cd website && npm install`
+The repository includes a `vercel.json` configuration file:
+
+```json
+{
+  "buildCommand": "cd website && npm run build",
+  "outputDirectory": "website/.next",
+  "installCommand": "npm install && cd website && npm install",
+  "framework": "nextjs",
+  "rootDirectory": "website"
+}
+```
+
+**Option 2: Vercel Dashboard Configuration**
+
+If you prefer to configure via the Vercel dashboard:
+
+1. **Root Directory**: `website`
+2. **Build Command**: `npm run build`
+3. **Output Directory**: `.next`
+4. **Install Command**: `npm install`
+5. **Framework Preset**: Next.js
+
+**Option 3: Move Next.js to Root (Alternative)**
+
+If you continue having issues, you can move the Next.js app to the root:
+
+```bash
+# Backup current structure
+cp -r website website-backup
+
+# Move Next.js files to root
+mv website/* .
+mv website/.* . 2>/dev/null || true
+
+# Update package.json scripts
+# Remove the "cd website &&" parts from scripts
+```
 
 ### Netlify
 
 The repository includes a `netlify.toml` configuration file:
 
-1. **Base Directory**: `website`
-2. **Build Command**: `npm run build`
-3. **Publish Directory**: `website/.next`
+```toml
+[build]
+  base = "website"
+  command = "npm run build"
+  publish = "website/.next"
+```
+
+**Alternative Netlify Configuration:**
+
+```toml
+[build]
+  base = "website"
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "18"
+  NPM_VERSION = "9"
+```
 
 ### Manual Deployment
 
@@ -50,38 +99,133 @@ npm run build
 npm run start
 ```
 
-## Environment Variables
+## Troubleshooting Deployment Issues
 
-If you need to set environment variables, create them in the deployment platform's dashboard or add a `.env.local` file in the `website/` directory:
+### Vercel: "routes-manifest.json couldn't be found"
 
-```env
-# Example environment variables
-NEXT_PUBLIC_GITHUB_TOKEN=your_github_token_here
-NEXT_PUBLIC_API_URL=https://api.openlaunch.org
+This error occurs when Vercel can't find the Next.js build output. Solutions:
+
+1. **Set Root Directory**: Add `"rootDirectory": "website"` to `vercel.json`
+2. **Check Build Output**: Ensure the build creates `.next` folder in the correct location
+3. **Verify Paths**: Make sure all paths in `vercel.json` are correct
+
+### Vercel: Alternative Configuration
+
+If the current configuration doesn't work, try this advanced setup:
+
+```json
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "website/package.json",
+      "use": "@vercel/next",
+      "config": {
+        "distDir": ".next"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/website/$1"
+    }
+  ]
+}
 ```
 
-## Root Package.json
+### Build Command Issues
 
-The root `package.json` includes Next.js dependencies to satisfy deployment platform requirements while maintaining the monorepo structure. All build commands properly delegate to the `website/` subdirectory.
+If builds fail, try these commands in order:
 
-## Troubleshooting
+```bash
+# Clean install
+npm ci
+cd website && npm ci
 
-### "No Next.js version detected" Error
+# Clean build
+npm run clean
+npm run build
 
-This error occurs when deployment platforms can't find Next.js in the root directory. The current configuration should resolve this by:
+# Check build output
+ls -la website/.next/
+```
 
-1. Including Next.js dependencies in the root `package.json`
-2. Providing proper build commands that navigate to the `website/` directory
-3. Including platform-specific configuration files (`vercel.json`, `netlify.toml`)
+### Environment Variables
 
-### Build Failures
+Set these in your deployment platform:
 
-If builds fail:
+```env
+# Required for GitHub API integration
+NEXT_PUBLIC_GITHUB_TOKEN=your_token_here
 
-1. Ensure all dependencies are installed: `npm install && cd website && npm install`
-2. Check that the build works locally: `npm run build`
-3. Verify environment variables are set correctly
-4. Check the deployment platform's build logs for specific errors
+# Optional: Custom API endpoints
+NEXT_PUBLIC_API_URL=https://api.openlaunch.org
+
+# Node.js version (for some platforms)
+NODE_VERSION=18
+```
+
+## Platform-Specific Instructions
+
+### Vercel CLI Deployment
+
+```bash
+# Install Vercel CLI
+npm i -g vercel
+
+# Deploy from root directory
+vercel
+
+# Follow prompts and set:
+# - Root Directory: website
+# - Build Command: npm run build
+# - Output Directory: .next
+```
+
+### Netlify CLI Deployment
+
+```bash
+# Install Netlify CLI
+npm i -g netlify-cli
+
+# Deploy from root directory
+netlify deploy
+
+# For production
+netlify deploy --prod
+```
+
+### Docker Deployment
+
+```dockerfile
+FROM node:18-alpine
+
+WORKDIR /app
+
+# Copy package files
+COPY package*.json ./
+COPY website/package*.json ./website/
+
+# Install dependencies
+RUN npm ci
+RUN cd website && npm ci
+
+# Copy source code
+COPY . .
+
+# Build application
+RUN npm run build
+
+# Expose port
+EXPOSE 3000
+
+# Start application
+CMD ["npm", "start"]
+```
 
 ## Development
 
@@ -98,3 +242,13 @@ npm run dev
 ```
 
 The development server will be available at `http://localhost:3000` (or the next available port).
+
+## Release and Deployment Automation
+
+The repository includes GitHub Actions for automated releases:
+
+- **Tag and Release**: Automatically creates tags and releases when version changes
+- **Manual Release**: Use `npm run release:patch/minor/major` for manual releases
+- **Deployment**: Automatic deployment on successful builds
+
+See `.github/workflows/` for the complete automation setup.

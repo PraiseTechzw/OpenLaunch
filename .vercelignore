@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+website/node_modules/
+
+# Build outputs
+.next/
+website/.next/
+out/
+website/out/
+
+# Environment files
+.env
+.env.local
+.env.production
+.env.staging
+
+# Logs
+*.log
+npm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# IDE files
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+tmp/
+temp/
