@@ -1,0 +1,120 @@
+# Coding Party 2026 🎉
+
+[![Build Status](https://github.com/coding-party-2026/coding-party-2026/workflows/CI/badge.svg)](https://github.com/coding-party-2026/coding-party-2026/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Contributors](https://img.shields.io/github/contributors/coding-party-2026/coding-party-2026.svg)](https://github.com/coding-party-2026/coding-party-2026/graphs/contributors)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+
+> A collaborative innovation lab where developers, designers, and creators build real-world software in public.
+
+## What is Coding Party 2026?
+
+Coding Party 2026 is an open-source launchpad and incubator designed to foster collaborative innovation. We're not building a single app—we're creating a platform where the global developer community can come together to build multiple real-world products that matter.
+
+### Our Mission
+
+To democratize software innovation by providing a transparent, inclusive, and structured environment where ideas transform into production-ready solutions through collective effort.
+
+## Why Join the Party?
+
+- **Open by Default**: Every decision, every line of code, every design choice is transparent
+- **Beginner-Friendly**: Clear onboarding, mentorship, and learning opportunities
+- **Expert-Respectful**: Leverage the wisdom of experienced contributors
+- **Real Impact**: Build software that solves actual problems
+- **Community-First**: Decisions made collectively, benefits shared by all
+
+## Getting Started
+
+### Quick Start
+
+1. **Explore the Vision**: Read our [vision document](docs/vision.md) to understand our philosophy
+2. **Check the Roadmap**: See what we're building in our [roadmap](docs/roadmap.md)
+3. **Join the Community**: Introduce yourself in [Discussions](https://github.com/coding-party-2026/coding-party-2026/discussions)
+4. **Pick Your Path**: Choose from frontend, backend, AI, design, or documentation
+
+### For Contributors
+
+```bash
+# Fork the repository
+git clone https://github.com/YOUR_USERNAME/coding-party-2026.git
+cd coding-party-2026
+
+# Run the setup script
+chmod +x scripts/setup.sh
+./scripts/setup.sh
+
+# Create your feature branch
+git checkout -b feature/your-amazing-idea
+
+# Start building!
+```
+
+### Project Structure
+
+```
+coding-party-2026/
+├── frontend/     # Web applications and user interfaces
+├── backend/      # APIs, services, and data management
+├── ai/           # Machine learning and AI components
+├── design/       # Design system and UI/UX resources
+├── docs/         # Comprehensive documentation
+├── community/    # Community resources and governance
+└── scripts/      # Development and deployment tools
+```
+
+## How We Work
+
+### Our Values
+
+- **Transparency**: All work happens in the open
+- **Inclusivity**: Everyone's voice matters, regardless of experience level
+- **Quality**: We ship production-ready code, not prototypes
+- **Learning**: Every interaction is an opportunity to grow
+- **Impact**: We build things that make a difference
+
+### Contribution Process
+
+1. **Discuss**: Share your idea in [Issues](https://github.com/coding-party-2026/coding-party-2026/issues) or [Discussions](https://github.com/coding-party-2026/coding-party-2026/discussions)
+2. **Plan**: Work with maintainers to refine the approach
+3. **Build**: Create your contribution following our guidelines
+4. **Review**: Collaborate on code review and refinement
+5. **Ship**: Celebrate as your work goes live!
+
+## Current Focus Areas
+
+- **MVP Selection**: Identifying our first production application
+- **Infrastructure**: Setting up scalable development workflows
+- **Community Building**: Growing our contributor base
+- **Documentation**: Creating comprehensive guides and tutorials
+
+## Community
+
+- **Discussions**: [GitHub Discussions](https://github.com/coding-party-2026/coding-party-2026/discussions)
+- **Issues**: [Bug reports and feature requests](https://github.com/coding-party-2026/coding-party-2026/issues)
+- **Contributors**: See our amazing [contributors](community/contributors.md)
+- **Events**: Check out upcoming [community events](community/events.md)
+
+## Contributing
+
+We welcome contributions from developers of all skill levels! Please read our [Contributing Guide](CONTRIBUTING.md) to get started.
+
+### Quick Contribution Ideas
+
+- 🐛 Fix bugs or improve existing features
+- 📝 Improve documentation
+- 🎨 Contribute to design and user experience
+- 🧪 Add tests and improve code quality
+- 💡 Propose new features or applications
+- 🌍 Help with internationalization
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+Built with ❤️ by the global developer community. Special thanks to all our [contributors](community/contributors.md) who make this project possible.
+
+---
+
+**Ready to join the party?** Start by reading our [onboarding guide](docs/onboarding.md) and jump into the [discussions](https://github.com/coding-party-2026/coding-party-2026/discussions)!
