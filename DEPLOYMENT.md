@@ -119,37 +119,22 @@ npm run start
 
 This error occurs when Vercel can't find the Next.js build output. Solutions:
 
-1. **Set Root Directory**: Add `"rootDirectory": "website"` to `vercel.json`
-2. **Check Build Output**: Ensure the build creates `.next` folder in the correct location
-3. **Verify Paths**: Make sure all paths in `vercel.json` are correct
+1. **Use Dashboard Configuration**: Remove `vercel.json` and configure via Vercel dashboard
+   - Root Directory: `website`
+   - Build Command: `npm run build`
+   - Output Directory: `.next`
 
-### Vercel: Alternative Configuration
+2. **Use Correct vercel.json**: Ensure you're using Vercel v2 API format
+3. **Check Build Output**: Ensure the build creates `.next` folder in `website/.next`
+4. **Run Fix Script**: Use `npm run fix-vercel` to auto-configure
 
-If the current configuration doesn't work, try this advanced setup:
+### Vercel: Schema Validation Errors
 
-```json
-{
-  "version": 2,
-  "builds": [
-    {
-      "src": "website/package.json",
-      "use": "@vercel/next",
-      "config": {
-        "distDir": ".next"
-      }
-    }
-  ],
-  "routes": [
-    {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/website/$1"
-    }
-  ]
-}
-```
+If you get schema validation errors:
+
+1. **Remove Invalid Properties**: Properties like `rootDirectory` are not valid in vercel.json
+2. **Use Dashboard Settings**: Configure root directory via Vercel dashboard instead
+3. **Use v2 API Format**: Ensure your vercel.json uses `"version": 2` format
 
 ### Build Command Issues
 
