@@ -36,8 +36,15 @@ To democratize software innovation by providing a transparent, inclusive, and st
 
 ```bash
 # Fork the repository
-git clone https://github.com/YOUR_USERNAME/coding-party-2026.git
-cd coding-party-2026
+git clone https://github.com/PraiseTechzw/OpenLaunch.git
+cd OpenLaunch 
+
+# Opening with any Code editor eg
+
+cd OpenLaunch
+code ./ # for Opening this project with VS Code
+cursor ./ # for Opening with Cursor 
+kiro ./ # KIRO 
 
 # Run the setup script
 chmod +x scripts/setup.sh

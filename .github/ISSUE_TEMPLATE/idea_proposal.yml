@@ -1,0 +1,325 @@
+name: 💡 Idea Proposal
+description: Propose a new project, application, or major initiative for Coding Party 2026
+title: "[Idea]: "
+labels: ["idea", "needs-discussion", "community-input"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Have a big idea for Coding Party 2026? 💡
+        
+        This template is for proposing new applications, major features, or community initiatives that could become part of our collaborative innovation lab.
+
+  - type: checkboxes
+    id: prerequisites
+    attributes:
+      label: Prerequisites
+      description: Please confirm you have completed the following
+      options:
+        - label: I have read the [project vision](../../docs/vision.md) and understand our mission
+          required: true
+        - label: I have reviewed the current [roadmap](../../docs/roadmap.md) to understand our direction
+          required: true
+        - label: I have searched existing issues and discussions for similar ideas
+          required: true
+        - label: This idea aligns with our open-source and community-first values
+          required: true
+
+  - type: dropdown
+    id: idea-category
+    attributes:
+      label: Idea Category
+      description: What type of idea are you proposing?
+      options:
+        - New Application/Product
+        - Platform Enhancement
+        - Community Initiative
+        - Developer Tool
+        - Educational Resource
+        - Integration/Partnership
+        - Process Improvement
+        - Research Project
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: idea-summary
+    attributes:
+      label: Idea Summary
+      description: Provide a clear, concise summary of your idea
+      placeholder: |
+        In one or two sentences, what is your big idea?
+        
+        Example: "A collaborative code review platform that helps developers learn from each other while contributing to open source projects."
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem-opportunity
+    attributes:
+      label: Problem or Opportunity
+      description: What problem does this solve or what opportunity does it address?
+      placeholder: |
+        What gap in the market or community need does this address?
+        Why is this important right now?
+        Who is currently underserved?
+    validations:
+      required: true
+
+  - type: textarea
+    id: target-audience
+    attributes:
+      label: Target Audience
+      description: Who would use or benefit from this idea?
+      placeholder: |
+        Primary users: ...
+        Secondary users: ...
+        Community impact: ...
+        
+        User personas:
+        - As a [type of user], I would use this to...
+    validations:
+      required: true
+
+  - type: textarea
+    id: vision-description
+    attributes:
+      label: Vision Description
+      description: Paint a picture of what success looks like
+      placeholder: |
+        Imagine this idea is fully realized and successful:
+        - What does the user experience look like?
+        - How has it changed the community or industry?
+        - What impact has it made?
+        - How do people talk about it?
+    validations:
+      required: true
+
+  - type: textarea
+    id: key-features
+    attributes:
+      label: Key Features or Components
+      description: What are the main features or components of this idea?
+      placeholder: |
+        Core features:
+        1. ...
+        2. ...
+        3. ...
+        
+        Nice-to-have features:
+        1. ...
+        2. ...
+
+  - type: dropdown
+    id: technical-complexity
+    attributes:
+      label: Technical Complexity
+      description: How technically complex do you think this idea would be?
+      options:
+        - Simple - Could be built by a small team in weeks
+        - Moderate - Requires multiple contributors over months
+        - Complex - Major undertaking requiring significant resources
+        - Experimental - Involves research or unproven technologies
+        - Unknown - Not sure about technical requirements
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: technology-areas
+    attributes:
+      label: Technology Areas
+      description: Which technology areas would this idea involve?
+      options:
+        - label: Frontend Development (React, Vue, etc.)
+        - label: Backend Development (APIs, databases)
+        - label: Mobile Development
+        - label: AI/Machine Learning
+        - label: DevOps/Infrastructure
+        - label: Blockchain/Web3
+        - label: IoT/Hardware
+        - label: Data Science/Analytics
+        - label: Security/Privacy
+        - label: Design/UX
+
+  - type: textarea
+    id: similar-projects
+    attributes:
+      label: Similar Projects or Inspiration
+      description: Are there existing projects that are similar or that inspired this idea?
+      placeholder: |
+        Similar projects:
+        - Project A: [link] - Similar because...
+        - Project B: [link] - Different because...
+        
+        How this idea is unique:
+        - ...
+        - ...
+
+  - type: textarea
+    id: success-metrics
+    attributes:
+      label: Success Metrics
+      description: How would we measure the success of this idea?
+      placeholder: |
+        Quantitative metrics:
+        - Number of users/contributors
+        - Usage statistics
+        - Performance metrics
+        
+        Qualitative metrics:
+        - Community feedback
+        - Impact stories
+        - Industry recognition
+
+  - type: textarea
+    id: potential-challenges
+    attributes:
+      label: Potential Challenges
+      description: What challenges or risks do you foresee?
+      placeholder: |
+        Technical challenges:
+        - ...
+        
+        Community challenges:
+        - ...
+        
+        Resource challenges:
+        - ...
+        
+        Market/adoption challenges:
+        - ...
+
+  - type: textarea
+    id: community-involvement
+    attributes:
+      label: Community Involvement Strategy
+      description: How would the community be involved in building this?
+      placeholder: |
+        Roles needed:
+        - Developers: ...
+        - Designers: ...
+        - Product managers: ...
+        - Community managers: ...
+        
+        Contribution opportunities:
+        - Beginners could help with...
+        - Experienced developers could work on...
+        - Non-technical contributors could...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: timeline-estimate
+    attributes:
+      label: Timeline Estimate
+      description: What's a realistic timeline for this idea?
+      options:
+        - 1-3 months for MVP
+        - 3-6 months for MVP
+        - 6-12 months for MVP
+        - 1+ years for full vision
+        - Ongoing/iterative project
+        - Unknown timeline
+    validations:
+      required: true
+
+  - type: textarea
+    id: mvp-definition
+    attributes:
+      label: MVP Definition
+      description: What would a Minimum Viable Product look like?
+      placeholder: |
+        Core functionality for MVP:
+        1. ...
+        2. ...
+        3. ...
+        
+        What can be added later:
+        - ...
+        - ...
+
+  - type: checkboxes
+    id: alignment-check
+    attributes:
+      label: Project Alignment
+      description: How does this idea align with Coding Party 2026's values?
+      options:
+        - label: Promotes open collaboration and transparency
+        - label: Welcomes contributors of all skill levels
+        - label: Builds real-world, production-ready software
+        - label: Fosters learning and knowledge sharing
+        - label: Has potential for significant community impact
+        - label: Encourages innovation and experimentation
+
+  - type: textarea
+    id: personal-commitment
+    attributes:
+      label: Personal Commitment
+      description: What's your commitment level to this idea?
+      placeholder: |
+        I am willing to:
+        - [ ] Lead this project as a maintainer
+        - [ ] Contribute significant development time
+        - [ ] Help with planning and coordination
+        - [ ] Provide ongoing support and maintenance
+        - [ ] Help find and onboard other contributors
+        
+        Time commitment: ... hours per week
+        Duration: ... months/years
+    validations:
+      required: true
+
+  - type: textarea
+    id: call-to-action
+    attributes:
+      label: Call to Action
+      description: What do you want the community to do with this idea?
+      placeholder: |
+        I'm looking for:
+        - Feedback on the idea itself
+        - Technical input on feasibility
+        - Potential collaborators
+        - Validation from target users
+        - Help refining the concept
+        - Resources or funding suggestions
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-resources
+    attributes:
+      label: Additional Resources
+      description: Any additional context, research, or resources?
+      placeholder: |
+        - Market research or user surveys
+        - Technical prototypes or mockups
+        - Related articles or papers
+        - Community discussions or feedback
+        - Competitive analysis
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        
+        Thank you for sharing your idea! 🌟
+        
+        ## What happens next?
+        
+        1. **Community Discussion**: The community will discuss your idea in the comments
+        2. **Refinement**: Work with others to refine and improve the concept
+        3. **Validation**: Gather feedback from potential users and contributors
+        4. **Planning**: If there's interest, create a detailed project plan
+        5. **Implementation**: Start building with community support!
+        
+        ## Get the conversation started:
+        
+        - Share this in our [Discussions](../../discussions) for broader visibility
+        - Connect with potential collaborators
+        - Consider creating a proof-of-concept or mockup
+        - Join our community events to present your idea
+        
+        Remember: The best ideas in Coding Party 2026 are those that bring the community together and create real value for users! 🚀
