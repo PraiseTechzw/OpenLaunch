@@ -392,4 +392,4 @@ You have the right to appeal any decision through our appeals process. Appeals a
 
 ---
 
-*This Code of Conduct is effective as of January 
+*This Code of Conduct is effective as of January 1, 2026, and will be reviewed annually. For questions about this Code of Conduct, please contact conduct@coding-party-2026.org.*

@@ -1,15 +1,15 @@
-# Coding Party 2026 🎉
+# OpenLaunch 🎉
 
-[![Build Status](https://github.com/coding-party-2026/coding-party-2026/workflows/CI/badge.svg)](https://github.com/coding-party-2026/coding-party-2026/actions)
+[![Build Status](https://github.com/PraiseTechzw/OpenLaunch/workflows/CI/badge.svg)](https://github.com/PraiseTechzw/OpenLaunch/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Contributors](https://img.shields.io/github/contributors/coding-party-2026/coding-party-2026.svg)](https://github.com/coding-party-2026/coding-party-2026/graphs/contributors)
+[![Contributors](https://img.shields.io/github/contributors/PraiseTechzw/OpenLaunch.svg)](https://github.com/PraiseTechzw/OpenLaunch/graphs/contributors)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
 > A collaborative innovation lab where developers, designers, and creators build real-world software in public.
 
-## What is Coding Party 2026?
+## What is OpenLaunch?
 
-Coding Party 2026 is an open-source launchpad and incubator designed to foster collaborative innovation. We're not building a single app—we're creating a platform where the global developer community can come together to build multiple real-world products that matter.
+OpenLaunch is an open-source launchpad and incubator designed to foster collaborative innovation through our annual Coding Party initiative. We're not building a single app—we're creating a platform where the global developer community can come together to build multiple real-world products that matter.
 
 ### Our Mission
 
