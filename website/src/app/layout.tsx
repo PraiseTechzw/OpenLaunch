@@ -7,6 +7,7 @@ import { Footer } from '@/components/Footer'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://openlaunch.praisetech.tech'),
   title: 'OpenLaunch - Collaborative Innovation Lab',
   description: 'A collaborative innovation lab where developers, designers, and creators build real-world software in public through our annual Coding Party initiatives.',
   keywords: ['open source', 'collaboration', 'coding party', 'developers', 'innovation'],
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'OpenLaunch - Collaborative Innovation Lab',
     description: 'Join our annual Coding Party initiatives and build real-world software with a global community.',
-    url: 'https://openlaunch.org',
+    url: '/',
     siteName: 'OpenLaunch',
     images: [
       {

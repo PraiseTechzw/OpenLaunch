@@ -22,7 +22,7 @@ export function Logo({ className = '', size = 'md', variant = 'full' }: LogoProp
   const LogoIcon = () => (
     <div className={`relative ${className}`}>
       <Image
-        src="/logo.svg"
+        src="/logo.png"
         alt="OpenLaunch Logo"
         width={width}
         height={height}
