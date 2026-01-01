@@ -29,7 +29,7 @@ To democratize software innovation by providing a transparent, inclusive, and st
 
 1. **Explore the Vision**: Read our [vision document](docs/vision.md) to understand our philosophy
 2. **Check the Roadmap**: See what we're building in our [roadmap](docs/roadmap.md)
-3. **Join the Community**: Introduce yourself in [Discussions](https://github.com/coding-party-2026/coding-party-2026/discussions)
+3. **Join the Community**: Introduce yourself in [Discussions](https://github.com/PraiseTechzw/OpenLaunch/discussions)
 4. **Pick Your Path**: Choose from frontend, backend, AI, design, or documentation
 
 ### For Contributors
@@ -59,7 +59,7 @@ git checkout -b feature/your-amazing-idea
 ### Project Structure
 
 ```
-coding-party-2026/
+OpenLaunch/
 ├── frontend/     # Web applications and user interfaces
 ├── backend/      # APIs, services, and data management
 ├── ai/           # Machine learning and AI components
