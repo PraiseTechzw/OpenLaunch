@@ -10,14 +10,15 @@
     "ai"
   ],
   "scripts": {
-    "dev": "npm run dev --workspace=website",
-    "build": "npm run build --workspace=website",
-    "start": "npm run start --workspace=website",
-    "lint": "npm run lint --workspace=website",
-    "type-check": "npm run type-check --workspace=website",
+    "dev": "cd website && npm run dev",
+    "build": "cd website && npm run build",
+    "start": "cd website && npm run start",
+    "lint": "cd website && npm run lint",
+    "type-check": "cd website && npm run type-check",
     "test": "echo \"Running tests for all workspaces...\" && npm run test --workspaces --if-present",
     "install-all": "npm install && npm install --workspaces",
-    "clean": "rm -rf node_modules && rm -rf */node_modules && rm -rf */.next && rm -rf */dist"
+    "clean": "rm -rf node_modules && rm -rf */node_modules && rm -rf */.next && rm -rf */dist",
+    "postinstall": "cd website && npm install"
   },
   "keywords": [
     "open-source",
@@ -42,7 +43,13 @@
     "node": ">=18.0.0",
     "npm": ">=9.0.0"
   },
+  "dependencies": {
+    "next": "14.0.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
   "devDependencies": {
-    "@types/node": "^20.10.5"
+    "@types/node": "^20.10.5",
+    "typescript": "^5.3.3"
   }
 }
