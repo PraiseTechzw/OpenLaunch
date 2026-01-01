@@ -16,9 +16,8 @@
     "lint": "cd website && npm run lint",
     "type-check": "cd website && npm run type-check",
     "test": "echo \"Running tests for all workspaces...\" && npm run test --workspaces --if-present",
-    "install-all": "npm install && npm install --workspaces",
-    "clean": "rm -rf node_modules && rm -rf */node_modules && rm -rf */.next && rm -rf */dist",
-    "postinstall": "cd website && npm install"
+    "install-all": "npm install && cd website && npm install",
+    "clean": "rm -rf node_modules && rm -rf */node_modules && rm -rf */.next && rm -rf */dist"
   },
   "keywords": [
     "open-source",
