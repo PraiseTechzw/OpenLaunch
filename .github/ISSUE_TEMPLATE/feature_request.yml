@@ -1,0 +1,21 @@
+name: ✨ Feature Request
+description: Suggest a new feature or enhancement for Coding Party 2026
+title: "[Feature]: "
+labels: ["enhancement", "needs-discussion"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a new feature! ✨
+        
+        We love hearing ideas from our community. Please provide as much detail as possible to help us understand your suggestion.
+
+  - type: checkboxes
+    id: prerequisites
+    attributes:
+      label: Prerequisites
+      description: Please confirm you have completed the following
+      options:
+        - label: I have searched existing issues and discussions to ensure this feature hasn't be
