@@ -1,16 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    appDir: true,
-  },
   images: {
-    domains: ['images.unsplash.com', 'avatars.githubusercontent.com'],
+    domains: ['images.unsplash.com', 'avatars.githubusercontent.com', 'github.com'],
   },
   async redirects() {
     return [
       {
         source: '/docs',
-        destination: '/docs/getting-started',
+        destination: '/docs/onboarding',
         permanent: true,
       },
     ]

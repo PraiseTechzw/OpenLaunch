@@ -1,4 +1,7 @@
+'use client'
+
 import React from 'react'
+import Image from 'next/image'
 
 interface LogoProps {
   className?: string
@@ -7,40 +10,28 @@ interface LogoProps {
 }
 
 const sizeClasses = {
-  sm: 'h-6 w-6',
-  md: 'h-8 w-8', 
-  lg: 'h-12 w-12',
-  xl: 'h-16 w-16'
+  sm: { width: 24, height: 24 },
+  md: { width: 32, height: 32 }, 
+  lg: { width: 48, height: 48 },
+  xl: { width: 64, height: 64 }
 }
 
 export function Logo({ className = '', size = 'md', variant = 'full' }: LogoProps) {
-  const iconSize = sizeClasses[size]
+  const { width, height } = sizeClasses[size]
   
   const LogoIcon = () => (
-    <div className={`${iconSize} bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center shadow-lg ${className}`}>
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        className="w-3/5 h-3/5 text-white"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        {/* Rocket/Launch icon representing OpenLaunch */}
-        <path
-          d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z"
-          fill="currentColor"
-        />
-        <path
-          d="M5 16L6.5 19L9 17.5L7.5 15L5 16Z"
-          fill="currentColor"
-          opacity="0.7"
-        />
-        <path
-          d="M15 17.5L17.5 19L19 16L16.5 15L15 17.5Z"
-          fill="currentColor"
-          opacity="0.7"
-        />
-        <circle cx="12" cy="9" r="1.5" fill="white" opacity="0.9" />
-      </svg>
+    <div className={`relative ${className}`}>
+      <Image
+        src="/logo.svg"
+        alt="OpenLaunch Logo"
+        width={width}
+        height={height}
+        className="object-contain"
+        priority
+        onError={(e) => {
+          console.error('Logo image failed to load:', e);
+        }}
+      />
     </div>
   )
 
