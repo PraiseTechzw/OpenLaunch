@@ -1,6 +1,6 @@
 {
-  "buildCommand": "cd website && npm run build",
+  "buildCommand": "npm run build",
   "outputDirectory": "website/.next",
-  "installCommand": "npm install && cd website && npm install",
+  "installCommand": "npm ci --workspaces",
   "framework": "nextjs"
 }
