@@ -13,7 +13,7 @@ interface GitHubRepo {
   topics: string[];
 }
 
-interface GitHubContributor {
+export interface GitHubContributor {
   id: number;
   login: string;
   avatar_url: string;

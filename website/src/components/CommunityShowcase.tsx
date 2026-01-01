@@ -1,182 +1,147 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { StarIcon } from '@heroicons/react/24/solid'
-
-const testimonials = [
-  {
-    name: 'Future Contributor',
-    role: 'Your Role Here',
-    avatar: '/avatars/placeholder.png',
-    content: 'Be the first to share your experience with OpenLaunch! Join our founding community and help shape the future of collaborative software development.',
-    rating: 5,
-  },
-  {
-    name: 'Early Adopter',
-    role: 'Community Member',
-    avatar: '/avatars/placeholder.png',
-    content: 'OpenLaunch launches January 1st, 2026. Be part of our story from the very beginning and help build something amazing together.',
-    rating: 5,
-  },
-  {
-    name: 'You?',
-    role: 'Founding Member',
-    avatar: '/avatars/placeholder.png',
-    content: 'Your testimonial could be here! Join OpenLaunch and become part of a community that values transparency, learning, and real impact.',
-    rating: 5,
-  },
-]
-
-const projects = [
-  {
-    name: 'Coming Soon',
-    description: 'Our first community project will be announced at launch. Help us decide what to build together!',
-    tech: ['React', 'TypeScript', 'Next.js', 'Tailwind'],
-    contributors: 0,
-    stars: 0,
-  },
-  {
-    name: 'Your Idea Here',
-    description: 'Have an idea for a project? Propose it to the community and lead its development from conception to production.',
-    tech: ['Your Choice', 'Community Driven', 'Open Source'],
-    contributors: 0,
-    stars: 0,
-  },
-  {
-    name: 'Future Project',
-    description: 'The third project will be chosen by our community. What problem should we solve together?',
-    tech: ['TBD', 'Community Vote', 'Real Impact'],
-    contributors: 0,
-    stars: 0,
-  },
-]
+import { useEffect, useState } from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { getContributors, fallbackContributors } from '@/lib/github'
+import type { GitHubContributor } from '@/lib/github'
 
 export function CommunityShowcase() {
+  const [contributors, setContributors] = useState<GitHubContributor[]>(fallbackContributors)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    async function fetchContributors() {
+      try {
+        const data = await getContributors()
+        setContributors(data.slice(0, 8)) // Show top 8 contributors
+      } catch (error) {
+        console.warn('Failed to fetch contributors, using fallback data:', error)
+        setContributors(fallbackContributors)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchContributors()
+  }, [])
+
   return (
-    <div className="py-16 sm:py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Community Testimonials */}
-        <div className="mb-20">
-          <div className="text-center mb-16">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-                Join Our Founding Community
-              </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                OpenLaunch launches January 1st, 2026. Be among the first to shape our community culture and values.
-              </p>
-            </motion.div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={testimonial.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-gray-50 rounded-xl p-6 border border-gray-200"
-              >
-                <div className="flex items-center mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <StarIcon key={i} className="h-5 w-5 text-yellow-400" />
-                  ))}
-                </div>
-                <p className="text-gray-700 mb-6 italic">
-                  "{testimonial.content}"
-                </p>
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-gray-200 rounded-full mr-4 flex items-center justify-center">
-                    <span className="text-gray-500 font-semibold text-sm">
-                      {testimonial.name.split(' ').map(n => n[0]).join('')}
-                    </span>
-                  </div>
-                  <div>
-                    <div className="font-semibold text-gray-900">{testimonial.name}</div>
-                    <div className="text-gray-600 text-sm">{testimonial.role}</div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
-        {/* Featured Projects */}
-        <div>
-          <div className="text-center mb-16">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-                Future Projects
-              </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Help us decide what to build! Our first projects will be chosen by the community through our democratic process.
-              </p>
-            </motion.div>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <motion.div
-                key={project.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-shadow"
-              >
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{project.name}</h3>
-                <p className="text-gray-600 mb-4">{project.description}</p>
-                
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tech.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-2 py-1 bg-white text-gray-700 text-xs rounded-md border border-gray-200"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                
-                <div className="flex items-center justify-between text-sm text-gray-600">
-                  <span>{project.contributors}+ future contributors</span>
-                  <div className="flex items-center">
-                    <StarIcon className="h-4 w-4 text-yellow-400 mr-1" />
-                    <span>{project.stars}+ (coming soon)</span>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
+    <div className="py-16 sm:py-24 relative overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white via-purple-50/30 to-primary-50/30" />
+      <div className="gradient-mesh absolute inset-0 opacity-20" />
+      
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mt-12"
           >
-            <a
-              href="https://github.com/PraiseTechzw/OpenLaunch/discussions"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 transition-colors"
-            >
-              Propose a Project
-            </a>
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-secondary-100 to-primary-100 border border-secondary-200/50 mb-6">
+              <span className="text-sm font-medium text-secondary-700">Our Community</span>
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+              Meet Our{' '}
+              <span className="bg-gradient-to-r from-secondary-600 to-primary-600 bg-clip-text text-transparent">
+                Contributors
+              </span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Join our growing community of developers, designers, and innovators who are 
+              building the future of collaborative software development.
+            </p>
           </motion.div>
         </div>
+
+        {/* Contributors Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-6 mb-16">
+          {contributors.map((contributor, index) => (
+            <motion.div
+              key={contributor.id}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="group"
+            >
+              <Link
+                href={contributor.html_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <div className="glass-card p-4 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-white/50 group-hover:scale-105 relative overflow-hidden">
+                  {/* Glow effect */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary-500/10 to-secondary-500/10 opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-300" />
+                  
+                  <div className="relative z-10 text-center">
+                    <div className="relative mb-3">
+                      <Image
+                        src={contributor.avatar_url}
+                        alt={contributor.login}
+                        width={64}
+                        height={64}
+                        className="w-16 h-16 rounded-full mx-auto ring-2 ring-white shadow-lg group-hover:ring-primary-200 transition-all duration-300"
+                      />
+                      {loading && (
+                        <div className="absolute inset-0 bg-gray-200 animate-pulse rounded-full" />
+                      )}
+                    </div>
+                    <h3 className="font-semibold text-gray-900 text-sm truncate group-hover:text-primary-700 transition-colors duration-300">
+                      {contributor.login}
+                    </h3>
+                    <p className="text-xs text-gray-500 mt-1">
+                      {contributor.contributions} commits
+                    </p>
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Community Stats */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: true }}
+          className="text-center"
+        >
+          <div className="glass-card rounded-3xl p-8 shadow-2xl border border-white/50 relative overflow-hidden max-w-4xl mx-auto">
+            {/* Background decoration */}
+            <div className="absolute inset-0 bg-gradient-to-br from-primary-50/30 to-secondary-50/30 rounded-3xl" />
+            
+            <div className="relative z-10">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                Join the Movement
+              </h3>
+              <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
+                OpenLaunch is more than just a project - it's a community-driven initiative 
+                to democratize software development and foster innovation through collaboration.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link
+                  href="/community/contributors"
+                  className="inline-flex items-center px-6 py-3 text-sm font-medium rounded-xl text-primary-700 bg-gradient-to-r from-primary-50 to-primary-100 hover:from-primary-100 hover:to-primary-200 border border-primary-200/50 transition-all duration-300 shadow-lg hover:shadow-xl"
+                >
+                  View All Contributors
+                </Link>
+                <Link
+                  href="/contributing"
+                  className="inline-flex items-center px-6 py-3 text-sm font-medium rounded-xl text-white bg-gradient-to-r from-primary-600 to-secondary-600 hover:from-primary-700 hover:to-secondary-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+                >
+                  Start Contributing
+                </Link>
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </div>
   )

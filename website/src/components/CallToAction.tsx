@@ -2,168 +2,119 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { ArrowRightIcon, ChatBubbleLeftRightIcon, DocumentTextIcon, CalendarDaysIcon } from '@heroicons/react/24/outline'
-
-const actions = [
-  {
-    title: 'Join the Launch',
-    description: 'Be part of our founding community launching January 1st, 2026',
-    href: '/docs/onboarding',
-    icon: ArrowRightIcon,
-    primary: true,
-  },
-  {
-    title: 'GitHub Discussions',
-    description: 'Connect with early adopters and share your ideas',
-    href: 'https://github.com/PraiseTechzw/OpenLaunch/discussions',
-    icon: ChatBubbleLeftRightIcon,
-    external: true,
-  },
-  {
-    title: 'Read Our Vision',
-    description: 'Learn about our mission and values',
-    href: '/docs/vision',
-    icon: DocumentTextIcon,
-  },
-  {
-    title: 'Upcoming Events',
-    description: 'Mark your calendar for our launch events',
-    href: '/events',
-    icon: CalendarDaysIcon,
-  },
-]
+import { ArrowRightIcon, CodeBracketIcon, HeartIcon, RocketLaunchIcon } from '@heroicons/react/24/outline'
 
 export function CallToAction() {
   return (
-    <div className="py-16 sm:py-24 bg-gradient-to-br from-primary-600 to-secondary-600">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-              Ready to Build the Future?
-            </h2>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-              OpenLaunch launches January 1st, 2026. Join our founding community and help shape 
-              the future of collaborative software development from day one.
-            </p>
-          </motion.div>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {actions.map((action, index) => (
-            <motion.div
-              key={action.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-            >
-              {action.external ? (
-                <a
-                  href={action.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`block p-6 rounded-xl transition-all duration-300 hover:scale-105 ${
-                    action.primary
-                      ? 'bg-white text-gray-900 shadow-lg hover:shadow-xl'
-                      : 'bg-white/10 backdrop-blur-sm text-white border border-white/20 hover:bg-white/20'
-                  }`}
-                >
-                  <div className={`w-12 h-12 rounded-lg flex items-center justify-center mb-4 ${
-                    action.primary ? 'bg-primary-100' : 'bg-white/20'
-                  }`}>
-                    <action.icon className={`h-6 w-6 ${
-                      action.primary ? 'text-primary-600' : 'text-white'
-                    }`} />
-                  </div>
-                  <h3 className="text-lg font-semibold mb-2">{action.title}</h3>
-                  <p className={`text-sm ${
-                    action.primary ? 'text-gray-600' : 'text-blue-100'
-                  }`}>
-                    {action.description}
-                  </p>
-                </a>
-              ) : (
-                <Link
-                  href={action.href}
-                  className={`block p-6 rounded-xl transition-all duration-300 hover:scale-105 ${
-                    action.primary
-                      ? 'bg-white text-gray-900 shadow-lg hover:shadow-xl'
-                      : 'bg-white/10 backdrop-blur-sm text-white border border-white/20 hover:bg-white/20'
-                  }`}
-                >
-                  <div className={`w-12 h-12 rounded-lg flex items-center justify-center mb-4 ${
-                    action.primary ? 'bg-primary-100' : 'bg-white/20'
-                  }`}>
-                    <action.icon className={`h-6 w-6 ${
-                      action.primary ? 'text-primary-600' : 'text-white'
-                    }`} />
-                  </div>
-                  <h3 className="text-lg font-semibold mb-2">{action.title}</h3>
-                  <p className={`text-sm ${
-                    action.primary ? 'text-gray-600' : 'text-blue-100'
-                  }`}>
-                    {action.description}
-                  </p>
-                </Link>
-              )}
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Newsletter signup */}
+    <div className="py-16 sm:py-24 relative overflow-hidden">
+      {/* Enhanced background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary-900 via-purple-900 to-secondary-900" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(120,119,198,0.3),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(236,72,153,0.3),transparent_50%)]" />
+      
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
+          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20"
+          className="text-center"
         >
-          <div className="text-center mb-6">
-            <h3 className="text-2xl font-bold text-white mb-2">
-              Get Launch Updates
-            </h3>
-            <p className="text-blue-100">
-              Be the first to know when OpenLaunch goes live and get exclusive early access to our community.
-            </p>
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-8">
+            <RocketLaunchIcon className="w-4 h-4 mr-2 text-white" />
+            <span className="text-sm font-medium text-white">Ready to Launch?</span>
           </div>
           
-          <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 px-4 py-3 rounded-lg border border-white/20 bg-white/10 backdrop-blur-sm text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-white/50"
-            />
-            <button
-              type="submit"
-              className="px-6 py-3 bg-white text-primary-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors"
-            >
-              Subscribe
-            </button>
-          </form>
-        </motion.div>
-
-        {/* Social proof */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mt-12"
-        >
-          <p className="text-blue-100 mb-4">
-            Building the future of open-source collaboration
+          <h2 className="text-4xl sm:text-6xl font-bold text-white mb-8">
+            Be Part of the{' '}
+            <span className="bg-gradient-to-r from-primary-300 to-secondary-300 bg-clip-text text-transparent">
+              Future
+            </span>
+          </h2>
+          
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed">
+            OpenLaunch 2026 is launching soon! Join our community of innovators, 
+            contribute to groundbreaking projects, and help shape the future of 
+            collaborative software development.
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
-            <div className="text-white font-semibold">Launching 2026</div>
-            <div className="text-white font-semibold">Community Driven</div>
-            <div className="text-white font-semibold">Open Source</div>
-            <div className="text-white font-semibold">Global Impact</div>
+
+          {/* Action buttons */}
+          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Link
+                href="https://github.com/PraiseTechzw/OpenLaunch"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center px-8 py-4 text-lg font-semibold rounded-2xl text-primary-900 bg-gradient-to-r from-white to-gray-100 hover:from-gray-100 hover:to-white transition-all duration-300 shadow-2xl hover:shadow-3xl relative overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-primary-500/10 to-secondary-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
+                <CodeBracketIcon className="w-6 h-6 mr-3 relative z-10" />
+                <span className="relative z-10">Star on GitHub</span>
+                <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300 relative z-10" />
+              </Link>
+            </motion.div>
+            
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Link
+                href="/contributing"
+                className="group inline-flex items-center px-8 py-4 text-lg font-semibold rounded-2xl text-white bg-gradient-to-r from-primary-600/80 to-secondary-600/80 hover:from-primary-600 hover:to-secondary-600 border border-white/20 backdrop-blur-sm transition-all duration-300 shadow-2xl hover:shadow-3xl relative overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
+                <HeartIcon className="w-6 h-6 mr-3 relative z-10" />
+                <span className="relative z-10">Start Contributing</span>
+                <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300 relative z-10" />
+              </Link>
+            </motion.div>
+          </div>
+
+          {/* Feature highlights */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {[
+              {
+                title: 'Open Source',
+                description: 'Built by the community, for the community',
+                icon: CodeBracketIcon,
+              },
+              {
+                title: 'Collaborative',
+                description: 'Work together on amazing projects',
+                icon: HeartIcon,
+              },
+              {
+                title: 'Innovative',
+                description: 'Push the boundaries of what\'s possible',
+                icon: RocketLaunchIcon,
+              },
+            ].map((feature, index) => (
+              <motion.div
+                key={feature.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
+                viewport={{ once: true }}
+                className="group"
+              >
+                <div className="glass-card p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-300 relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary-500/10 to-secondary-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
+                  
+                  <div className="relative z-10 text-center">
+                    <feature.icon className="w-8 h-8 text-primary-300 mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
+                    <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-primary-200 transition-colors duration-300">
+                      {feature.title}
+                    </h3>
+                    <p className="text-gray-300 text-sm group-hover:text-gray-200 transition-colors duration-300">
+                      {feature.description}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
       </div>
