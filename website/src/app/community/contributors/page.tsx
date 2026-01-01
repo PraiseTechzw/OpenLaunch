@@ -29,10 +29,10 @@ const topContributors = [
 ]
 
 const contributionStats = [
-  { label: 'Total Contributors', value: '1+', description: 'Growing community' },
-  { label: 'Countries Represented', value: '1+', description: 'Global reach' },
-  { label: 'Lines of Code', value: '10K+', description: 'And counting' },
-  { label: 'Community Members', value: '50+', description: 'Active participants' }
+  { label: 'Total Contributors', value: '1+', description: 'Founding team ready' },
+  { label: 'Countries Represented', value: '1+', description: 'Starting global' },
+  { label: 'Lines of Code', value: '1K+', description: 'Foundation built' },
+  { label: 'Community Members', value: '0+', description: 'Join us today!' }
 ]
 
 const recognitionCategories = [

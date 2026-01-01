@@ -10,32 +10,32 @@ import {
 
 const upcomingEvents = [
   {
-    title: 'Coding Party 2026 Kickoff',
-    date: '2026-01-15',
+    title: 'OpenLaunch Kickoff Event',
+    date: '2026-01-01',
+    time: '12:00 UTC',
+    type: 'Virtual',
+    description: 'Join us for the official launch of OpenLaunch! Meet the founding team, learn about our vision, and help shape our first projects.',
+    attendees: 0,
+    status: 'upcoming',
+    registrationLink: 'https://github.com/PraiseTechzw/OpenLaunch/discussions',
+  },
+  {
+    title: 'Community Planning Session',
+    date: '2026-01-08',
     time: '18:00 UTC',
     type: 'Virtual',
-    description: 'Join us for the official launch of Coding Party 2026! Meet the community, learn about our goals, and start planning your contributions.',
-    attendees: 150,
+    description: 'Help us plan our first quarter! Discuss project ideas, contribution guidelines, and community structure.',
+    attendees: 0,
     status: 'upcoming',
     registrationLink: 'https://github.com/PraiseTechzw/OpenLaunch/discussions',
   },
   {
-    title: 'Frontend Architecture Workshop',
-    date: '2026-01-22',
+    title: 'First Coding Party',
+    date: '2026-01-15',
     time: '16:00 UTC',
     type: 'Virtual',
-    description: 'Deep dive into our frontend architecture decisions, component design patterns, and development workflow.',
-    attendees: 75,
-    status: 'upcoming',
-    registrationLink: 'https://github.com/PraiseTechzw/OpenLaunch/discussions',
-  },
-  {
-    title: 'Open Source Contribution 101',
-    date: '2026-01-29',
-    time: '19:00 UTC',
-    type: 'Virtual',
-    description: 'Perfect for beginners! Learn how to make your first contribution to OpenLaunch and open source in general.',
-    attendees: 200,
+    description: 'Our inaugural Coding Party! Work together on our first community project and establish our collaborative workflow.',
+    attendees: 0,
     status: 'upcoming',
     registrationLink: 'https://github.com/PraiseTechzw/OpenLaunch/discussions',
   },
@@ -43,13 +43,13 @@ const upcomingEvents = [
 
 const pastEvents = [
   {
-    title: 'Community Planning Session',
+    title: 'Pre-Launch Planning',
     date: '2025-12-15',
     type: 'Virtual',
-    description: 'Initial planning session where we defined our vision and roadmap for 2026.',
-    attendees: 45,
+    description: 'Internal planning session to prepare for the OpenLaunch launch.',
+    attendees: 1,
     status: 'completed',
-    recordingLink: '#',
+    recordingLink: null,
   },
 ]
 
@@ -164,7 +164,7 @@ export default function EventsPage() {
                       </div>
                       <div className="flex items-center">
                         <UserGroupIcon className="w-4 h-4 mr-1" />
-                        {event.attendees} registered
+                        {event.attendees}+ expected
                       </div>
                     </div>
                     
@@ -180,7 +180,7 @@ export default function EventsPage() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center px-6 py-3 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-colors"
                     >
-                      Register Now
+                      Join Discussion
                     </Link>
                   </div>
                 </div>

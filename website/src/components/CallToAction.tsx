@@ -6,28 +6,28 @@ import { ArrowRightIcon, ChatBubbleLeftRightIcon, DocumentTextIcon, CalendarDays
 
 const actions = [
   {
-    title: 'Start Contributing',
-    description: 'Jump into our projects and make your first contribution today',
-    href: '/docs/getting-started',
+    title: 'Join the Launch',
+    description: 'Be part of our founding community launching January 1st, 2026',
+    href: '/docs/onboarding',
     icon: ArrowRightIcon,
     primary: true,
   },
   {
-    title: 'Join Discussions',
-    description: 'Connect with the community and share your ideas',
+    title: 'GitHub Discussions',
+    description: 'Connect with early adopters and share your ideas',
     href: 'https://github.com/PraiseTechzw/OpenLaunch/discussions',
     icon: ChatBubbleLeftRightIcon,
     external: true,
   },
   {
-    title: 'Read the Docs',
-    description: 'Explore our comprehensive documentation and guides',
-    href: '/docs',
+    title: 'Read Our Vision',
+    description: 'Learn about our mission and values',
+    href: '/docs/vision',
     icon: DocumentTextIcon,
   },
   {
-    title: 'Attend Events',
-    description: 'Join our regular community events and workshops',
+    title: 'Upcoming Events',
+    description: 'Mark your calendar for our launch events',
     href: '/events',
     icon: CalendarDaysIcon,
   },
@@ -45,11 +45,11 @@ export function CallToAction() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-              Ready to Join the Party?
+              Ready to Build the Future?
             </h2>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-              Become part of a global community that's building the future of collaborative software development. 
-              Your journey starts here.
+              OpenLaunch launches January 1st, 2026. Join our founding community and help shape 
+              the future of collaborative software development from day one.
             </p>
           </motion.div>
         </div>
@@ -126,10 +126,10 @@ export function CallToAction() {
         >
           <div className="text-center mb-6">
             <h3 className="text-2xl font-bold text-white mb-2">
-              Stay Updated
+              Get Launch Updates
             </h3>
             <p className="text-blue-100">
-              Get the latest updates on Coding Party 2026 and community news delivered to your inbox.
+              Be the first to know when OpenLaunch goes live and get exclusive early access to our community.
             </p>
           </div>
           
@@ -157,15 +157,13 @@ export function CallToAction() {
           className="text-center mt-12"
         >
           <p className="text-blue-100 mb-4">
-            Trusted by developers from leading companies
+            Building the future of open-source collaboration
           </p>
           <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
-            {/* Company logos would go here */}
-            <div className="text-white font-semibold">Google</div>
-            <div className="text-white font-semibold">Microsoft</div>
-            <div className="text-white font-semibold">Meta</div>
-            <div className="text-white font-semibold">Netflix</div>
-            <div className="text-white font-semibold">Spotify</div>
+            <div className="text-white font-semibold">Launching 2026</div>
+            <div className="text-white font-semibold">Community Driven</div>
+            <div className="text-white font-semibold">Open Source</div>
+            <div className="text-white font-semibold">Global Impact</div>
           </div>
         </motion.div>
       </div>

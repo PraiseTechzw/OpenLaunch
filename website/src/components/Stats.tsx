@@ -4,24 +4,24 @@ import { motion } from 'framer-motion'
 
 const stats = [
   {
-    name: 'Active Contributors',
-    value: '500+',
-    description: 'Developers, designers, and creators from around the world',
+    name: 'Contributors',
+    value: '1+',
+    description: 'Growing community of developers and creators',
   },
   {
-    name: 'Projects Launched',
-    value: '12',
-    description: 'Production-ready applications serving real users',
+    name: 'GitHub Stars',
+    value: '0+',
+    description: 'Star us on GitHub to show your support!',
   },
   {
-    name: 'Countries Represented',
-    value: '25+',
-    description: 'Global community spanning multiple continents',
+    name: 'Days Active',
+    value: '0+',
+    description: 'Just launched - be part of our founding community',
   },
   {
     name: 'Lines of Code',
-    value: '100K+',
-    description: 'Open source code contributed by the community',
+    value: '1K+',
+    description: 'Foundation built, ready for contributions',
   },
 ]
 
@@ -37,11 +37,11 @@ export function Stats() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Growing Together
+              Just Getting Started
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our community continues to grow as more developers discover the power of 
-              collaborative innovation through our annual Coding Party initiatives.
+              OpenLaunch is launching in 2026! Be part of our founding community and help 
+              shape the future of collaborative software development from day one.
             </p>
           </motion.div>
         </div>
