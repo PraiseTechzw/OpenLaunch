@@ -10,10 +10,10 @@ interface LogoProps {
 }
 
 const sizeClasses = {
-  sm: { width: 24, height: 24 },
-  md: { width: 32, height: 32 }, 
-  lg: { width: 48, height: 48 },
-  xl: { width: 64, height: 64 }
+  sm: { width: 32, height: 32 },
+  md: { width: 48, height: 48 }, 
+  lg: { width: 64, height: 64 },
+  xl: { width: 80, height: 80 }
 }
 
 export function Logo({ className = '', size = 'md', variant = 'full' }: LogoProps) {
@@ -23,7 +23,7 @@ export function Logo({ className = '', size = 'md', variant = 'full' }: LogoProp
     <div className={`relative ${className}`}>
       <Image
         src="/logo.png"
-        alt="OpenLaunch Logo"
+        alt="OpenLaunch"
         width={width}
         height={height}
         className="object-contain"
@@ -49,10 +49,6 @@ export function Logo({ className = '', size = 'md', variant = 'full' }: LogoProp
     return <LogoText textSize={size === 'sm' ? 'text-lg' : size === 'lg' ? 'text-2xl' : size === 'xl' ? 'text-3xl' : 'text-xl'} />
   }
 
-  return (
-    <div className="flex items-center space-x-3">
-      <LogoIcon />
-      <LogoText textSize={size === 'sm' ? 'text-lg' : size === 'lg' ? 'text-2xl' : size === 'xl' ? 'text-3xl' : 'text-xl'} />
-    </div>
-  )
+  // Since the logo SVG already contains the text, just return the icon
+  return <LogoIcon />
 }

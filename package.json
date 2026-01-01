@@ -23,7 +23,8 @@
     "release:minor": "npm version minor && git push && git push --tags",
     "release:major": "npm version major && git push && git push --tags",
     "release:manual": "node scripts/release.js",
-    "fix-vercel": "node scripts/fix-vercel-deployment.js"
+    "fix-vercel": "node scripts/fix-vercel-deployment.js",
+    "generate-og": "node scripts/generate-og-image.js"
   },
   "keywords": [
     "open-source",

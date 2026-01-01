@@ -80,7 +80,7 @@ export function Navigation() {
             <div className="flex justify-between h-16">
               <div className="flex items-center">
                 <Link href="/" className="flex items-center hover:opacity-80 transition-all duration-300 hover:scale-105">
-                  <Logo size="md" />
+                  <Logo size="lg" />
                 </Link>
               </div>
 
