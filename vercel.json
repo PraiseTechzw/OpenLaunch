@@ -1,25 +1,6 @@
 {
-  "version": 2,
-  "name": "openlaunch",
-  "builds": [
-    {
-      "src": "website/package.json",
-      "use": "@vercel/next",
-      "config": {
-        "distDir": ".next"
-      }
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/website/$1"
-    }
-  ],
-  "functions": {
-    "website/src/app/**": {
-      "includeFiles": "website/**"
-    }
-  },
-  "outputDirectory": "website/.next"
+  "buildCommand": "cd website && npm run build",
+  "outputDirectory": "website/.next",
+  "installCommand": "npm install && cd website && npm install",
+  "framework": "nextjs"
 }

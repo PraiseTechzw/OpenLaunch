@@ -1,0 +1,18 @@
+[build]
+  base = "website"
+  command = "npm run build"
+  publish = "website/.next"
+
+[build.environment]
+  NODE_VERSION = "18"
+  NPM_VERSION = "9"
+
+[[redirects]]
+  from = "/docs"
+  to = "/docs/onboarding"
+  status = 301
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
