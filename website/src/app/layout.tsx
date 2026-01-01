@@ -12,6 +12,23 @@ export const metadata: Metadata = {
   description: 'A collaborative innovation lab where developers, designers, and creators build real-world software in public through our annual Coding Party initiatives.',
   keywords: ['open source', 'collaboration', 'coding party', 'developers', 'innovation'],
   authors: [{ name: 'OpenLaunch Community' }],
+  creator: 'OpenLaunch Community',
+  publisher: 'PraiseTech',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico', sizes: '32x32' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180' },
+    ],
+  },
+  manifest: '/site.webmanifest',
   openGraph: {
     title: 'OpenLaunch - Collaborative Innovation Lab',
     description: 'Join our annual Coding Party initiatives and build real-world software with a global community.',
@@ -33,6 +50,8 @@ export const metadata: Metadata = {
     title: 'OpenLaunch - Collaborative Innovation Lab',
     description: 'Join our annual Coding Party initiatives and build real-world software with a global community.',
     images: ['/og-image.png'],
+    creator: '@openlaunch',
+    site: '@openlaunch',
   },
   robots: {
     index: true,
@@ -44,6 +63,9 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
+  },
+  verification: {
+    google: 'your-google-verification-code',
   },
 }
 

@@ -2,6 +2,12 @@
   "name": "openlaunch-website",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://openlaunch.praisetech.tech",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PraiseTechzw/OpenLaunch.git",
+    "directory": "website"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",

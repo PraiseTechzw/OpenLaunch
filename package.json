@@ -43,7 +43,7 @@
   "bugs": {
     "url": "https://github.com/PraiseTechzw/OpenLaunch/issues"
   },
-  "homepage": "https://github.com/PraiseTechzw/OpenLaunch#readme",
+  "homepage": "https://openlaunch.praisetech.tech",
   "engines": {
     "node": ">=18.0.0",
     "npm": ">=9.0.0"
