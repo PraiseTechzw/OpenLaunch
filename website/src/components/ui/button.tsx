@@ -39,14 +39,15 @@ export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean
+  loading?: boolean
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, children, ...props }, ref) => {
+  ({ className, variant, size, asChild = false, loading = false, disabled, children, ...props }, ref) => {
     const Comp = asChild ? Slot : "button"
+    const isDisabled = disabled || loading
     
     if (asChild) {
-      // When using asChild, we can't add extra elements, so just return the child
       return (
         <Comp
           className={cn(buttonVariants({ variant, size, className }))}
@@ -62,15 +63,18 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       <Comp
         className={cn(buttonVariants({ variant, size, className }))}
         ref={ref}
+        disabled={isDisabled}
         {...props}
       >
-        {/* Shimmer effect for enhanced buttons */}
-        {(variant === 'default' || variant === 'glow') && (
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-shimmer" />
+        {/* Loading spinner */}
+        {loading && (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" />
+          </div>
         )}
         
-        {/* Content wrapper */}
-        <span className="relative z-10 flex items-center">
+        {/* Content wrapper - hidden when loading */}
+        <span className={cn("flex items-center gap-2", loading && "opacity-0")}>
           {children}
         </span>
       </Comp>

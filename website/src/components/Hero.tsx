@@ -179,7 +179,7 @@ export function Hero() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Button asChild variant="outline" size="lg" className="border-2 border-gray-600 hover:border-primary-400 hover:bg-gray-800 shadow-xl hover:shadow-2xl btn-magnetic glass-card relative overflow-hidden group px-8 py-4 text-gray-300 hover:text-white">
+              <Button asChild variant="secondary" size="lg" className="border-2 border-gray-600 hover:border-primary-400 hover:bg-gray-800 shadow-xl hover:shadow-2xl btn-magnetic glass-card relative overflow-hidden group px-8 py-4 text-gray-300 hover:text-white">
                 <Link
                   href="https://github.com/PraiseTechzw/OpenLaunch"
                   target="_blank"
