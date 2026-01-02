@@ -11,8 +11,8 @@ export function Hero() {
     <div className="relative overflow-hidden min-h-screen flex items-center">
       {/* Enhanced multi-layer background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-blue-50" />
-        <div className="absolute inset-0 bg-gradient-to-tr from-primary-50/30 to-secondary-50/30" />
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-primary-900/30 to-secondary-900/30" />
         <div className="gradient-mesh absolute inset-0" />
       </div>
       
@@ -65,7 +65,7 @@ export function Hero() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-primary-100/80 to-secondary-100/80 border border-primary-200/50 mb-8 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 group"
+              className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-gray-800/80 to-gray-700/80 border border-gray-600/50 mb-8 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 group"
             >
               <motion.div
                 animate={{ rotate: [0, 360] }}
@@ -73,7 +73,7 @@ export function Hero() {
               >
                 <Flame className="w-5 h-5 text-accent-500 mr-3" />
               </motion.div>
-              <span className="text-sm font-semibold text-primary-700">
+              <span className="text-sm font-semibold text-gray-300">
                 <CheckCircle className="w-4 h-4 inline mr-1" />
                 Now Live - Launched January 1st, 2026!
               </span>
@@ -85,7 +85,7 @@ export function Hero() {
             </motion.div>
 
             <motion.h1 
-              className="text-5xl sm:text-6xl lg:text-8xl font-black text-gray-900 mb-8 leading-tight tracking-tight"
+              className="text-5xl sm:text-6xl lg:text-8xl font-black text-white mb-8 leading-tight tracking-tight"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
@@ -137,10 +137,10 @@ export function Hero() {
               </span>
             </motion.h1>
             
-            <p className="text-xl sm:text-2xl text-gray-600 mb-6 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl sm:text-2xl text-gray-300 mb-6 max-w-4xl mx-auto leading-relaxed">
               A collaborative innovation lab where developers, designers, and creators
             </p>
-            <p className="text-xl sm:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl sm:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
               are building the future of{' '}
               <span className="font-semibold bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent">
                 open-source collaboration
@@ -179,7 +179,7 @@ export function Hero() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Button asChild variant="outline" size="lg" className="border-2 border-gray-300 hover:border-primary-300 hover:bg-primary-50 shadow-xl hover:shadow-2xl btn-magnetic glass-card relative overflow-hidden group px-8 py-4">
+              <Button asChild variant="outline" size="lg" className="border-2 border-gray-600 hover:border-primary-400 hover:bg-gray-800 shadow-xl hover:shadow-2xl btn-magnetic glass-card relative overflow-hidden group px-8 py-4 text-gray-300 hover:text-white">
                 <Link
                   href="https://github.com/PraiseTechzw/OpenLaunch"
                   target="_blank"
@@ -204,7 +204,7 @@ export function Hero() {
                       <Star className="ml-2 h-4 w-4" />
                     </motion.div>
                   </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary-50/50 to-secondary-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-gray-700/50 to-gray-600/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </Link>
               </Button>
             </motion.div>
@@ -250,9 +250,9 @@ export function Hero() {
                   rotateY: 5,
                   rotateX: 5,
                 }}
-                className="group relative p-8 glass-card rounded-3xl shadow-2xl hover:shadow-3xl card-3d card-glow cursor-pointer"
+                className="group relative p-8 glass-card rounded-3xl shadow-2xl hover:shadow-3xl card-3d card-glow cursor-pointer bg-gray-800/50 border border-gray-700/50"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-white/90 to-white/60 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-br from-gray-700/90 to-gray-800/60 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative z-10">
                   <div className="flex items-center justify-between mb-6">
                     <motion.div 
@@ -282,13 +282,13 @@ export function Hero() {
                     </motion.div>
                   </div>
                   <motion.h3 
-                    className="text-xl font-bold text-gray-900 mb-4 group-hover:text-primary-600 transition-colors duration-300"
+                    className="text-xl font-bold text-white mb-4 group-hover:text-primary-400 transition-colors duration-300"
                     whileHover={{ x: 5 }}
                   >
                     {feature.title}
                   </motion.h3>
                   <motion.p 
-                    className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300"
+                    className="text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors duration-300"
                     whileHover={{ x: 5 }}
                   >
                     {feature.description}
@@ -329,9 +329,9 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 1.2 }}
-            className="mt-16 pt-8 border-t border-gray-200/50"
+            className="mt-16 pt-8 border-t border-gray-700/50"
           >
-            <p className="text-sm text-gray-500 mb-4">Building the future of collaborative development - Now Live!</p>
+            <p className="text-sm text-gray-400 mb-4">Building the future of collaborative development - Now Live!</p>
             <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
               <motion.div 
                 className="flex items-center space-x-2"
@@ -343,7 +343,7 @@ export function Hero() {
                   transition={{ duration: 1.5, repeat: Infinity }}
                 />
                 <Lock className="w-4 h-4 text-primary-500 mr-1" />
-                <span className="text-sm font-medium text-gray-600">Open Source</span>
+                <span className="text-sm font-medium text-gray-300">Open Source</span>
               </motion.div>
               <motion.div 
                 className="flex items-center space-x-2"
@@ -355,7 +355,7 @@ export function Hero() {
                   transition={{ duration: 1.5, repeat: Infinity, delay: 0.5 }}
                 />
                 <Users className="w-4 h-4 text-secondary-500 mr-1" />
-                <span className="text-sm font-medium text-gray-600">Community Driven</span>
+                <span className="text-sm font-medium text-gray-300">Community Driven</span>
               </motion.div>
               <motion.div 
                 className="flex items-center space-x-2"
@@ -367,7 +367,7 @@ export function Hero() {
                   transition={{ duration: 1.5, repeat: Infinity, delay: 1 }}
                 />
                 <Zap className="w-4 h-4 text-accent-500 mr-1" />
-                <span className="text-sm font-medium text-gray-600">Production Ready</span>
+                <span className="text-sm font-medium text-gray-300">Production Ready</span>
               </motion.div>
             </div>
           </motion.div>

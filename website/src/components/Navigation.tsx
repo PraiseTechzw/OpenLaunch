@@ -33,8 +33,8 @@ export function Navigation() {
     <Disclosure as="nav" className={clsx(
       "sticky top-0 z-50 transition-all duration-300",
       isScrolled 
-        ? "bg-white/95 backdrop-blur-xl border-b border-gray-200/50 shadow-lg" 
-        : "bg-white/80 backdrop-blur-lg border-b border-gray-200/30"
+        ? "bg-gray-900/95 backdrop-blur-xl border-b border-gray-700/50 shadow-lg" 
+        : "bg-gray-900/80 backdrop-blur-lg border-b border-gray-700/30"
     )}>
       {({ open }) => (
         <>
@@ -55,8 +55,8 @@ export function Navigation() {
                     className={clsx(
                       'text-sm font-medium transition-colors duration-200',
                       pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href))
-                        ? 'text-primary-600'
-                        : 'text-gray-700 hover:text-primary-600'
+                        ? 'text-primary-400'
+                        : 'text-gray-300 hover:text-primary-400'
                     )}
                   >
                     {item.name}
@@ -67,7 +67,7 @@ export function Navigation() {
                   href="https://github.com/PraiseTechzw/OpenLaunch"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-4 py-2 text-sm font-medium rounded-lg text-white bg-gray-900 hover:bg-gray-800 transition-colors duration-200"
+                  className="inline-flex items-center px-4 py-2 text-sm font-medium rounded-lg text-white bg-primary-600 hover:bg-primary-700 transition-colors duration-200"
                 >
                   <Github className="w-4 h-4 mr-2" />
                   GitHub
@@ -76,7 +76,7 @@ export function Navigation() {
 
               {/* Mobile menu button */}
               <div className="lg:hidden flex items-center">
-                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-xl text-gray-400 hover:text-gray-500 hover:bg-gradient-to-r hover:from-gray-100 hover:to-primary-50 transition-all duration-300">
+                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-xl text-gray-400 hover:text-gray-300 hover:bg-gray-800 transition-all duration-300">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
                     <XMarkIcon className="block h-6 w-6 transition-transform duration-300 rotate-90" aria-hidden="true" />
@@ -89,8 +89,8 @@ export function Navigation() {
           </div>
 
           {/* Mobile menu */}
-          <Disclosure.Panel className="lg:hidden border-t border-gray-200">
-            <div className="px-2 pt-2 pb-3 space-y-1">
+          <Disclosure.Panel className="lg:hidden border-t border-gray-700">
+            <div className="px-2 pt-2 pb-3 space-y-1 bg-gray-900/95 backdrop-blur-xl">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
@@ -98,8 +98,8 @@ export function Navigation() {
                   className={clsx(
                     'block px-3 py-2 text-base font-medium rounded-md transition-colors duration-200',
                     pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href))
-                      ? 'text-primary-600 bg-primary-50'
-                      : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'
+                      ? 'text-primary-400 bg-gray-800'
+                      : 'text-gray-300 hover:text-primary-400 hover:bg-gray-800'
                   )}
                 >
                   {item.name}
@@ -110,7 +110,7 @@ export function Navigation() {
                 href="https://github.com/PraiseTechzw/OpenLaunch"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center px-3 py-2 text-base font-medium text-white bg-gray-900 hover:bg-gray-800 rounded-md transition-colors duration-200 mt-4"
+                className="flex items-center px-3 py-2 text-base font-medium text-white bg-primary-600 hover:bg-primary-700 rounded-md transition-colors duration-200 mt-4"
               >
                 <Github className="w-5 h-5 mr-2" />
                 GitHub
