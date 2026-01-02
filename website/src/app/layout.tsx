@@ -8,6 +8,8 @@ import { PageTransition } from '@/components/PageTransition'
 import { KeyboardShortcutsButton } from '@/components/KeyboardShortcuts'
 import { generateOrganizationSchema, generateWebsiteSchema } from '@/lib/seo'
 import { StructuredData } from '@/components/StructuredData'
+import { ErrorBoundary } from '@/components/ErrorBoundary'
+import { GlobalErrorHandler } from '@/components/GlobalErrorHandler'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -113,6 +115,9 @@ export default function RootLayout({
         <StructuredData data={generateWebsiteSchema()} />
       </head>
       <body className={`${inter.className} antialiased bg-gray-900 text-white`}>
+        {/* Global Error Handler */}
+        <GlobalErrorHandler />
+        
         {/* Skip links for keyboard navigation */}
         <a href="#main-content" className="skip-link">
           Skip to main content
@@ -123,13 +128,19 @@ export default function RootLayout({
         
         <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 safe-area">
           <RouteLoader />
-          <Navigation />
+          <ErrorBoundary>
+            <Navigation />
+          </ErrorBoundary>
           <main id="main-content" className="relative" role="main" aria-label="Main content">
-            <PageTransition>
-              {children}
-            </PageTransition>
+            <ErrorBoundary>
+              <PageTransition>
+                {children}
+              </PageTransition>
+            </ErrorBoundary>
           </main>
-          <Footer />
+          <ErrorBoundary>
+            <Footer />
+          </ErrorBoundary>
           <KeyboardShortcutsButton />
         </div>
       </body>
