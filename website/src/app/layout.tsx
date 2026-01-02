@@ -1,10 +1,13 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { Navigation } from '@/components/Navigation'
 import { Footer } from '@/components/Footer'
 import { RouteLoader } from '@/components/RouteLoader'
 import { PageTransition } from '@/components/PageTransition'
+import { KeyboardShortcutsButton } from '@/components/KeyboardShortcuts'
+import { generateOrganizationSchema, generateWebsiteSchema } from '@/lib/seo'
+import { StructuredData } from '@/components/StructuredData'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -12,7 +15,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://openlaunch.praisetech.tech'),
   title: 'OpenLaunch - Collaborative Innovation Lab',
   description: 'A collaborative innovation lab where developers, designers, and creators build real-world software in public through our annual Coding Party initiatives.',
-  keywords: ['open source', 'collaboration', 'coding party', 'developers', 'innovation'],
+  keywords: ['open source', 'collaboration', 'coding party', 'developers', 'innovation', 'software development', 'community', 'programming', 'technology', 'hackathon'],
   authors: [{ name: 'OpenLaunch Community' }],
   creator: 'OpenLaunch Community',
   publisher: 'PraiseTech',
@@ -67,8 +70,21 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'your-google-verification-code',
+    google: process.env.GOOGLE_VERIFICATION_CODE,
   },
+  alternates: {
+    canonical: '/',
+  },
+}
+
+// Enhanced mobile viewport configuration
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+  viewportFit: 'cover', // For devices with notches
+  themeColor: '#5865f2',
 }
 
 export default function RootLayout({
@@ -78,16 +94,43 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth dark">
+      <head>
+        {/* Enhanced mobile meta tags */}
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="msapplication-TileColor" content="#5865f2" />
+        
+        {/* Prevent zoom on form inputs on iOS */}
+        <meta name="format-detection" content="telephone=no" />
+        
+        {/* Preconnect to external domains for performance */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        
+        {/* Structured Data */}
+        <StructuredData data={generateOrganizationSchema()} />
+        <StructuredData data={generateWebsiteSchema()} />
+      </head>
       <body className={`${inter.className} antialiased bg-gray-900 text-white`}>
-        <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+        {/* Skip links for keyboard navigation */}
+        <a href="#main-content" className="skip-link">
+          Skip to main content
+        </a>
+        <a href="#main-navigation" className="skip-link">
+          Skip to navigation
+        </a>
+        
+        <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 safe-area">
           <RouteLoader />
           <Navigation />
-          <main className="relative">
+          <main id="main-content" className="relative" role="main" aria-label="Main content">
             <PageTransition>
               {children}
             </PageTransition>
           </main>
           <Footer />
+          <KeyboardShortcutsButton />
         </div>
       </body>
     </html>

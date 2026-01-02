@@ -123,17 +123,51 @@ const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
       // Store the previously focused element
       previousActiveElement.current = document.activeElement as HTMLElement
 
-      // Focus the modal
-      if (modalRef.current) {
-        modalRef.current.focus()
-      }
+      // Focus the modal after a brief delay to ensure it's rendered
+      const timer = setTimeout(() => {
+        if (modalRef.current) {
+          modalRef.current.focus()
+        }
+      }, 100)
 
       return () => {
+        clearTimeout(timer)
         // Restore focus to the previously focused element
         if (previousActiveElement.current) {
           previousActiveElement.current.focus()
         }
       }
+    }, [isOpen])
+
+    // Focus trap
+    React.useEffect(() => {
+      if (!isOpen || !modalRef.current) return
+
+      const modal = modalRef.current
+      const focusableElements = modal.querySelectorAll(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      )
+      const firstElement = focusableElements[0] as HTMLElement
+      const lastElement = focusableElements[focusableElements.length - 1] as HTMLElement
+
+      const handleTabKey = (e: KeyboardEvent) => {
+        if (e.key !== 'Tab') return
+
+        if (e.shiftKey) {
+          if (document.activeElement === firstElement) {
+            e.preventDefault()
+            lastElement?.focus()
+          }
+        } else {
+          if (document.activeElement === lastElement) {
+            e.preventDefault()
+            firstElement?.focus()
+          }
+        }
+      }
+
+      modal.addEventListener('keydown', handleTabKey)
+      return () => modal.removeEventListener('keydown', handleTabKey)
     }, [isOpen])
 
     // Handle overlay click
@@ -156,7 +190,7 @@ const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
           {...props}
         >
           {/* Backdrop */}
-          <div className="absolute inset-0 bg-black/80 backdrop-blur-sm animate-fade-in" />
+          <div className="absolute inset-0 bg-black/80 backdrop-blur-sm animate-fade-in" aria-hidden="true" />
           
           {/* Modal content */}
           <div
@@ -164,6 +198,8 @@ const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
             className={cn(modalContentVariants({ size }))}
             role="dialog"
             aria-modal="true"
+            aria-labelledby="modal-title"
+            aria-describedby="modal-description"
             tabIndex={-1}
           >
             {children}
@@ -215,6 +251,7 @@ const ModalTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <h2
     ref={ref}
+    id="modal-title"
     className={cn(
       "text-heading-2 font-semibold text-discord-text-primary",
       className
@@ -230,6 +267,7 @@ const ModalDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <p
     ref={ref}
+    id="modal-description"
     className={cn(
       "text-small text-discord-text-secondary mt-2",
       className

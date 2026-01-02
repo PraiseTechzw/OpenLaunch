@@ -16,7 +16,13 @@
     "type-check": "tsc --noEmit",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "content:create": "node scripts/content-cli.js create",
+    "content:list": "node scripts/content-cli.js list",
+    "content:validate": "node scripts/content-cli.js validate",
+    "content:nav": "node scripts/content-cli.js nav",
+    "content:bulk-update": "node scripts/content-cli.js bulk-update",
+    "content:help": "node scripts/content-cli.js help"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.17",

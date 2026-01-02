@@ -7,6 +7,23 @@ module.exports = {
   ],
   darkMode: 'class',
   theme: {
+    screens: {
+      // Discord-inspired responsive breakpoints
+      'xs': '475px',    // Extra small devices (large phones)
+      'sm': '640px',    // Small devices (tablets)
+      'md': '768px',    // Medium devices (small laptops)
+      'lg': '1024px',   // Large devices (desktops)
+      'xl': '1280px',   // Extra large devices (large desktops)
+      '2xl': '1536px',  // 2X large devices (larger desktops)
+      '3xl': '1920px',  // 3X large devices (ultra-wide)
+      
+      // Custom breakpoints for specific use cases
+      'mobile': { 'max': '767px' },     // Mobile-only styles
+      'tablet': { 'min': '768px', 'max': '1023px' }, // Tablet-only styles
+      'desktop': { 'min': '1024px' },   // Desktop and up
+      'touch': { 'max': '1023px' },     // Touch devices (mobile + tablet)
+      'no-touch': { 'min': '1024px' },  // Non-touch devices (desktop)
+    },
     extend: {
       colors: {
         // Discord-inspired color system
@@ -154,6 +171,73 @@ module.exports = {
         // Discord-inspired spacing scale
         '18': '4.5rem',
         '88': '22rem',
+        
+        // Enhanced responsive spacing
+        'safe-top': 'env(safe-area-inset-top)',
+        'safe-bottom': 'env(safe-area-inset-bottom)',
+        'safe-left': 'env(safe-area-inset-left)',
+        'safe-right': 'env(safe-area-inset-right)',
+      },
+      
+      // Enhanced container configuration
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: '1rem',
+          xs: '1rem',
+          sm: '1.5rem',
+          md: '2rem',
+          lg: '2.5rem',
+          xl: '3rem',
+          '2xl': '4rem',
+        },
+        screens: {
+          xs: '475px',
+          sm: '640px',
+          md: '768px',
+          lg: '1024px',
+          xl: '1280px',
+          '2xl': '1400px', // Slightly smaller than default for better content width
+        },
+      },
+      
+      // Grid system enhancements
+      gridTemplateColumns: {
+        // Discord-style grid layouts
+        'discord-sidebar': '240px 1fr',
+        'discord-sidebar-collapsed': '72px 1fr',
+        'discord-main': '1fr 300px',
+        'discord-full': 'minmax(0, 1fr)',
+        
+        // Responsive grid patterns
+        'auto-fit-xs': 'repeat(auto-fit, minmax(200px, 1fr))',
+        'auto-fit-sm': 'repeat(auto-fit, minmax(250px, 1fr))',
+        'auto-fit-md': 'repeat(auto-fit, minmax(300px, 1fr))',
+        'auto-fit-lg': 'repeat(auto-fit, minmax(350px, 1fr))',
+        
+        // Card grid layouts
+        'cards-1': 'repeat(1, minmax(0, 1fr))',
+        'cards-2': 'repeat(2, minmax(0, 1fr))',
+        'cards-3': 'repeat(3, minmax(0, 1fr))',
+        'cards-4': 'repeat(4, minmax(0, 1fr))',
+        'cards-auto': 'repeat(auto-fit, minmax(280px, 1fr))',
+      },
+      
+      gridTemplateRows: {
+        // Layout rows
+        'layout': 'auto 1fr auto',
+        'header-main-footer': 'auto 1fr auto',
+        'nav-content': 'auto 1fr',
+      },
+      
+      // Responsive max widths
+      maxWidth: {
+        'discord-content': '1200px',
+        'discord-wide': '1400px',
+        'discord-full': '1600px',
+        'prose-sm': '60ch',
+        'prose-md': '70ch',
+        'prose-lg': '80ch',
       },
       
       borderRadius: {

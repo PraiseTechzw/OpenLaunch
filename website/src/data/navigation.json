@@ -1,0 +1,82 @@
+[
+  {
+    "category": "General",
+    "items": [
+      {
+        "title": "architecture",
+        "href": "/docs/architecture",
+        "order": 0
+      },
+      {
+        "title": "governance",
+        "href": "/docs/governance",
+        "order": 0
+      },
+      {
+        "title": "master-prompt",
+        "href": "/docs/master-prompt",
+        "order": 0
+      },
+      {
+        "title": "onboarding",
+        "href": "/docs/onboarding",
+        "order": 0
+      },
+      {
+        "title": "roadmap",
+        "href": "/docs/roadmap",
+        "order": 0
+      },
+      {
+        "title": "vision",
+        "href": "/docs/vision",
+        "order": 0
+      },
+      {
+        "title": "code-of-conduct",
+        "href": "/docs/code-of-conduct",
+        "order": 0
+      },
+      {
+        "title": "contributors",
+        "href": "/docs/contributors",
+        "order": 0
+      },
+      {
+        "title": "events",
+        "href": "/docs/events",
+        "order": 0
+      },
+      {
+        "title": "design-principles",
+        "href": "/docs/design-principles",
+        "order": 0
+      },
+      {
+        "title": "ui-system",
+        "href": "/docs/ui-system",
+        "order": 0
+      }
+    ]
+  },
+  {
+    "category": "Getting Started",
+    "items": [
+      {
+        "title": "Getting Started with OpenLaunch",
+        "href": "/docs/getting-started",
+        "order": 1
+      }
+    ]
+  },
+  {
+    "category": "Development",
+    "items": [
+      {
+        "title": "Project Structure Guide",
+        "href": "/docs/project-structure",
+        "order": 2
+      }
+    ]
+  }
+]

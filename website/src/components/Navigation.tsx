@@ -10,6 +10,10 @@ import { Logo } from '@/components/ui/logo'
 import { Github } from 'lucide-react'
 import { discordColors } from '@/lib/discord-theme'
 import { useClientNavigation } from '@/hooks/useClientNavigation'
+import { useResponsive } from '@/hooks/useResponsive'
+import { useMobileInteractions } from '@/hooks/useMobileInteractions'
+import { useKeyboardNavigation } from '@/hooks/useKeyboardNavigation'
+import { mobileClasses } from '@/lib/mobile-utils'
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -23,6 +27,30 @@ export function Navigation() {
   const pathname = usePathname()
   const { prefetch } = useClientNavigation()
   const [isScrolled, setIsScrolled] = useState(false)
+  const { isMobile, isTouch } = useResponsive()
+
+  // Mobile interactions
+  const { ref: mobileMenuRef, haptic } = useMobileInteractions({
+    enableRipple: isTouch,
+    enableHaptic: isTouch,
+    optimizeTouchTarget: isTouch,
+  })
+
+  // Keyboard navigation for desktop menu
+  const { containerRef: desktopNavRef } = useKeyboardNavigation({
+    orientation: 'horizontal',
+    enableArrowKeys: true,
+    enableHomeEnd: true,
+    wrap: true,
+  })
+
+  // Keyboard navigation for mobile menu
+  const { containerRef: mobileNavRef } = useKeyboardNavigation({
+    orientation: 'vertical',
+    enableArrowKeys: true,
+    enableHomeEnd: true,
+    wrap: true,
+  })
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,10 +74,23 @@ export function Navigation() {
     return pathname.startsWith(href)
   }
 
+  const handleMobileMenuClick = () => {
+    haptic?.('light')
+  }
+
+  const handleNavItemClick = () => {
+    haptic?.('light')
+  }
+
   return (
     <Disclosure as="nav" 
+      id="main-navigation"
+      role="navigation"
+      aria-label="Main navigation"
       className={clsx(
         "sticky top-0 z-50 transition-all duration-300",
+        // Enhanced mobile support with safe area
+        mobileClasses.safeTop,
         isScrolled 
           ? "backdrop-blur-xl border-b shadow-lg" 
           : "backdrop-blur-lg border-b"
@@ -68,26 +109,39 @@ export function Navigation() {
               <div className="flex items-center">
                 <Link 
                   href="/" 
-                  className="flex items-center transition-all duration-200 hover:scale-105"
+                  className={clsx(
+                    "flex items-center transition-all duration-200",
+                    // Enhanced mobile touch target
+                    isTouch ? mobileClasses.touchTarget : "hover:scale-105"
+                  )}
                   style={{
                     color: discordColors.text.primary
                   }}
+                  onClick={handleNavItemClick}
+                  aria-label="OpenLaunch home"
                 >
                   <Logo size="lg" variant="navigation" />
                 </Link>
               </div>
 
               {/* Desktop navigation */}
-              <div className="hidden lg:flex items-center space-x-2">
+              <div 
+                ref={desktopNavRef}
+                className="hidden lg:flex items-center space-x-2" 
+                role="menubar"
+                aria-label="Main navigation"
+              >
                 {navigation.map((item) => {
                   const isActive = isActiveRoute(item.href)
                   return (
                     <Link
                       key={item.name}
                       href={item.href}
+                      role="menuitem"
+                      aria-current={isActive ? 'page' : undefined}
                       className={clsx(
                         'relative px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200',
-                        'hover:scale-105 active:scale-95'
+                        'hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-discord-brand-primary focus-visible:ring-offset-2'
                       )}
                       style={{
                         color: isActive 
@@ -109,6 +163,7 @@ export function Navigation() {
                           e.currentTarget.style.color = discordColors.text.secondary
                         }
                       }}
+                      onClick={handleNavItemClick}
                     >
                       {isActive && (
                         <div 
@@ -116,6 +171,7 @@ export function Navigation() {
                           style={{
                             backgroundColor: discordColors.brand.primary,
                           }}
+                          aria-hidden="true"
                         />
                       )}
                       {item.name}
@@ -128,7 +184,8 @@ export function Navigation() {
                     href="https://github.com/PraiseTechzw/OpenLaunch"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 hover:scale-105 active:scale-95"
+                    aria-label="View OpenLaunch on GitHub (opens in new tab)"
+                    className="inline-flex items-center px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-discord-brand-primary focus-visible:ring-offset-2"
                     style={{
                       color: discordColors.text.primary,
                       backgroundColor: discordColors.brand.primary,
@@ -139,30 +196,45 @@ export function Navigation() {
                     onMouseLeave={(e) => {
                       e.currentTarget.style.backgroundColor = discordColors.brand.primary
                     }}
+                    onClick={handleNavItemClick}
                   >
-                    <Github className="w-4 h-4 mr-2" />
+                    <Github className="w-4 h-4 mr-2" aria-hidden="true" />
                     GitHub
                   </Link>
                 </div>
               </div>
 
-              {/* Mobile menu button */}
+              {/* Enhanced mobile menu button */}
               <div className="lg:hidden flex items-center">
                 <Disclosure.Button 
-                  className="inline-flex items-center justify-center p-2 rounded-lg transition-all duration-200 hover:scale-105 active:scale-95"
+                  ref={mobileMenuRef}
+                  aria-label={open ? "Close main menu" : "Open main menu"}
+                  aria-expanded={open}
+                  className={clsx(
+                    "inline-flex items-center justify-center rounded-lg transition-all duration-200",
+                    // Enhanced mobile interactions
+                    mobileClasses.touchTarget,
+                    isTouch ? mobileClasses.touchFeedback : "hover:scale-105 active:scale-95",
+                    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-discord-brand-primary focus-visible:ring-offset-2"
+                  )}
                   style={{
                     color: discordColors.text.secondary,
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = discordColors.background.modifier.hover
-                    e.currentTarget.style.color = discordColors.text.primary
+                    if (!isTouch) {
+                      e.currentTarget.style.backgroundColor = discordColors.background.modifier.hover
+                      e.currentTarget.style.color = discordColors.text.primary
+                    }
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = 'transparent'
-                    e.currentTarget.style.color = discordColors.text.secondary
+                    if (!isTouch) {
+                      e.currentTarget.style.backgroundColor = 'transparent'
+                      e.currentTarget.style.color = discordColors.text.secondary
+                    }
                   }}
+                  onClick={handleMobileMenuClick}
                 >
-                  <span className="sr-only">Open main menu</span>
+                  <span className="sr-only">{open ? "Close main menu" : "Open main menu"}</span>
                   <Transition
                     show={!open}
                     enter="transition-all duration-200"
@@ -190,7 +262,7 @@ export function Navigation() {
             </div>
           </div>
 
-          {/* Mobile menu */}
+          {/* Enhanced mobile menu */}
           <Transition
             enter="transition duration-200 ease-out"
             enterFrom="transform scale-95 opacity-0"
@@ -200,22 +272,37 @@ export function Navigation() {
             leaveTo="transform scale-95 opacity-0"
           >
             <Disclosure.Panel 
-              className="lg:hidden border-t"
+              className={clsx(
+                "lg:hidden border-t",
+                // Enhanced mobile scrolling
+                mobileClasses.scrollable,
+                mobileClasses.safeBottom
+              )}
               style={{
                 borderTopColor: `${discordColors.interactive.normal}80`,
                 backgroundColor: `${discordColors.background.secondary}f8`, // 97% opacity
               }}
             >
-              <div className="px-4 pt-4 pb-6 space-y-2">
+              <nav 
+                ref={mobileNavRef}
+                className="px-4 pt-4 pb-6 space-y-2" 
+                role="menu" 
+                aria-label="Mobile navigation menu"
+              >
                 {navigation.map((item) => {
                   const isActive = isActiveRoute(item.href)
                   return (
                     <Link
                       key={item.name}
                       href={item.href}
+                      role="menuitem"
+                      aria-current={isActive ? 'page' : undefined}
                       className={clsx(
-                        'relative flex items-center px-4 py-3 text-base font-medium rounded-lg transition-all duration-200',
-                        'active:scale-95'
+                        'relative flex items-center text-base font-medium rounded-lg transition-all duration-200',
+                        // Enhanced mobile touch interactions
+                        mobileClasses.touchTarget,
+                        isTouch ? mobileClasses.touchFeedback : 'active:scale-95',
+                        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-discord-brand-primary focus-visible:ring-offset-2'
                       )}
                       style={{
                         color: isActive 
@@ -224,21 +311,24 @@ export function Navigation() {
                         backgroundColor: isActive 
                           ? discordColors.background.modifier.selected
                           : 'transparent',
+                        // Enhanced padding for mobile
+                        padding: isMobile ? '12px 16px' : '8px 16px',
                       }}
                       onTouchStart={(e) => {
-                        if (!isActive) {
+                        if (!isActive && isTouch) {
                           e.currentTarget.style.backgroundColor = discordColors.background.modifier.hover
                           e.currentTarget.style.color = discordColors.text.primary
                         }
                       }}
                       onTouchEnd={(e) => {
-                        if (!isActive) {
+                        if (!isActive && isTouch) {
                           setTimeout(() => {
                             e.currentTarget.style.backgroundColor = 'transparent'
                             e.currentTarget.style.color = discordColors.text.secondary
                           }, 150)
                         }
                       }}
+                      onClick={handleNavItemClick}
                     >
                       {isActive && (
                         <div 
@@ -246,6 +336,7 @@ export function Navigation() {
                           style={{
                             backgroundColor: discordColors.brand.primary,
                           }}
+                          aria-hidden="true"
                         />
                       )}
                       {item.name}
@@ -253,30 +344,47 @@ export function Navigation() {
                   )
                 })}
                 
-                <div className="pt-4 mt-4 border-t" style={{ borderColor: discordColors.interactive.normal }}>
+                <div 
+                  className="pt-4 mt-4 border-t" 
+                  style={{ borderColor: discordColors.interactive.normal }}
+                >
                   <Link
                     href="https://github.com/PraiseTechzw/OpenLaunch"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center px-4 py-3 text-base font-medium rounded-lg transition-all duration-200 active:scale-95"
+                    aria-label="View OpenLaunch on GitHub (opens in new tab)"
+                    className={clsx(
+                      "flex items-center text-base font-medium rounded-lg transition-all duration-200",
+                      // Enhanced mobile touch interactions
+                      mobileClasses.touchTarget,
+                      isTouch ? mobileClasses.touchFeedback : 'active:scale-95',
+                      'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-discord-brand-primary focus-visible:ring-offset-2'
+                    )}
                     style={{
                       color: discordColors.text.primary,
                       backgroundColor: discordColors.brand.primary,
+                      // Enhanced padding for mobile
+                      padding: isMobile ? '12px 16px' : '8px 16px',
                     }}
                     onTouchStart={(e) => {
-                      e.currentTarget.style.backgroundColor = `${discordColors.brand.primary}e6`
+                      if (isTouch) {
+                        e.currentTarget.style.backgroundColor = `${discordColors.brand.primary}e6`
+                      }
                     }}
                     onTouchEnd={(e) => {
-                      setTimeout(() => {
-                        e.currentTarget.style.backgroundColor = discordColors.brand.primary
-                      }, 150)
+                      if (isTouch) {
+                        setTimeout(() => {
+                          e.currentTarget.style.backgroundColor = discordColors.brand.primary
+                        }, 150)
+                      }
                     }}
+                    onClick={handleNavItemClick}
                   >
-                    <Github className="w-5 h-5 mr-3" />
+                    <Github className="w-5 h-5 mr-3" aria-hidden="true" />
                     GitHub
                   </Link>
                 </div>
-              </div>
+              </nav>
             </Disclosure.Panel>
           </Transition>
         </>

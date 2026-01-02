@@ -7,6 +7,7 @@ import { BookOpenIcon, RocketLaunchIcon, CogIcon, PaintBrushIcon } from '@heroic
 import { discordColors } from '@/lib/discord-theme'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
+import { useKeyboardNavigation } from '@/hooks/useKeyboardNavigation'
 
 const documentationSections = [
   {
@@ -51,6 +52,14 @@ const quickLinks = [
 export default function DocsPage() {
   const [searchQuery, setSearchQuery] = useState('')
 
+  // Keyboard navigation for quick links
+  const { containerRef: quickLinksRef } = useKeyboardNavigation({
+    orientation: 'both',
+    enableArrowKeys: true,
+    enableHomeEnd: true,
+    wrap: true,
+  })
+
   const filteredSections = documentationSections.map(section => ({
     ...section,
     links: section.links.filter(link => 
@@ -67,11 +76,12 @@ export default function DocsPage() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
+        <header className="text-center mb-16">
           <div className="flex items-center justify-center mb-6">
             <BookOpenIcon 
               className="w-12 h-12 mr-4" 
               style={{ color: discordColors.brand.primary }}
+              aria-hidden="true"
             />
             <h1 
               className="text-4xl font-bold"
@@ -93,6 +103,7 @@ export default function DocsPage() {
               <MagnifyingGlassIcon 
                 className="h-5 w-5" 
                 style={{ color: discordColors.text.muted }}
+                aria-hidden="true"
               />
             </div>
             <input
@@ -112,25 +123,31 @@ export default function DocsPage() {
               onBlur={(e) => {
                 e.target.style.boxShadow = `0 0 0 2px transparent`
               }}
+              aria-label="Search documentation"
             />
           </div>
-        </div>
+        </header>
 
         {/* Quick Links */}
         {searchQuery === '' && (
-          <div className="mb-12">
+          <section className="mb-12">
             <h2 
               className="text-lg font-semibold mb-4"
               style={{ color: discordColors.text.primary }}
             >
               Quick Links
             </h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div 
+              ref={quickLinksRef}
+              className="grid grid-cols-2 md:grid-cols-4 gap-4"
+              role="grid"
+              aria-label="Quick navigation links"
+            >
               {quickLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="group p-4 rounded-lg border transition-all duration-200 hover:scale-105"
+                  className="group p-4 rounded-lg border transition-all duration-200 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-discord-brand-primary focus-visible:ring-offset-2"
                   style={{
                     backgroundColor: discordColors.background.secondary,
                     borderColor: discordColors.interactive.normal,
@@ -143,6 +160,7 @@ export default function DocsPage() {
                     e.currentTarget.style.backgroundColor = discordColors.background.secondary
                     e.currentTarget.style.borderColor = discordColors.interactive.normal
                   }}
+                  aria-describedby={`${link.name.toLowerCase().replace(/\s+/g, '-')}-desc`}
                 >
                   <h3 
                     className="font-medium mb-1 group-hover:text-discord-brand-primary transition-colors"
@@ -151,6 +169,7 @@ export default function DocsPage() {
                     {link.name}
                   </h3>
                   <p 
+                    id={`${link.name.toLowerCase().replace(/\s+/g, '-')}-desc`}
                     className="text-xs"
                     style={{ color: discordColors.text.muted }}
                   >
@@ -159,11 +178,11 @@ export default function DocsPage() {
                 </Link>
               ))}
             </div>
-          </div>
+          </section>
         )}
 
         {/* Documentation Sections */}
-        <div className="grid gap-8 md:gap-12">
+        <main className="grid gap-8 md:gap-12">
           {filteredSections.map((section) => (
             <Card key={section.title} variant="elevated" className="p-8">
               <CardHeader className="p-0 mb-6">
@@ -174,10 +193,12 @@ export default function DocsPage() {
                       backgroundColor: `${discordColors.brand.primary}20`,
                       color: discordColors.brand.primary 
                     }}
+                    aria-hidden="true"
                   >
                     {section.icon}
                   </div>
                   <CardTitle 
+                    as="h2"
                     className="text-2xl"
                     style={{ color: discordColors.text.primary }}
                   >
@@ -190,12 +211,12 @@ export default function DocsPage() {
               </CardHeader>
               
               <CardContent className="p-0">
-                <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+                <nav className="grid gap-4 md:grid-cols-2 lg:grid-cols-3" aria-label={`${section.title} navigation`}>
                   {section.links.map((link) => (
                     <Link
                       key={link.name}
                       href={link.href}
-                      className="group p-4 rounded-lg border transition-all duration-200 hover:scale-105"
+                      className="group p-4 rounded-lg border transition-all duration-200 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-discord-brand-primary focus-visible:ring-offset-2"
                       style={{
                         backgroundColor: discordColors.background.primary,
                         borderColor: discordColors.interactive.normal,
@@ -208,6 +229,7 @@ export default function DocsPage() {
                         e.currentTarget.style.backgroundColor = discordColors.background.primary
                         e.currentTarget.style.borderColor = discordColors.interactive.normal
                       }}
+                      aria-describedby={`${link.name.toLowerCase().replace(/\s+/g, '-')}-section-desc`}
                     >
                       <div className="flex items-center justify-between mb-2">
                         <h3 
@@ -219,9 +241,11 @@ export default function DocsPage() {
                         <ChevronRightIcon 
                           className="w-4 h-4 group-hover:text-discord-brand-primary transition-colors" 
                           style={{ color: discordColors.text.muted }}
+                          aria-hidden="true"
                         />
                       </div>
                       <p 
+                        id={`${link.name.toLowerCase().replace(/\s+/g, '-')}-section-desc`}
                         className="text-sm"
                         style={{ color: discordColors.text.secondary }}
                       >
@@ -229,11 +253,11 @@ export default function DocsPage() {
                       </p>
                     </Link>
                   ))}
-                </div>
+                </nav>
               </CardContent>
             </Card>
           ))}
-        </div>
+        </main>
 
         {/* Call to Action */}
         <Card 
