@@ -1,9 +1,6 @@
 import * as React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
-import { useMobileInteractions } from "@/hooks/useMobileInteractions"
-import { useResponsive } from "@/hooks/useResponsive"
-import { mobileClasses } from "@/lib/mobile-utils"
 
 const cardVariants = cva(
   "rounded-discord-lg border-0 text-discord-text-primary shadow-discord-elevation-low transition-all duration-200",
@@ -24,78 +21,41 @@ const cardVariants = cva(
 
 export interface CardProps
   extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof cardVariants> {
-  // Mobile interaction props
-  enableRipple?: boolean
-  enableHaptic?: boolean
-  rippleColor?: string
-}
+    VariantProps<typeof cardVariants> {}
 
 const Card = React.forwardRef<HTMLDivElement, CardProps>(
-  ({ className, variant, enableRipple, enableHaptic, rippleColor, onClick, ...props }, ref) => {
-    const { isTouch } = useResponsive()
+  ({ className, variant, onClick, ...props }, ref) => {
     const isInteractive = variant === 'interactive' || onClick
-    
-    // Auto-enable mobile features for interactive cards on touch devices
-    const shouldEnableRipple = enableRipple ?? (isInteractive && isTouch)
-    const shouldEnableHaptic = enableHaptic ?? (isInteractive && isTouch)
-    
-    const { ref: mobileRef, haptic } = useMobileInteractions({
-      enableRipple: shouldEnableRipple,
-      rippleColor: rippleColor || 'rgba(88, 101, 242, 0.2)',
-      enableHaptic: shouldEnableHaptic,
-      optimizeTouchTarget: false, // Cards don't need touch target optimization
-    })
 
     const handleClick = React.useCallback((e: React.MouseEvent<HTMLDivElement>) => {
-      if (isInteractive && shouldEnableHaptic) {
-        haptic?.('light')
-      }
       onClick?.(e)
-    }, [onClick, isInteractive, shouldEnableHaptic, haptic])
+    }, [onClick])
 
-    // Combine refs
-    const combinedRef = React.useCallback((element: HTMLDivElement | null) => {
-      if (typeof ref === 'function') {
-        ref(element)
-      } else if (ref) {
-        ref.current = element
-      }
-      
-      if (isInteractive) {
-        mobileRef(element)
-      }
-    }, [ref, mobileRef, isInteractive])
-
-    // Add proper semantic attributes for interactive cards
-    const semanticProps = isInteractive ? {
-      role: onClick ? 'button' : 'article',
-      tabIndex: onClick ? 0 : undefined,
-      'aria-pressed': onClick ? false : undefined,
-      onKeyDown: onClick ? (e: React.KeyboardEvent) => {
+    // Only add interactive props if the card is actually interactive
+    const interactiveProps = isInteractive && onClick ? {
+      role: 'button',
+      tabIndex: 0,
+      'aria-pressed': false,
+      onClick: handleClick,
+      onKeyDown: (e: React.KeyboardEvent) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault()
           handleClick(e as any)
         }
-      } : undefined,
+      },
     } : {
       role: 'article'
     }
 
     return (
       <div
-        ref={combinedRef}
+        ref={ref}
         className={cn(
           cardVariants({ variant, className }),
-          isInteractive && isTouch && [
-            mobileClasses.touchFeedback,
-            shouldEnableRipple && mobileClasses.rippleEffect,
-          ],
           // Add focus styles for interactive cards
-          isInteractive && 'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-discord-brand-primary focus-visible:ring-offset-2'
+          isInteractive && onClick && 'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-discord-brand-primary focus-visible:ring-offset-2'
         )}
-        onClick={isInteractive ? handleClick : onClick}
-        {...semanticProps}
+        {...interactiveProps}
         {...props}
       />
     )

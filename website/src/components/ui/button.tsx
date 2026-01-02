@@ -2,9 +2,6 @@ import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
-import { useMobileInteractions } from "@/hooks/useMobileInteractions"
-import { useResponsive } from "@/hooks/useResponsive"
-import { mobileClasses } from "@/lib/mobile-utils"
 
 const buttonVariants = cva(
   "inline-flex items-center justify-center whitespace-nowrap rounded-discord text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-discord-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-discord-background-primary disabled:pointer-events-none disabled:opacity-50 relative overflow-hidden group",
@@ -48,10 +45,6 @@ export interface ButtonProps
     VariantProps<typeof buttonVariants> {
   asChild?: boolean
   loading?: boolean
-  // Mobile interaction props
-  enableRipple?: boolean
-  enableHaptic?: boolean
-  rippleColor?: string
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
@@ -63,90 +56,32 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     loading = false, 
     disabled, 
     children,
-    enableRipple,
-    enableHaptic,
-    rippleColor,
     onClick,
     ...props 
   }, ref) => {
     const Comp = asChild ? Slot : "button"
     const isDisabled = disabled || loading
-    const { isTouch, isMobile } = useResponsive()
-    
-    // Auto-enable mobile features on touch devices
-    const shouldEnableRipple = enableRipple ?? isTouch
-    const shouldEnableHaptic = enableHaptic ?? isTouch
-    
-    // Auto-adjust size for mobile devices
-    const adjustedSize = React.useMemo(() => {
-      if (isMobile && size && !size.toString().startsWith('mobile-')) {
-        switch (size) {
-          case 'sm': return 'mobile-sm'
-          case 'default': return 'mobile-default'
-          case 'lg': return 'mobile-lg'
-          case 'icon': return 'mobile-icon'
-          default: return size
-        }
-      }
-      return size
-    }, [isMobile, size])
-
-    const { ref: mobileRef, haptic } = useMobileInteractions({
-      enableRipple: shouldEnableRipple && !isDisabled,
-      rippleColor: rippleColor || (variant === 'primary' ? 'rgba(255, 255, 255, 0.3)' : 'rgba(88, 101, 242, 0.3)'),
-      enableHaptic: shouldEnableHaptic && !isDisabled,
-      optimizeTouchTarget: isTouch,
-    })
 
     const handleClick = React.useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
       if (isDisabled) return
-      
-      // Trigger haptic feedback on touch devices
-      if (shouldEnableHaptic) {
-        haptic?.('light')
-      }
-      
-      // Call original onClick handler
       onClick?.(e)
-    }, [onClick, shouldEnableHaptic, haptic, isDisabled])
-
-    // Combine refs
-    const combinedRef = React.useCallback((element: HTMLButtonElement | null) => {
-      // Set the forwarded ref
-      if (typeof ref === 'function') {
-        ref(element)
-      } else if (ref) {
-        ref.current = element
-      }
-      
-      // Set the mobile interactions ref
-      if (!asChild) {
-        mobileRef(element)
-      }
-    }, [ref, mobileRef, asChild])
+    }, [onClick, isDisabled])
 
     // Generate ARIA attributes
     const ariaProps = {
       'aria-disabled': isDisabled,
       'aria-busy': loading,
       ...(loading && { 'aria-label': `${props['aria-label'] || 'Button'} - Loading` }),
-      ...props
     }
     
     if (asChild) {
       return (
         <Comp
-          className={cn(
-            buttonVariants({ variant, size: adjustedSize, className }),
-            // Add mobile-specific classes for touch devices
-            isTouch && [
-              mobileClasses.touchFeedback,
-              shouldEnableRipple && mobileClasses.rippleEffect,
-            ]
-          )}
+          className={cn(buttonVariants({ variant, size, className }))}
           ref={ref}
           onClick={handleClick}
           {...ariaProps}
+          {...props}
         >
           {children}
         </Comp>
@@ -155,19 +90,13 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     
     return (
       <Comp
-        className={cn(
-          buttonVariants({ variant, size: adjustedSize, className }),
-          // Add mobile-specific classes for touch devices
-          isTouch && [
-            mobileClasses.touchFeedback,
-            shouldEnableRipple && mobileClasses.rippleEffect,
-          ]
-        )}
-        ref={combinedRef}
+        className={cn(buttonVariants({ variant, size, className }))}
+        ref={ref}
         disabled={isDisabled}
         onClick={handleClick}
         type={props.type || 'button'}
         {...ariaProps}
+        {...props}
       >
         {/* Loading spinner */}
         {loading && (

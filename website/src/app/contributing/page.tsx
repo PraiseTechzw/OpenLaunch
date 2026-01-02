@@ -1,4 +1,6 @@
-import { Metadata } from 'next'
+'use client'
+
+import { useEffect } from 'react'
 import Link from 'next/link'
 import { 
   CodeBracketIcon, 
@@ -17,12 +19,15 @@ import {
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 
-export const metadata: Metadata = {
-  title: 'Contributing - OpenLaunch',
-  description: 'Learn how to contribute to the OpenLaunch project and join our community of developers building the future of collaborative software development.',
-}
-
 export default function ContributingPage() {
+  // Set metadata for client component
+  useEffect(() => {
+    document.title = 'Contributing - OpenLaunch'
+    const metaDescription = document.querySelector('meta[name="description"]')
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Learn how to contribute to the OpenLaunch project and join our community of developers building the future of collaborative software development.')
+    }
+  }, [])
   const contributionTypes = [
     {
       title: 'Code Contributions',
