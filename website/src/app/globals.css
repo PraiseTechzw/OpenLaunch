@@ -576,6 +576,246 @@ body {
   }
 }
 
+/* Discord Animation Keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes fadeInDown {
+  from { 
+    opacity: 0; 
+    transform: translateY(-20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes fadeInLeft {
+  from { 
+    opacity: 0; 
+    transform: translateX(-20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateX(0); 
+  }
+}
+
+@keyframes fadeInRight {
+  from { 
+    opacity: 0; 
+    transform: translateX(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateX(0); 
+  }
+}
+
+@keyframes scaleIn {
+  from { 
+    opacity: 0; 
+    transform: scale(0.9); 
+  }
+  to { 
+    opacity: 1; 
+    transform: scale(1); 
+  }
+}
+
+@keyframes scaleOut {
+  from { 
+    opacity: 1; 
+    transform: scale(1); 
+  }
+  to { 
+    opacity: 0; 
+    transform: scale(0.9); 
+  }
+}
+
+@keyframes discordBounce {
+  0%, 20%, 53%, 80%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  40%, 43% {
+    transform: translate3d(0, -8px, 0);
+  }
+  70% {
+    transform: translate3d(0, -4px, 0);
+  }
+  90% {
+    transform: translate3d(0, -2px, 0);
+  }
+}
+
+@keyframes discordPulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes discordGlow {
+  0%, 100% {
+    box-shadow: 0 0 5px var(--discord-brand-primary);
+  }
+  50% {
+    box-shadow: 0 0 20px var(--discord-brand-primary), 0 0 30px var(--discord-brand-primary);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Animation utility classes */
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out both;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.4s ease-out both;
+}
+
+.animate-fade-in-down {
+  animation: fadeInDown 0.4s ease-out both;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.3s ease-out both;
+}
+
+.animate-slide-in-up {
+  animation: slideInUp 0.4s ease-out both;
+}
+
+.animate-slide-in-down {
+  animation: slideInDown 0.4s ease-out both;
+}
+
+.animate-discord-bounce {
+  animation: discordBounce 1s ease-in-out both;
+}
+
+.animate-discord-pulse {
+  animation: discordPulse 2s ease-in-out infinite;
+}
+
+.animate-discord-glow {
+  animation: discordGlow 2s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 1.5s linear infinite;
+}
+
+/* Stagger animation utilities */
+.stagger-fade-in > * {
+  opacity: 0;
+  animation: fadeInUp 0.4s ease-out both;
+}
+
+.stagger-fade-in > *:nth-child(1) { animation-delay: 0ms; }
+.stagger-fade-in > *:nth-child(2) { animation-delay: 100ms; }
+.stagger-fade-in > *:nth-child(3) { animation-delay: 200ms; }
+.stagger-fade-in > *:nth-child(4) { animation-delay: 300ms; }
+.stagger-fade-in > *:nth-child(5) { animation-delay: 400ms; }
+.stagger-fade-in > *:nth-child(6) { animation-delay: 500ms; }
+.stagger-fade-in > *:nth-child(7) { animation-delay: 600ms; }
+.stagger-fade-in > *:nth-child(8) { animation-delay: 700ms; }
+.stagger-fade-in > *:nth-child(9) { animation-delay: 800ms; }
+.stagger-fade-in > *:nth-child(n+10) { animation-delay: 900ms; }
+
+.stagger-scale-in > * {
+  opacity: 0;
+  transform: scale(0.9);
+  animation: scaleIn 0.3s ease-out both;
+}
+
+.stagger-scale-in > *:nth-child(1) { animation-delay: 0ms; }
+.stagger-scale-in > *:nth-child(2) { animation-delay: 150ms; }
+.stagger-scale-in > *:nth-child(3) { animation-delay: 300ms; }
+.stagger-scale-in > *:nth-child(4) { animation-delay: 450ms; }
+.stagger-scale-in > *:nth-child(5) { animation-delay: 600ms; }
+.stagger-scale-in > *:nth-child(6) { animation-delay: 750ms; }
+
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -585,5 +825,25 @@ body {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+  
+  .animate-fade-in,
+  .animate-fade-in-up,
+  .animate-fade-in-down,
+  .animate-scale-in,
+  .animate-slide-in-up,
+  .animate-slide-in-down,
+  .animate-discord-bounce,
+  .animate-discord-pulse,
+  .animate-discord-glow,
+  .animate-shimmer {
+    animation: none !important;
+  }
+  
+  .stagger-fade-in > *,
+  .stagger-scale-in > * {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
