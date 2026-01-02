@@ -21,7 +21,7 @@ export interface GitHubContributor {
   contributions: number;
 }
 
-interface GitHubStats {
+export interface GitHubStats {
   stars: number;
   forks: number;
   contributors: number;

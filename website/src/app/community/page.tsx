@@ -11,7 +11,7 @@ import {
   CodeBracketIcon,
   StarIcon,
   EyeIcon,
-  GitBranchIcon
+  ArrowPathIcon
 } from '@heroicons/react/24/outline'
 import { discord } from '@/lib/discord-utils'
 import { getRepoStats, fallbackStats } from '@/lib/github'
@@ -146,7 +146,7 @@ export default function CommunityPage() {
           
           <div className={discord.getCardClasses('default', 'text-center')}>
             <div className="flex items-center justify-center mb-2">
-              <GitBranchIcon className="w-6 h-6 text-discord-brand-primary mr-2" />
+              <ArrowPathIcon className="w-6 h-6 text-discord-brand-primary mr-2" />
               <span className={discord.getTypographyClasses('heading2', 'text-discord-text-primary')}>
                 {loading ? '...' : stats.forks}
               </span>
