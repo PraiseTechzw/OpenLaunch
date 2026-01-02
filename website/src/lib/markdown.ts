@@ -206,7 +206,7 @@ export function getDocSlugs(): string[] {
     }
   })
   
-  return [...new Set(slugs)] // Remove duplicates
+  return Array.from(new Set(slugs)) // Remove duplicates
 }
 
 // Search functionality

@@ -78,12 +78,7 @@ export default function Error({
               backgroundColor: discordColors.brand.primary,
               color: discordColors.text.primary,
             }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = `${discordColors.brand.primary}e6`
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = discordColors.brand.primary
-            }}
+
           >
             <ArrowPathIcon className="w-4 h-4 mr-2" />
             Try Again
@@ -97,12 +92,7 @@ export default function Error({
               color: discordColors.text.primary,
               backgroundColor: 'transparent',
             }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = discordColors.background.modifier.hover
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = 'transparent'
-            }}
+
           >
             Go Home
           </Link>
@@ -122,12 +112,7 @@ export default function Error({
             rel="noopener noreferrer"
             className="text-sm font-medium transition-colors duration-200 hover:underline"
             style={{ color: discordColors.text.link }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.color = discordColors.brand.primary
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.color = discordColors.text.link
-            }}
+
           >
             Report this issue on GitHub
           </Link>

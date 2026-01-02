@@ -51,14 +51,6 @@ export default function NotFound() {
               backgroundColor: discordColors.background.secondary,
               borderColor: discordColors.interactive.normal,
             }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = discordColors.background.elevated
-              e.currentTarget.style.borderColor = discordColors.brand.primary
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = discordColors.background.secondary
-              e.currentTarget.style.borderColor = discordColors.interactive.normal
-            }}
           >
             <HomeIcon 
               className="w-8 h-8 mx-auto mb-3 group-hover:scale-110 transition-transform"
@@ -85,14 +77,6 @@ export default function NotFound() {
               backgroundColor: discordColors.background.secondary,
               borderColor: discordColors.interactive.normal,
             }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = discordColors.background.elevated
-              e.currentTarget.style.borderColor = discordColors.brand.primary
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = discordColors.background.secondary
-              e.currentTarget.style.borderColor = discordColors.interactive.normal
-            }}
           >
             <DocumentTextIcon 
               className="w-8 h-8 mx-auto mb-3 group-hover:scale-110 transition-transform"
@@ -118,14 +102,6 @@ export default function NotFound() {
             style={{
               backgroundColor: discordColors.background.secondary,
               borderColor: discordColors.interactive.normal,
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = discordColors.background.elevated
-              e.currentTarget.style.borderColor = discordColors.brand.primary
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = discordColors.background.secondary
-              e.currentTarget.style.borderColor = discordColors.interactive.normal
             }}
           >
             <UserGroupIcon 
@@ -182,12 +158,6 @@ export default function NotFound() {
                   backgroundColor: `${discordColors.brand.primary}20`,
                   color: discordColors.brand.primary,
                 }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = `${discordColors.brand.primary}30`
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = `${discordColors.brand.primary}20`
-                }}
               >
                 {link.label}
               </Link>
@@ -215,12 +185,6 @@ export default function NotFound() {
             className="inline-flex items-center px-6 py-3 bg-white font-semibold rounded-discord transition-all duration-200 hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-discord-brand-primary"
             style={{ 
               color: discordColors.brand.primary,
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = '#f8f9fa'
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = 'white'
             }}
           >
             Get Help
