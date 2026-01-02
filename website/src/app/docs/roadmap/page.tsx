@@ -353,8 +353,8 @@ export default function RoadmapPage() {
                   color: selectedCategory === category.id 
                     ? category.color 
                     : discordColors.text.secondary,
-                  ringColor: category.color
-                }}
+                  '--tw-ring-color': category.color
+                } as React.CSSProperties}
               >
                 {category.name}
               </button>
@@ -379,8 +379,8 @@ export default function RoadmapPage() {
                   isSelected ? "ring-2" : ""
                 )}
                 style={{
-                  ringColor: isSelected ? discordColors.brand.primary : 'transparent'
-                }}
+                  '--tw-ring-color': isSelected ? discordColors.brand.primary : 'transparent'
+                } as React.CSSProperties}
                 onClick={() => setSelectedPhase(isSelected ? null : phase.id)}
               >
                 <div className="flex items-start justify-between">

@@ -10,6 +10,8 @@
 import React from 'react'
 import { discord } from '@/lib/discord-utils'
 import { discordTheme } from '@/lib/discord-theme'
+import { ModalDemo } from '@/components/ui/modal-demo'
+import { LoadingDemo } from '@/components/ui/loading-demo'
 
 export function DiscordTestComponent() {
   return (
@@ -227,6 +229,23 @@ export function DiscordTestComponent() {
               <div className="w-full h-12 bg-discord-interactive-hover rounded-discord"></div>
               <div className="w-full h-12 bg-discord-interactive-active rounded-discord"></div>
             </div>
+          </div>
+        </section>
+
+        {/* Advanced Components Test */}
+        <section className="space-y-8">
+          <h2 className={discord.getTypographyClasses('heading2')}>
+            Advanced Components
+          </h2>
+          
+          {/* Modal Components */}
+          <div className="space-y-4">
+            <ModalDemo />
+          </div>
+          
+          {/* Loading Components */}
+          <div className="space-y-4">
+            <LoadingDemo />
           </div>
         </section>
       </div>

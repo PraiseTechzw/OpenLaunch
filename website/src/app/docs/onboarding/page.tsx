@@ -249,8 +249,8 @@ export default function OnboardingPage() {
                     backgroundColor: activeStep === step.id 
                       ? discordColors.background.modifier.selected
                       : discordColors.background.secondary,
-                    ringColor: discordColors.brand.primary,
-                  }}
+                    '--tw-ring-color': discordColors.brand.primary,
+                  } as React.CSSProperties}
                 >
                   <div className="flex items-center mb-2">
                     <span style={{ color: discordColors.brand.primary }}>
@@ -296,8 +296,8 @@ export default function OnboardingPage() {
               activeStep === step.id ? "ring-2" : ""
             )}
             style={{
-              ringColor: activeStep === step.id ? discordColors.brand.primary : 'transparent'
-            }}
+              '--tw-ring-color': activeStep === step.id ? discordColors.brand.primary : 'transparent'
+            } as React.CSSProperties}
           >
             <CardHeader>
               <div className="flex items-center">

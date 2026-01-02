@@ -174,8 +174,8 @@ This implementation plan transforms the OpenLaunch website into a Discord-inspir
     - Include project-specific setup guides
     - _Requirements: 6.4_
 
-- [-] 8. Implement Advanced Components
-  - [-] 8.1 Create Modal and Overlay system
+- [x] 8. Implement Advanced Components
+  - [x] 8.1 Create Modal and Overlay system
     - Build reusable Modal component with backdrop
     - Add keyboard and click-outside dismissal
     - Implement focus management and accessibility
@@ -185,7 +185,7 @@ This implementation plan transforms the OpenLaunch website into a Discord-inspir
     - **Property 11: Modal Component Functionality**
     - **Validates: Requirements 7.4**
 
-  - [ ] 8.3 Build Loading and Skeleton components
+  - [x] 8.3 Build Loading and Skeleton components
     - Create Discord-style loading spinners
     - Implement skeleton loaders for content
     - Add loading states for async operations
@@ -195,7 +195,7 @@ This implementation plan transforms the OpenLaunch website into a Discord-inspir
     - **Property 12: Loading State Display**
     - **Validates: Requirements 7.5, 9.5**
 
-- [ ] 9. Checkpoint - Core Components Complete
+- [-] 9. Checkpoint - Core Components Complete
   - Ensure all core components render correctly
   - Verify Discord styling consistency across components
   - Test responsive behavior on different screen sizes
