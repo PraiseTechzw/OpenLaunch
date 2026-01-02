@@ -139,7 +139,7 @@ This implementation plan transforms the OpenLaunch website into a Discord-inspir
     - Implement RSVP functionality
     - _Requirements: 5.1, 5.2, 5.6_
 
-  - [-]* 6.2 Write property test for event display
+  - [x]* 6.2 Write property test for event display
     - **Property 13: Event Display Consistency**
     - **Validates: Requirements 5.2, 5.6**
 
@@ -161,21 +161,21 @@ This implementation plan transforms the OpenLaunch website into a Discord-inspir
     - Include meetup group integration
     - _Requirements: 5.5_
 
-- [ ] 7. Create Contributing Hub
-  - [ ] 7.1 Build contributing guidelines (`/contributing`)
+- [x] 7. Create Contributing Hub
+  - [x] 7.1 Build contributing guidelines (`/contributing`)
     - Create comprehensive contribution guide
     - Add different contribution types with examples
     - Include beginner-friendly opportunity highlights
     - _Requirements: 6.1, 6.2, 6.3, 6.5_
 
-  - [ ] 7.2 Add resource links and tools
+  - [x] 7.2 Add resource links and tools
     - Create curated list of development tools
     - Add links to relevant documentation and tutorials
     - Include project-specific setup guides
     - _Requirements: 6.4_
 
-- [ ] 8. Implement Advanced Components
-  - [ ] 8.1 Create Modal and Overlay system
+- [-] 8. Implement Advanced Components
+  - [-] 8.1 Create Modal and Overlay system
     - Build reusable Modal component with backdrop
     - Add keyboard and click-outside dismissal
     - Implement focus management and accessibility
