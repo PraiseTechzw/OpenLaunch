@@ -120,7 +120,7 @@ export function Navigation() {
                   onClick={handleNavItemClick}
                   aria-label="OpenLaunch home"
                 >
-                  <Logo size="lg" variant="navigation" />
+                  <Logo size="xl" variant="navigation" />
                 </Link>
               </div>
 
