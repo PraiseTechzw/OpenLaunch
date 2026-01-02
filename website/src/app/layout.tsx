@@ -3,6 +3,8 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import { Navigation } from '@/components/Navigation'
 import { Footer } from '@/components/Footer'
+import { RouteLoader } from '@/components/RouteLoader'
+import { PageTransition } from '@/components/PageTransition'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -78,9 +80,12 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth dark">
       <body className={`${inter.className} antialiased bg-gray-900 text-white`}>
         <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+          <RouteLoader />
           <Navigation />
           <main className="relative">
-            {children}
+            <PageTransition>
+              {children}
+            </PageTransition>
           </main>
           <Footer />
         </div>

@@ -1,3 +1,6 @@
+'use client'
+
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { 
   ChatBubbleLeftRightIcon,
@@ -5,8 +8,14 @@ import {
   CalendarDaysIcon,
   DocumentTextIcon,
   HeartIcon,
-  CodeBracketIcon
+  CodeBracketIcon,
+  StarIcon,
+  EyeIcon,
+  GitBranchIcon
 } from '@heroicons/react/24/outline'
+import { discord } from '@/lib/discord-utils'
+import { getRepoStats, fallbackStats } from '@/lib/github'
+import type { GitHubStats } from '@/lib/github'
 
 const communityLinks = [
   {
@@ -25,7 +34,7 @@ const communityLinks = [
   {
     name: 'Events',
     description: 'Upcoming community events, coding parties, and meetups',
-    href: '/community/events',
+    href: '/events',
     icon: CalendarDaysIcon,
   },
   {
@@ -41,53 +50,123 @@ const contributionAreas = [
     title: 'Frontend Development',
     description: 'Build user interfaces with React, Next.js, and modern web technologies',
     skills: ['React', 'TypeScript', 'Tailwind CSS', 'Next.js'],
-    color: 'bg-blue-500',
+    color: 'bg-discord-brand-primary',
   },
   {
     title: 'Backend Development',
     description: 'Create APIs, services, and data management solutions',
     skills: ['Node.js', 'Python', 'PostgreSQL', 'Docker'],
-    color: 'bg-green-500',
+    color: 'bg-discord-status-success',
   },
   {
     title: 'AI & Machine Learning',
     description: 'Integrate AI capabilities and build intelligent features',
     skills: ['Python', 'TensorFlow', 'OpenAI API', 'LangChain'],
-    color: 'bg-purple-500',
+    color: 'bg-discord-brand-accent',
   },
   {
     title: 'Design & UX',
     description: 'Create beautiful, accessible, and user-friendly experiences',
     skills: ['Figma', 'Design Systems', 'Accessibility', 'User Research'],
-    color: 'bg-pink-500',
+    color: 'bg-discord-status-warning',
   },
   {
     title: 'Documentation',
     description: 'Help others learn and contribute through clear documentation',
     skills: ['Technical Writing', 'Markdown', 'Tutorials', 'API Docs'],
-    color: 'bg-yellow-500',
+    color: 'bg-discord-text-link',
   },
   {
     title: 'DevOps & Infrastructure',
     description: 'Build and maintain development and deployment infrastructure',
     skills: ['Docker', 'CI/CD', 'AWS', 'Monitoring'],
-    color: 'bg-indigo-500',
+    color: 'bg-discord-interactive-normal',
   },
 ]
 
 export default function CommunityPage() {
+  const [stats, setStats] = useState<GitHubStats>(fallbackStats)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    async function fetchStats() {
+      try {
+        const data = await getRepoStats()
+        setStats(data)
+      } catch (error) {
+        console.warn('Failed to fetch GitHub stats, using fallback data:', error)
+        setStats(fallbackStats)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchStats()
+  }, [])
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-discord-background-primary">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          <h1 className={discord.getTypographyClasses('display', 'mb-6')}>
             Join Our Community
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className={discord.getTypographyClasses('body', 'text-discord-text-secondary max-w-3xl mx-auto text-lg')}>
             Connect with developers, designers, and creators from around the world. 
             Together, we're building the future of open-source collaboration.
           </p>
+        </div>
+
+        {/* Community Statistics */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+          <div className={discord.getCardClasses('default', 'text-center')}>
+            <div className="flex items-center justify-center mb-2">
+              <StarIcon className="w-6 h-6 text-discord-brand-accent mr-2" />
+              <span className={discord.getTypographyClasses('heading2', 'text-discord-text-primary')}>
+                {loading ? '...' : stats.stars}
+              </span>
+            </div>
+            <p className={discord.getTypographyClasses('small', 'text-discord-text-muted')}>
+              GitHub Stars
+            </p>
+          </div>
+          
+          <div className={discord.getCardClasses('default', 'text-center')}>
+            <div className="flex items-center justify-center mb-2">
+              <UserGroupIcon className="w-6 h-6 text-discord-status-success mr-2" />
+              <span className={discord.getTypographyClasses('heading2', 'text-discord-text-primary')}>
+                {loading ? '...' : stats.contributors}
+              </span>
+            </div>
+            <p className={discord.getTypographyClasses('small', 'text-discord-text-muted')}>
+              Contributors
+            </p>
+          </div>
+          
+          <div className={discord.getCardClasses('default', 'text-center')}>
+            <div className="flex items-center justify-center mb-2">
+              <GitBranchIcon className="w-6 h-6 text-discord-brand-primary mr-2" />
+              <span className={discord.getTypographyClasses('heading2', 'text-discord-text-primary')}>
+                {loading ? '...' : stats.forks}
+              </span>
+            </div>
+            <p className={discord.getTypographyClasses('small', 'text-discord-text-muted')}>
+              Forks
+            </p>
+          </div>
+          
+          <div className={discord.getCardClasses('default', 'text-center')}>
+            <div className="flex items-center justify-center mb-2">
+              <EyeIcon className="w-6 h-6 text-discord-text-link mr-2" />
+              <span className={discord.getTypographyClasses('heading2', 'text-discord-text-primary')}>
+                {loading ? '...' : stats.commits}
+              </span>
+            </div>
+            <p className={discord.getTypographyClasses('small', 'text-discord-text-muted')}>
+              Total Commits
+            </p>
+          </div>
         </div>
 
         {/* Community Links */}
@@ -98,17 +177,17 @@ export default function CommunityPage() {
               href={link.href}
               target={link.external ? '_blank' : undefined}
               rel={link.external ? 'noopener noreferrer' : undefined}
-              className="group bg-white rounded-2xl shadow-sm border border-gray-200 p-6 hover:shadow-md hover:border-primary-300 transition-all duration-200"
+              className={discord.getCardClasses('interactive', 'group')}
             >
               <div className="flex items-center mb-4">
-                <div className="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center group-hover:bg-primary-200 transition-colors">
-                  <link.icon className="w-5 h-5 text-primary-600" />
+                <div className="w-10 h-10 bg-discord-background-modifier-accent rounded-discord flex items-center justify-center group-hover:bg-discord-brand-primary transition-colors duration-200">
+                  <link.icon className="w-5 h-5 text-discord-text-primary" />
                 </div>
-                <h3 className="ml-3 font-semibold text-gray-900 group-hover:text-primary-700">
+                <h3 className={discord.getTypographyClasses('heading3', 'ml-3 text-discord-text-primary group-hover:text-discord-brand-primary transition-colors duration-200')}>
                   {link.name}
                 </h3>
               </div>
-              <p className="text-gray-600 text-sm">
+              <p className={discord.getTypographyClasses('small', 'text-discord-text-secondary')}>
                 {link.description}
               </p>
             </Link>
@@ -118,10 +197,10 @@ export default function CommunityPage() {
         {/* Contribution Areas */}
         <div className="mb-16">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className={discord.getTypographyClasses('heading1', 'text-discord-text-primary mb-4')}>
               Ways to Contribute
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className={discord.getTypographyClasses('body', 'text-discord-text-secondary max-w-2xl mx-auto')}>
               Whether you're a beginner or an expert, there's a place for you in our community. 
               Find your area of interest and start contributing today.
             </p>
@@ -131,22 +210,22 @@ export default function CommunityPage() {
             {contributionAreas.map((area) => (
               <div
                 key={area.title}
-                className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow duration-200"
+                className={discord.getCardClasses('default', 'group hover:bg-discord-background-elevated transition-colors duration-200')}
               >
                 <div className="flex items-center mb-4">
                   <div className={`w-3 h-3 ${area.color} rounded-full mr-3`} />
-                  <h3 className="font-semibold text-gray-900">
+                  <h3 className={discord.getTypographyClasses('heading3', 'text-discord-text-primary')}>
                     {area.title}
                   </h3>
                 </div>
-                <p className="text-gray-600 mb-4 text-sm">
+                <p className={discord.getTypographyClasses('small', 'text-discord-text-secondary mb-4')}>
                   {area.description}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {area.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-md"
+                      className="px-2 py-1 bg-discord-background-modifier-hover text-discord-text-muted text-xs rounded-discord"
                     >
                       {skill}
                     </span>
@@ -158,19 +237,19 @@ export default function CommunityPage() {
         </div>
 
         {/* Getting Started */}
-        <div className="bg-gradient-to-r from-primary-600 to-secondary-600 rounded-2xl p-8 text-white">
+        <div className={discord.getCardClasses('elevated', 'bg-gradient-to-r from-discord-brand-primary to-discord-brand-secondary')}>
           <div className="text-center">
-            <h2 className="text-2xl font-bold mb-4">
+            <h2 className={discord.getTypographyClasses('heading1', 'text-white mb-4')}>
               Ready to Get Started?
             </h2>
-            <p className="text-primary-100 mb-6 max-w-2xl mx-auto">
+            <p className={discord.getTypographyClasses('body', 'text-discord-text-primary opacity-90 mb-6 max-w-2xl mx-auto')}>
               Join thousands of contributors building amazing open-source projects. 
               Start with our onboarding guide and make your first contribution today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/docs/onboarding"
-                className="inline-flex items-center px-6 py-3 bg-white text-primary-600 font-semibold rounded-lg hover:bg-gray-50 transition-colors"
+                className={discord.getButtonClasses('secondary', 'md', 'bg-white text-discord-brand-primary hover:bg-gray-100')}
               >
                 <DocumentTextIcon className="w-5 h-5 mr-2" />
                 Read Onboarding Guide
@@ -179,7 +258,7 @@ export default function CommunityPage() {
                 href="https://github.com/PraiseTechzw/OpenLaunch"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-6 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-primary-600 transition-colors"
+                className={discord.getButtonClasses('ghost', 'md', 'border-2 border-white text-white hover:bg-white hover:text-discord-brand-primary')}
               >
                 <CodeBracketIcon className="w-5 h-5 mr-2" />
                 View on GitHub
