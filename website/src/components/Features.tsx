@@ -1,5 +1,6 @@
 'use client'
 
+import React from 'react'
 import { motion } from 'framer-motion'
 import { 
   CodeBracketIcon, 
@@ -164,7 +165,9 @@ export function Features() {
                             delay: index * 0.3
                           }}
                         >
-                          {feature.emoji}
+                          {React.createElement(feature.iconSymbol, { 
+                            className: "w-8 h-8 text-white" 
+                          })}
                         </motion.span>
                         {/* Glow effect */}
                         <div className={`absolute left-0 top-0 w-16 h-16 bg-gradient-to-br ${feature.gradient} rounded-2xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500`} />

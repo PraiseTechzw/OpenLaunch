@@ -2,443 +2,317 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Enhanced CSS Variables with Logo-Inspired Color Palette */
+/* Discord-Inspired Design System CSS Variables */
 :root {
-  /* Green (from logo left bracket) */
-  --primary-50: #f0fdf4;
-  --primary-100: #dcfce7;
-  --primary-200: #bbf7d0;
-  --primary-300: #86efac;
-  --primary-400: #4ade80;
-  --primary-500: #22c55e;
-  --primary-600: #16a34a;
-  --primary-700: #15803d;
-  --primary-800: #166534;
-  --primary-900: #14532d;
+  /* Discord Background Colors */
+  --discord-bg-primary: #36393f;
+  --discord-bg-secondary: #2f3136;
+  --discord-bg-tertiary: #202225;
+  --discord-bg-elevated: #40444b;
+  --discord-bg-floating: #18191c;
   
-  /* Cyan/Turquoise (from logo right bracket and PARTY text) */
-  --secondary-50: #ecfeff;
-  --secondary-100: #cffafe;
-  --secondary-200: #a5f3fc;
-  --secondary-300: #67e8f9;
-  --secondary-400: #22d3ee;
-  --secondary-500: #06b6d4;
-  --secondary-600: #0891b2;
-  --secondary-700: #0e7490;
-  --secondary-800: #155e75;
-  --secondary-900: #164e63;
-
-  /* Orange/Yellow (from rocket flame and 2026 text) */
-  --accent-50: #fff7ed;
-  --accent-100: #ffedd5;
-  --accent-200: #fed7aa;
-  --accent-300: #fdba74;
-  --accent-400: #fb923c;
-  --accent-500: #f97316;
-  --accent-600: #ea580c;
-  --accent-700: #c2410c;
-  --accent-800: #9a3412;
-  --accent-900: #7c2d12;
-
-  /* Enhanced accent colors from logo */
-  --accent-purple: #a855f7;
-  --accent-pink: #ec4899;
-  --accent-emerald: #10b981;
-  --accent-orange: #f97316;
+  /* Discord Text Colors */
+  --discord-text-primary: #ffffff;
+  --discord-text-secondary: #b9bbbe;
+  --discord-text-muted: #72767d;
+  --discord-text-link: #00b0f4;
+  --discord-text-positive: #3ba55c;
+  --discord-text-warning: #faa61a;
+  --discord-text-danger: #ed4245;
   
-  /* shadcn/ui CSS variables */
+  /* Discord Brand Colors */
+  --discord-brand-primary: #5865f2;
+  --discord-brand-secondary: #3ba55c;
+  --discord-brand-accent: #faa61a;
+  
+  /* Discord Interactive Colors */
+  --discord-interactive-normal: #4f545c;
+  --discord-interactive-hover: #40444b;
+  --discord-interactive-active: #36393f;
+  --discord-interactive-muted: #2f3136;
+  
+  /* Discord Status Colors */
+  --discord-status-success: #3ba55c;
+  --discord-status-warning: #faa61a;
+  --discord-status-error: #ed4245;
+  --discord-status-info: #00b0f4;
+  
+  /* Discord Modifier Colors */
+  --discord-modifier-hover: rgba(79, 84, 92, 0.16);
+  --discord-modifier-active: rgba(79, 84, 92, 0.24);
+  --discord-modifier-selected: rgba(79, 84, 92, 0.32);
+  --discord-modifier-accent: rgba(88, 101, 242, 0.1);
+  
+  /* Light mode overrides */
   --background: 0 0% 100%;
   --foreground: 222.2 84% 4.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
   --muted: 210 40% 98%;
   --muted-foreground: 215.4 16.3% 46.9%;
   --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 222.2 84% 4.9%;
   
-  /* Modern shadows */
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  /* Discord Shadows */
+  --discord-shadow-low: 0 1px 0 rgba(4, 4, 5, 0.2), 0 1.5px 0 rgba(6, 6, 7, 0.05), 0 2px 0 rgba(4, 4, 5, 0.05);
+  --discord-shadow-medium: 0 4px 4px rgba(0, 0, 0, 0.16);
+  --discord-shadow-high: 0 8px 16px rgba(0, 0, 0, 0.16);
   
-  /* Glass morphism */
-  --glass-bg: rgba(255, 255, 255, 0.1);
-  --glass-border: rgba(255, 255, 255, 0.2);
-  --glass-backdrop: blur(16px);
+  /* Discord Border Radius */
+  --discord-radius: 8px;
+  --discord-radius-lg: 12px;
+  --discord-radius-xl: 16px;
+  
+  /* Discord Spacing */
+  --discord-spacing-xs: 4px;
+  --discord-spacing-sm: 8px;
+  --discord-spacing-md: 16px;
+  --discord-spacing-lg: 24px;
+  --discord-spacing-xl: 32px;
+  
+  /* Discord Typography */
+  --discord-font-display: 700 2.5rem/1.2 'Inter', sans-serif;
+  --discord-font-heading-1: 600 2rem/1.25 'Inter', sans-serif;
+  --discord-font-heading-2: 600 1.5rem/1.3 'Inter', sans-serif;
+  --discord-font-heading-3: 600 1.25rem/1.4 'Inter', sans-serif;
+  --discord-font-body: 400 1rem/1.5 'Inter', sans-serif;
+  --discord-font-small: 400 0.875rem/1.4 'Inter', sans-serif;
+  --discord-font-caption: 500 0.75rem/1.3 'Inter', sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --border: 217.2 32.6% 17.5%;
+/* Dark mode Discord theme */
+.dark {
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+  --card: 222.2 84% 4.9%;
+  --card-foreground: 210 40% 98%;
+  --popover: 222.2 84% 4.9%;
+  --popover-foreground: 210 40% 98%;
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 212.7 26.8% 83.9%;
+}
+
+/* Discord Component Base Styles */
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  /* Discord Typography Classes */
+  .discord-text-display {
+    font: var(--discord-font-display);
+  }
+  
+  .discord-text-heading-1 {
+    font: var(--discord-font-heading-1);
+  }
+  
+  .discord-text-heading-2 {
+    font: var(--discord-font-heading-2);
+  }
+  
+  .discord-text-heading-3 {
+    font: var(--discord-font-heading-3);
+  }
+  
+  .discord-text-body {
+    font: var(--discord-font-body);
+  }
+  
+  .discord-text-small {
+    font: var(--discord-font-small);
+  }
+  
+  .discord-text-caption {
+    font: var(--discord-font-caption);
   }
 }
 
-/* Custom Utilities */
-.gradient-text {
-  background: linear-gradient(135deg, var(--primary-500), var(--secondary-500));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+/* Discord Component Utilities */
+@layer components {
+  /* Discord Button Base */
+  .discord-button {
+    @apply inline-flex items-center justify-center rounded-discord px-4 py-2 text-sm font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+  
+  /* Discord Button Variants */
+  .discord-button-primary {
+    @apply discord-button bg-discord-brand-primary text-white hover:bg-opacity-90 focus:ring-discord-brand-primary;
+  }
+  
+  .discord-button-secondary {
+    @apply discord-button bg-discord-interactive-normal text-discord-text-primary hover:bg-discord-interactive-hover focus:ring-discord-interactive-normal;
+  }
+  
+  .discord-button-success {
+    @apply discord-button bg-discord-status-success text-white hover:bg-opacity-90 focus:ring-discord-status-success;
+  }
+  
+  .discord-button-danger {
+    @apply discord-button bg-discord-status-error text-white hover:bg-opacity-90 focus:ring-discord-status-error;
+  }
+  
+  .discord-button-ghost {
+    @apply discord-button bg-transparent text-discord-text-secondary hover:bg-discord-modifier-hover focus:ring-discord-interactive-normal;
+  }
+  
+  /* Discord Card Base */
+  .discord-card {
+    @apply rounded-discord-lg bg-card p-6 shadow-discord border border-border;
+  }
+  
+  .discord-card-elevated {
+    @apply discord-card shadow-discord-lg;
+  }
+  
+  .discord-card-interactive {
+    @apply discord-card transition-all duration-200 hover:shadow-discord-lg hover:-translate-y-1 cursor-pointer;
+  }
+  
+  /* Discord Input Base */
+  .discord-input {
+    @apply w-full rounded-discord border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  
+  /* Discord Navigation */
+  .discord-nav-item {
+    @apply flex items-center px-3 py-2 rounded-discord text-sm font-medium transition-colors duration-200;
+  }
+  
+  .discord-nav-item-active {
+    @apply discord-nav-item bg-discord-modifier-selected text-discord-text-primary;
+  }
+  
+  .discord-nav-item-inactive {
+    @apply discord-nav-item text-discord-text-secondary hover:bg-discord-modifier-hover hover:text-discord-text-primary;
+  }
+  
+  /* Discord Modal */
+  .discord-modal-overlay {
+    @apply fixed inset-0 z-50 bg-black/50 backdrop-blur-sm;
+  }
+  
+  .discord-modal-content {
+    @apply fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-discord-high duration-200 rounded-discord-lg;
+  }
 }
 
-.gradient-bg {
-  background: linear-gradient(135deg, var(--primary-500), var(--secondary-500));
+/* Discord Animation Utilities */
+@layer utilities {
+  .discord-animate-in {
+    @apply animate-fade-in;
+  }
+  
+  .discord-animate-slide-up {
+    @apply animate-slide-in-up;
+  }
+  
+  .discord-animate-slide-down {
+    @apply animate-slide-in-down;
+  }
+  
+  .discord-animate-scale {
+    @apply animate-scale-in;
+  }
+  
+  .discord-animate-bounce {
+    @apply animate-discord-bounce;
+  }
+  
+  /* Discord Hover Effects */
+  .discord-hover-lift {
+    @apply transition-transform duration-200 hover:-translate-y-1;
+  }
+  
+  .discord-hover-glow {
+    @apply transition-shadow duration-200 hover:shadow-discord-lg;
+  }
+  
+  .discord-hover-scale {
+    @apply transition-transform duration-200 hover:scale-105;
+  }
+  
+  /* Discord Focus States */
+  .discord-focus {
+    @apply focus:outline-none focus:ring-2 focus:ring-discord-brand-primary focus:ring-offset-2 focus:ring-offset-background;
+  }
+  
+  /* Discord Loading States */
+  .discord-loading {
+    @apply animate-pulse bg-discord-modifier-hover;
+  }
+  
+  .discord-skeleton {
+    @apply discord-loading rounded-discord h-4 w-full;
+  }
 }
 
-/* Enhanced glassmorphism effects */
-.glass {
-  background: var(--glass-bg);
-  backdrop-filter: var(--glass-backdrop);
-  border: 1px solid var(--glass-border);
-  box-shadow: var(--shadow-lg);
-}
-
-.glass-dark {
-  background: rgba(0, 0, 0, 0.1);
-  backdrop-filter: var(--glass-backdrop);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: var(--shadow-xl);
-}
-
-.glass-card {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-}
-
-/* Modern gradient backgrounds */
-.gradient-mesh {
-  background: 
-    radial-gradient(at 40% 20%, var(--primary-400) 0px, transparent 50%),
-    radial-gradient(at 80% 0%, var(--secondary-400) 0px, transparent 50%),
-    radial-gradient(at 0% 50%, var(--accent-500) 0px, transparent 50%),
-    radial-gradient(at 80% 50%, var(--accent-purple) 0px, transparent 50%),
-    radial-gradient(at 0% 100%, var(--primary-500) 0px, transparent 50%),
-    radial-gradient(at 80% 100%, var(--accent-500) 0px, transparent 50%);
-  filter: blur(100px) saturate(150%);
-  opacity: 0.15;
-}
-
-.gradient-orb {
-  background: conic-gradient(from 0deg, var(--primary-500), var(--secondary-500), var(--accent-500), var(--primary-500));
-  border-radius: 50%;
-  filter: blur(40px);
-  opacity: 0.3;
-}
-
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Custom scrollbar */
+/* Enhanced scrollbar with Discord styling */
 ::-webkit-scrollbar {
   width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: var(--discord-bg-secondary);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, var(--primary-500), var(--secondary-500));
+  background: var(--discord-interactive-normal);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, var(--primary-600), var(--secondary-600));
+  background: var(--discord-interactive-hover);
 }
 
-/* Enhanced focus styles */
-.focus-visible:focus-visible {
-  outline: 2px solid var(--primary-500);
+::-webkit-scrollbar-corner {
+  background: var(--discord-bg-secondary);
+}
+
+/* Discord-style text selection */
+::selection {
+  background-color: var(--discord-brand-primary);
+  color: white;
+}
+
+::-moz-selection {
+  background-color: var(--discord-brand-primary);
+  color: white;
+}
+
+/* Discord-style focus indicators */
+.discord-focus-visible:focus-visible {
+  outline: 2px solid var(--discord-brand-primary);
   outline-offset: 2px;
-  border-radius: 8px;
+  border-radius: var(--discord-radius);
 }
 
-/* Enhanced animation utilities */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-@keyframes glow {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
-  }
-  50% {
-    box-shadow: 0 0 30px rgba(59, 130, 246, 0.6);
-  }
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
-}
-
-@keyframes pulse-glow {
-  0%, 100% {
-    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
-  }
-  70% {
-    box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
-  }
-}
-
-@keyframes rotate-gradient {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes bounce-in {
-  0% {
-    transform: scale(0.3);
-    opacity: 0;
-  }
-  50% {
-    transform: scale(1.05);
-  }
-  70% {
-    transform: scale(0.9);
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-@keyframes slide-up {
-  from {
-    transform: translateY(100px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes wiggle {
-  0%, 7% {
-    transform: rotateZ(0);
-  }
-  15% {
-    transform: rotateZ(-15deg);
-  }
-  20% {
-    transform: rotateZ(10deg);
-  }
-  25% {
-    transform: rotateZ(-10deg);
-  }
-  30% {
-    transform: rotateZ(6deg);
-  }
-  35% {
-    transform: rotateZ(-4deg);
-  }
-  40%, 100% {
-    transform: rotateZ(0);
-  }
-}
-
-@keyframes heartbeat {
-  0% {
-    transform: scale(1);
-  }
-  14% {
-    transform: scale(1.3);
-  }
-  28% {
-    transform: scale(1);
-  }
-  42% {
-    transform: scale(1.3);
-  }
-  70% {
-    transform: scale(1);
-  }
-}
-
-@keyframes rainbow {
-  0% {
-    filter: hue-rotate(0deg);
-  }
-  100% {
-    filter: hue-rotate(360deg);
-  }
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes blink {
-  from, to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: var(--primary-500);
-  }
-}
-
-.animate-bounce-in {
-  animation: bounce-in 0.6s ease-out;
-}
-
-.animate-slide-up {
-  animation: slide-up 0.8s ease-out;
-}
-
-.animate-wiggle {
-  animation: wiggle 1s ease-in-out;
-}
-
-.animate-heartbeat {
-  animation: heartbeat 1.5s ease-in-out infinite;
-}
-
-.animate-rainbow {
-  animation: rainbow 3s linear infinite;
-}
-
-.animate-typing {
-  animation: typing 3.5s steps(40, end), blink 0.75s step-end infinite;
-}
-
-.animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out;
-}
-
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-
-.animate-glow {
-  animation: glow 2s ease-in-out infinite;
-}
-
-.animate-shimmer {
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-  background-size: 200% 100%;
-  animation: shimmer 2s infinite;
-}
-
-.animate-pulse-glow {
-  animation: pulse-glow 2s infinite;
-}
-
-.animate-rotate-gradient {
-  animation: rotate-gradient 8s linear infinite;
-}
-
-.animate-morphing {
-  animation: morphing 8s ease-in-out infinite;
-}
-
-/* Enhanced button hover effects */
-.btn-hover-lift {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
-}
-
-.btn-hover-lift:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-2xl);
-}
-
-.btn-hover-lift::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.5s;
-}
-
-.btn-hover-lift:hover::before {
-  left: 100%;
-}
-
-.btn-magnetic {
-  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-.btn-magnetic:hover {
-  transform: scale(1.05) translateY(-2px);
-  box-shadow: var(--shadow-2xl);
-}
-
-.btn-glow {
-  position: relative;
-  background: linear-gradient(135deg, var(--primary-600), var(--secondary-600));
-  transition: all 0.3s ease;
-}
-
-.btn-glow::before {
-  content: '';
-  position: absolute;
-  inset: -2px;
-  background: linear-gradient(135deg, var(--primary-600), var(--secondary-600));
-  border-radius: inherit;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: -1;
-  filter: blur(8px);
-}
-
-.btn-glow:hover::before {
-  opacity: 0.7;
-}
-
-/* Code highlighting */
+/* Discord-style code highlighting */
 .prose pre {
-  background-color: #1e293b !important;
-  color: #e2e8f0 !important;
-  border-radius: 12px !important;
-  padding: 1.5rem !important;
+  background-color: var(--discord-bg-secondary) !important;
+  color: var(--discord-text-primary) !important;
+  border-radius: var(--discord-radius-lg) !important;
+  padding: 1rem !important;
+  border: 1px solid var(--discord-interactive-normal) !important;
 }
 
 .prose code {
-  background-color: #f1f5f9 !important;
-  color: #475569 !important;
-  padding: 0.125rem 0.375rem !important;
-  border-radius: 6px !important;
+  background-color: var(--discord-modifier-hover) !important;
+  color: var(--discord-text-primary) !important;
+  padding: 0.125rem 0.25rem !important;
+  border-radius: var(--discord-radius) !important;
   font-size: 0.875em !important;
   font-weight: 500 !important;
 }
@@ -450,272 +324,81 @@ html {
   font-weight: 400 !important;
 }
 
-/* Enhanced card hover effects */
-.card-hover {
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-}
-
-.card-hover:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: var(--shadow-2xl);
-}
-
-.card-3d {
-  transition: all 0.3s ease;
-  transform-style: preserve-3d;
-}
-
-.card-3d:hover {
-  transform: rotateX(5deg) rotateY(5deg) translateY(-10px);
-  box-shadow: 
-    0 35px 80px -15px rgba(0, 0, 0, 0.2),
-    0 25px 50px -12px rgba(0, 0, 0, 0.4);
-}
-
-.card-tilt {
-  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-.card-tilt:hover {
-  transform: perspective(1000px) rotateX(10deg) rotateY(10deg) translateZ(20px);
-  box-shadow: var(--shadow-2xl);
-}
-
-.card-glow {
-  position: relative;
-  overflow: hidden;
-}
-
-.card-glow::before {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  background: linear-gradient(135deg, var(--primary-500), var(--secondary-500), var(--accent-purple));
-  border-radius: inherit;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: -1;
-  filter: blur(20px);
-}
-
-.card-glow:hover::before {
-  opacity: 0.3;
-}
-
-/* Gradient borders */
-.gradient-border {
-  position: relative;
-  background: linear-gradient(135deg, var(--primary-500), var(--secondary-500));
-  padding: 2px;
-  border-radius: 12px;
-}
-
-.gradient-border::before {
-  content: '';
-  position: absolute;
-  inset: 2px;
-  background: white;
-  border-radius: 10px;
-  z-index: -1;
-}
-
-/* Text selection */
-::selection {
-  background-color: var(--primary-200);
-  color: var(--primary-900);
-}
-
-::-moz-selection {
-  background-color: var(--primary-200);
-  color: var(--primary-900);
-}
-
-/* Loading spinner */
-.spinner {
-  border: 2px solid #f3f3f3;
-  border-top: 2px solid var(--primary-500);
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-/* Improved typography */
-.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
-  font-weight: 700;
-  line-height: 1.2;
-}
-
-.prose p {
-  line-height: 1.7;
-}
-
-/* Enhanced link styles */
+/* Discord-style link styling */
 .prose a {
-  color: var(--primary-600) !important;
+  color: var(--discord-text-link) !important;
   text-decoration: none !important;
-  border-bottom: 1px solid transparent !important;
-  transition: all 0.2s ease !important;
+  transition: color 0.2s ease !important;
 }
 
 .prose a:hover {
-  color: var(--primary-700) !important;
-  border-bottom-color: var(--primary-500) !important;
+  color: var(--discord-brand-primary) !important;
+  text-decoration: underline !important;
 }
 
+/* Discord-style typography improvements */
+.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+  color: var(--discord-text-primary) !important;
+  font-weight: 600 !important;
+}
+
+.prose p {
+  color: var(--discord-text-secondary) !important;
+  line-height: 1.6 !important;
+}
+
+.prose ul, .prose ol {
+  color: var(--discord-text-secondary) !important;
+}
+
+.prose blockquote {
+  border-left: 4px solid var(--discord-brand-primary) !important;
+  background-color: var(--discord-modifier-hover) !important;
+  padding: 1rem !important;
+  border-radius: var(--discord-radius) !important;
+  color: var(--discord-text-primary) !important;
+  font-style: normal !important;
+}
+
+/* Discord-style table styling */
+.prose table {
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  border: 1px solid var(--discord-interactive-normal) !important;
+  border-radius: var(--discord-radius-lg) !important;
+  overflow: hidden !important;
+}
+
+.prose th {
+  background-color: var(--discord-bg-elevated) !important;
+  color: var(--discord-text-primary) !important;
+  font-weight: 600 !important;
+  padding: 0.75rem !important;
+  border-bottom: 1px solid var(--discord-interactive-normal) !important;
+}
+
+.prose td {
+  background-color: var(--discord-bg-secondary) !important;
+  color: var(--discord-text-secondary) !important;
+  padding: 0.75rem !important;
+  border-bottom: 1px solid var(--discord-interactive-normal) !important;
+}
+
+.prose tr:last-child td {
+  border-bottom: none !important;
+}
+
+/* Import Inter font */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
+/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
+/* Base body styling */
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f5f9;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 3px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
-}
-
-/* Code highlighting */
-pre {
-  @apply bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto;
-}
-
-code {
-  @apply bg-gray-100 text-gray-800 px-1 py-0.5 rounded text-sm font-mono;
-}
-
-pre code {
-  @apply bg-transparent text-gray-100 p-0;
-}
-
-/* Prose improvements */
-.prose {
-  @apply max-w-none;
-}
-
-.prose h1 {
-  @apply text-3xl font-bold text-gray-900 mb-6;
-}
-
-.prose h2 {
-  @apply text-2xl font-semibold text-gray-900 mt-8 mb-4;
-}
-
-.prose h3 {
-  @apply text-xl font-semibold text-gray-900 mt-6 mb-3;
-}
-
-.prose h4 {
-  @apply text-lg font-semibold text-gray-900 mt-4 mb-2;
-}
-
-.prose p {
-  @apply text-gray-700 leading-relaxed mb-4;
-}
-
-.prose ul {
-  @apply list-disc list-inside mb-4 space-y-1;
-}
-
-.prose ol {
-  @apply list-decimal list-inside mb-4 space-y-1;
-}
-
-.prose li {
-  @apply text-gray-700;
-}
-
-.prose blockquote {
-  @apply border-l-4 border-primary-500 pl-4 italic text-gray-600 my-4;
-}
-
-.prose table {
-  @apply w-full border-collapse border border-gray-300 my-4;
-}
-
-.prose th {
-  @apply bg-gray-50 border border-gray-300 px-4 py-2 text-left font-semibold;
-}
-
-.prose td {
-  @apply border border-gray-300 px-4 py-2;
-}
-
-/* Animation utilities */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fade-in {
-  animation: fadeIn 0.6s ease-out;
-}
-
-@keyframes slideInFromLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.animate-slide-in-left {
-  animation: slideInFromLeft 0.6s ease-out;
-}
-
-/* Gradient text */
-.gradient-text {
-  background: linear-gradient(135deg, #22c55e 0%, #06b6d4 50%, #f97316 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
