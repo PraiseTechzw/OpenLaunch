@@ -60,6 +60,8 @@ git checkout -b feature/your-amazing-idea
 
 ```
 OpenLaunch/
+├── apps/         # Production applications built by the community
+│   └── versify/  # AI-powered poetry generation from images
 ├── frontend/     # Web applications and user interfaces
 ├── backend/      # APIs, services, and data management
 ├── ai/           # Machine learning and AI components
@@ -87,12 +89,24 @@ OpenLaunch/
 4. **Review**: Collaborate on code review and refinement
 5. **Ship**: Celebrate as your work goes live!
 
+## Our First Success: Versify 🎨
+
+We're excited to showcase **Versify**, our first production application built through the OpenLaunch community! Versify is a modern web application that uses artificial intelligence to generate unique poems inspired by your images, built with Next.js and powered by Google's Gemini AI.
+
+🔗 **[Try Versify](https://github.com/PraiseTechzw/versify)** | 🌟 **[Live Demo](https://versify.vercel.app)**
+
+### What Makes Versify Special
+- **AI-Powered Poetry**: Transform your images into beautiful, unique poems
+- **Discord-Inspired UI**: Modern, intuitive interface that users love
+- **Open Source**: Built transparently with community collaboration
+- **Production Ready**: Real users, real impact, real success
+
 ## Current Focus Areas
 
-- **MVP Selection**: Identifying our first production application
-- **Infrastructure**: Setting up scalable development workflows
-- **Community Building**: Growing our contributor base
-- **Documentation**: Creating comprehensive guides and tutorials
+- **Versify Enhancement**: Expanding features and community contributions
+- **Second App Development**: Building on our success with Versify
+- **Community Growth**: Scaling our contributor base
+- **Infrastructure**: Optimizing our collaborative development workflows
 
 ## Community
 

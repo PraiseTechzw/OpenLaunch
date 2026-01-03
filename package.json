@@ -7,7 +7,8 @@
     "website",
     "frontend",
     "backend",
-    "ai"
+    "ai",
+    "apps/*"
   ],
   "scripts": {
     "dev": "npm run dev --workspace=website",
@@ -24,7 +25,11 @@
     "release:major": "npm version major && git push && git push --tags",
     "release:manual": "node scripts/release.js",
     "fix-vercel": "node scripts/fix-vercel-deployment.js",
-    "generate-og": "node scripts/generate-og-image.js"
+    "generate-og": "node scripts/generate-og-image.js",
+    "setup-apps": "chmod +x scripts/setup-apps.sh && ./scripts/setup-apps.sh",
+    "dev:versify": "npm run dev --workspace=apps/versify",
+    "build:versify": "npm run build --workspace=apps/versify",
+    "apps:update": "git submodule update --remote --merge"
   },
   "keywords": [
     "open-source",

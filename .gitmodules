@@ -1,0 +1,3 @@
+[submodule "apps/versify"]
+	path = apps/versify
+	url = https://github.com/PraiseTechzw/versify.git

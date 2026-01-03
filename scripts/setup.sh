@@ -320,7 +320,24 @@ main() {
     setup_docker
     echo ""
     
+    setup_apps
+    echo ""
+    
     show_next_steps
+}
+
+# Setup apps directory
+setup_apps() {
+    log_info "Setting up OpenLaunch apps..."
+    
+    # Run the apps setup script
+    if [ -f "scripts/setup-apps.sh" ]; then
+        chmod +x scripts/setup-apps.sh
+        ./scripts/setup-apps.sh
+        log_success "Apps setup completed ✓"
+    else
+        log_warning "Apps setup script not found, skipping apps setup"
+    fi
 }
 
 # Handle script interruption
