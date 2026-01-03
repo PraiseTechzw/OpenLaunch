@@ -17,9 +17,9 @@ import { mobileClasses } from '@/lib/mobile-utils'
 
 const navigation = [
   { name: 'Home', href: '/' },
+  { name: 'Apps', href: '/#apps' },
   { name: 'Docs', href: '/docs' },
   { name: 'Community', href: '/community' },
-  { name: 'Events', href: '/events' },
   { name: 'Contributing', href: '/contributing' },
 ]
 

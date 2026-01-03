@@ -35,6 +35,12 @@ export function Stats() {
 
   const statsDisplay = [
     {
+      name: 'Apps Built',
+      value: '1',
+      description: 'Versify - our first community success story!',
+      highlight: true,
+    },
+    {
       name: 'Contributors',
       value: loading ? '...' : `${stats.contributors}+`,
       description: 'Growing community of developers and creators',
@@ -45,14 +51,10 @@ export function Stats() {
       description: 'Star us on GitHub to show your support!',
     },
     {
-      name: 'Total Commits',
-      value: loading ? '...' : `${stats.commits}+`,
-      description: 'Commits from our amazing contributors',
-    },
-    {
-      name: 'Open Issues',
-      value: loading ? '...' : `${stats.issues}`,
-      description: 'Help us by contributing to open issues',
+      name: 'Active Users',
+      value: '100+',
+      description: 'People using Versify and loving it!',
+      highlight: true,
     },
   ]
 
@@ -80,8 +82,8 @@ export function Stats() {
               </span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              OpenLaunch is launching in 2026! Be part of our founding community and help 
-              shape the future of collaborative software development from day one.
+              🎉 We're live and building! Versify, our first community app, is already serving users. 
+              Join our growing community and help us build the next amazing project.
             </p>
           </motion.div>
         </div>
@@ -96,27 +98,53 @@ export function Stats() {
               viewport={{ once: true }}
               className="group relative"
             >
-              <div className="glass-card p-8 rounded-3xl shadow-2xl hover:shadow-3xl card-3d border border-white/50 relative overflow-hidden">
+              <div className={clsx(
+                "glass-card p-8 rounded-3xl shadow-2xl hover:shadow-3xl card-3d border border-white/50 relative overflow-hidden",
+                stat.highlight && "ring-2 ring-purple-300 ring-opacity-50"
+              )}>
                 {/* Gradient background on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary-50/50 to-secondary-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
+                <div className={clsx(
+                  "absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl",
+                  stat.highlight 
+                    ? "bg-gradient-to-br from-purple-50/50 to-pink-50/50"
+                    : "bg-gradient-to-br from-primary-50/50 to-secondary-50/50"
+                )} />
                 
                 <div className="relative z-10 text-center">
                   <div className={clsx(
-                    "text-4xl sm:text-5xl font-black gradient-text mb-4 group-hover:scale-110 transition-transform duration-300",
-                    loading && "animate-pulse"
+                    "text-4xl sm:text-5xl font-black mb-4 group-hover:scale-110 transition-transform duration-300",
+                    loading && "animate-pulse",
+                    stat.highlight 
+                      ? "bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent"
+                      : "gradient-text"
                   )}>
                     {stat.value}
                   </div>
-                  <div className="text-lg font-bold text-gray-900 mb-3 group-hover:text-primary-700 transition-colors duration-300">
+                  <div className={clsx(
+                    "text-lg font-bold mb-3 transition-colors duration-300",
+                    stat.highlight
+                      ? "text-purple-900 group-hover:text-purple-700"
+                      : "text-gray-900 group-hover:text-primary-700"
+                  )}>
                     {stat.name}
                   </div>
-                  <div className="text-gray-600 text-sm leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                  <div className={clsx(
+                    "text-sm leading-relaxed transition-colors duration-300",
+                    stat.highlight
+                      ? "text-purple-600 group-hover:text-purple-700"
+                      : "text-gray-600 group-hover:text-gray-700"
+                  )}>
                     {stat.description}
                   </div>
                 </div>
 
                 {/* Glow effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary-500/10 to-secondary-500/10 opacity-0 group-hover:opacity-100 rounded-3xl blur-xl transition-opacity duration-500" />
+                <div className={clsx(
+                  "absolute inset-0 opacity-0 group-hover:opacity-100 rounded-3xl blur-xl transition-opacity duration-500",
+                  stat.highlight
+                    ? "bg-gradient-to-br from-purple-500/10 to-pink-500/10"
+                    : "bg-gradient-to-br from-primary-500/10 to-secondary-500/10"
+                )} />
               </div>
             </motion.div>
           ))}
@@ -146,10 +174,11 @@ export function Stats() {
                 {[
                   {
                     quarter: 'Q1',
-                    title: 'Foundation',
-                    description: 'Community building, infrastructure setup, and first project launches',
-                    gradient: 'from-primary-500 to-primary-600',
-                    bgGradient: 'from-primary-100 to-primary-200'
+                    title: 'Foundation ✅',
+                    description: 'Community built, Versify launched! Infrastructure setup complete.',
+                    gradient: 'from-green-500 to-green-600',
+                    bgGradient: 'from-green-100 to-green-200',
+                    status: 'complete'
                   },
                   {
                     quarter: 'Q2',

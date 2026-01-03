@@ -5,7 +5,8 @@ import {
   LazyFeatures, 
   LazyStats, 
   LazyCommunityShowcase, 
-  LazyCallToAction 
+  LazyCallToAction,
+  LazyAppsShowcase
 } from '@/lib/dynamic-imports'
 
 export default function Home() {
@@ -21,6 +22,14 @@ export default function Home() {
         </div>
       }>
         <LazyFeatures />
+      </Suspense>
+      
+      <Suspense fallback={
+        <div className="flex justify-center items-center py-20">
+          <Spinner size="lg" />
+        </div>
+      }>
+        <LazyAppsShowcase />
       </Suspense>
       
       <Suspense fallback={

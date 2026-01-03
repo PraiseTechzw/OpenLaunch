@@ -75,6 +75,12 @@ export const LazyCallToAction = createLazyComponent(
   'CallToAction'
 )
 
+export const LazyAppsShowcase = createLazyComponent(
+  () => import('@/components/AppsShowcase'),
+  'AppsShowcase',
+  'AppsShowcase'
+)
+
 // Page-specific lazy components
 export const LazyMarkdownRenderer = createLazyComponent(
   () => import('@/components/MarkdownRenderer'),

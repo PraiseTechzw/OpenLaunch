@@ -51,7 +51,7 @@ export function Hero() {
               </div>
               <span className="text-sm font-semibold text-gray-300">
                 <CheckCircle className="w-4 h-4 inline mr-1" />
-                Now Live - Launched January 1st, 2026!
+                🎉 Versify is Live - Our First Community Success!
               </span>
               <div className="ml-3 w-2 h-2 bg-green-500 rounded-full animate-discord-pulse" />
             </div>
@@ -81,11 +81,15 @@ export function Hero() {
             <p className="text-xl sm:text-2xl text-gray-300 mb-6 max-w-4xl mx-auto leading-relaxed animate-fade-in-up">
               A collaborative innovation lab where developers, designers, and creators
             </p>
-            <p className="text-xl sm:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed animate-fade-in-up">
+            <p className="text-xl sm:text-2xl text-gray-300 mb-6 max-w-4xl mx-auto leading-relaxed animate-fade-in-up">
               are building the future of{' '}
               <span className="font-semibold bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent">
                 open-source collaboration
               </span>
+            </p>
+            <p className="text-lg text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed animate-fade-in-up">
+              ✨ <strong className="text-purple-400">Versify</strong> - our first community-built app - is now live! 
+              AI-powered poetry from images, built transparently by our amazing community.
             </p>
           </div>
 
