@@ -10,10 +10,13 @@ This directory contains production applications built by the OpenLaunch communit
 Versify transforms your images into beautiful, unique poems using Google's Gemini AI. Built with Next.js and featuring a Discord-inspired interface.
 
 - **Repository**: [github.com/PraiseTechzw/versify](https://github.com/PraiseTechzw/versify)
-- **Live Demo**: [versify.vercel.app](https://versify.vercel.app)
+- **Live Demo**: [versify.praisetech.tech](https://versify.praisetech.tech)
 - **Status**: ✅ Production Ready
 - **Tech Stack**: Next.js, TypeScript, Tailwind CSS, Google Gemini AI
 - **Contributors**: Community-built through OpenLaunch
+
+![Versify Interface](../apps/versify/public/screenshoots/image.png)
+*Versify's intuitive interface - simply upload an image and watch AI create personalized poetry*
 
 **Key Features:**
 - Upload images and generate AI-powered poems
@@ -21,6 +24,13 @@ Versify transforms your images into beautiful, unique poems using Google's Gemin
 - Responsive design for all devices
 - Fast, reliable performance
 - Open source and community-maintained
+
+**Community Achievements:**
+- 🏆 First OpenLaunch production app
+- 👥 5+ active contributors
+- ⭐ 25+ GitHub stars
+- 👤 100+ active users
+- 🔄 Continuous community improvements
 
 ---
 

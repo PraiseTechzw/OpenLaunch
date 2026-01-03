@@ -13,7 +13,7 @@ We're proud to showcase our first major community achievement: **Versify** - an 
 - ✅ Production-ready with real users
 - ✅ Modern Discord-inspired UI/UX
 - ✅ Open source and community-maintained
-- ✅ Deployed and accessible at [versify.vercel.app](https://versify.vercel.app)
+- ✅ Deployed and accessible at [versify.praisetech.tech](https://versify.praisetech.tech)
 
 This success validates our community-driven approach and shows that we can build real software that matters!
 

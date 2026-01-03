@@ -69,7 +69,7 @@ npm run dev
 
 ### Deployment
 Versify is deployed independently:
-- **Production**: https://versify.vercel.app
+- **Production**: https://versify.praisetech.tech
 - **Repository**: https://github.com/PraiseTechzw/versify
 - **Deployment**: Automated via Vercel
 
@@ -107,7 +107,7 @@ Versify demonstrates that OpenLaunch can:
 ## Resources
 
 - **Versify Repository**: https://github.com/PraiseTechzw/versify
-- **Live Application**: https://versify.vercel.app
+- **Live Application**: https://versify.praisetech.tech
 - **OpenLaunch Discussions**: https://github.com/PraiseTechzw/OpenLaunch/discussions
 - **Contribution Guidelines**: [CONTRIBUTING.md](../CONTRIBUTING.md)
 

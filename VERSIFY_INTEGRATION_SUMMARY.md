@@ -79,7 +79,7 @@ npm run build:versify
 
 ### Links and Resources
 - **Versify Repository**: https://github.com/PraiseTechzw/versify
-- **Live Demo**: https://versify.vercel.app
+- **Live Demo**: https://versify.praisetech.tech
 - **OpenLaunch Main**: https://github.com/PraiseTechzw/OpenLaunch
 
 ### Impact

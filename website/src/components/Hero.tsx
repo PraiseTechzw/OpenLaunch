@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { ArrowRightIcon } from '@heroicons/react/24/outline'
-import { Flame, Zap, Star, Rocket, Users, Lock, GraduationCap, CheckCircle } from 'lucide-react'
+import { Flame, Zap, Star, Rocket, Users, Lock, GraduationCap, CheckCircle, Sparkles } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 export function Hero() {
@@ -95,11 +95,24 @@ export function Hero() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 animate-fade-in-up">
             <div className="discord-hover-scale">
+              <Button asChild size="lg" className="bg-gradient-to-r from-purple-500 via-pink-500 to-rose-500 hover:from-purple-600 hover:via-pink-600 hover:to-rose-600 text-white shadow-2xl hover:shadow-3xl relative overflow-hidden group px-8 py-4">
+                <Link href="https://versify.praisetech.tech" target="_blank" rel="noopener noreferrer" className="relative flex items-center">
+                  <span className="relative z-10 flex items-center">
+                    <Sparkles className="mr-2 h-5 w-5" />
+                    Try Versify Live
+                    <ArrowRightIcon className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </Link>
+              </Button>
+            </div>
+            
+            <div className="discord-hover-scale">
               <Button asChild size="lg" className="bg-gradient-to-r from-primary-500 via-accent-500 to-secondary-500 hover:from-primary-600 hover:via-accent-600 hover:to-secondary-600 text-white shadow-2xl hover:shadow-3xl relative overflow-hidden group px-8 py-4">
                 <Link href="/docs/onboarding" className="relative flex items-center">
                   <span className="relative z-10 flex items-center">
                     <Rocket className="mr-2 h-5 w-5" />
-                    Get Started Now
+                    Join Community
                     <ArrowRightIcon className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </span>
                   <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

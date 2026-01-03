@@ -33,7 +33,7 @@ const apps = [
     longDescription: 'Versify represents our first major success - a production-ready application that demonstrates what our community can accomplish when we work together. Upload any image and watch as AI transforms it into personalized poetry.',
     status: 'Live',
     statusColor: 'bg-green-500',
-    liveUrl: 'https://versify.vercel.app',
+    liveUrl: 'https://versify.praisetech.tech',
     githubUrl: 'https://github.com/PraiseTechzw/versify',
     techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Google Gemini AI'],
     features: [
@@ -52,7 +52,7 @@ const apps = [
     bgGradient: 'from-purple-50 via-pink-50 to-rose-50',
     borderGradient: 'from-purple-200 via-pink-200 to-rose-200',
     icon: Sparkles,
-    image: '/images/versify-preview.png', // We'll add this later
+    image: '/images/apps/versify/versify-screenshot.png',
     achievements: [
       'First OpenLaunch production app',
       'Community-built from start to finish',
@@ -214,27 +214,27 @@ export function AppsShowcase() {
 
                   {/* Right side - Visual/Preview */}
                   <div className="relative">
-                    <div className={`h-full min-h-[400px] bg-gradient-to-br ${app.bgGradient} rounded-2xl p-8 flex items-center justify-center relative overflow-hidden`}>
-                      {/* Placeholder for app screenshot/preview */}
-                      <div className="text-center space-y-4">
-                        <motion.div
-                          animate={{ 
-                            rotate: [0, 10, -10, 0],
-                            scale: [1, 1.1, 1]
-                          }}
-                          transition={{ 
-                            duration: 3, 
-                            repeat: Infinity
-                          }}
-                        >
-                          <ImageIcon className="w-24 h-24 text-purple-400 mx-auto" />
-                        </motion.div>
-                        <div className="space-y-2">
-                          <div className="text-lg font-semibold text-purple-700">Upload Image</div>
-                          <div className="text-purple-600">↓</div>
-                          <div className="text-lg font-semibold text-pink-700">AI Magic</div>
-                          <div className="text-pink-600">↓</div>
-                          <div className="text-lg font-semibold text-rose-700">Beautiful Poetry</div>
+                    <div className={`h-full min-h-[400px] bg-gradient-to-br ${app.bgGradient} rounded-2xl p-4 flex items-center justify-center relative overflow-hidden`}>
+                      {/* App Screenshot */}
+                      <div className="relative w-full h-full max-w-md">
+                        <div className="bg-white rounded-xl shadow-2xl overflow-hidden border-4 border-white/20">
+                          <img 
+                            src={app.image} 
+                            alt="Versify App Screenshot - AI Poetry Generation Interface"
+                            className="w-full h-auto object-cover"
+                            loading="lazy"
+                          />
+                        </div>
+                        
+                        {/* Floating UI elements to show it's interactive */}
+                        <div className="absolute -top-2 -right-2 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
+                          Live App
+                        </div>
+                        
+                        {/* Feature callouts */}
+                        <div className="absolute -bottom-4 -left-4 bg-purple-500 text-white px-4 py-2 rounded-lg text-sm font-medium shadow-lg">
+                          <Sparkles className="w-4 h-4 inline mr-1" />
+                          AI-Powered
                         </div>
                       </div>
 

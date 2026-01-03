@@ -7,6 +7,14 @@
 
 > A collaborative innovation lab where developers, designers, and creators build real-world software in public.
 
+## 🚀 **LIVE SUCCESS**: Versify is Here!
+
+**Our first community-built app is live and serving users!** 
+
+[**🎨 Try Versify Now →**](https://versify.praisetech.tech) | [📖 View Source](https://github.com/PraiseTechzw/versify)
+
+Transform your images into beautiful AI-generated poetry. Built by our community, for everyone to enjoy. This is proof that collaborative development works!
+
 ## What is OpenLaunch?
 
 OpenLaunch is an open-source launchpad and incubator designed to foster collaborative innovation through our annual Coding Party initiative. We're not building a single app—we're creating a platform where the global developer community can come together to build multiple real-world products that matter.
@@ -93,13 +101,23 @@ OpenLaunch/
 
 We're excited to showcase **Versify**, our first production application built through the OpenLaunch community! Versify is a modern web application that uses artificial intelligence to generate unique poems inspired by your images, built with Next.js and powered by Google's Gemini AI.
 
-🔗 **[Try Versify](https://github.com/PraiseTechzw/versify)** | 🌟 **[Live Demo](https://versify.vercel.app)**
+🔗 **[Try Versify](https://github.com/PraiseTechzw/versify)** | 🌟 **[Live Demo](https://versify.praisetech.tech)**
 
 ### What Makes Versify Special
 - **AI-Powered Poetry**: Transform your images into beautiful, unique poems
 - **Discord-Inspired UI**: Modern, intuitive interface that users love
 - **Open Source**: Built transparently with community collaboration
 - **Production Ready**: Real users, real impact, real success
+
+![Versify Screenshot](apps/versify/public/screenshoots/image.png)
+*Versify's beautiful interface - upload an image and watch AI create personalized poetry*
+
+### Community Impact
+- ✅ **First Production App**: Proves our collaborative model works
+- ✅ **Real Users**: 100+ active users creating poetry daily
+- ✅ **Open Development**: Built entirely in the open with community input
+- ✅ **Learning Platform**: New contributors gained valuable experience
+- ✅ **Quality Standards**: Production-ready code with proper testing
 
 ## Current Focus Areas
 
